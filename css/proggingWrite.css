@@ -1,0 +1,75 @@
+.backBorder{
+    display: flex;
+    width: 70%;
+    height: 550px;
+    background-color: #F1F1F1;
+    margin-top: 7%;
+    margin-left: 15%;
+    padding-top: 3%;
+    border-radius: 20px;
+    border: 2px solid rgb(209, 209, 209);
+}
+
+.informationArea{
+    height: 93%;
+    width: 40%;
+    margin-left: 7%;
+    padding: 2%;
+    /* background-color: aqua; */
+}
+
+.writeArea{
+    height: 93%;
+    width: 40%;
+    margin-left: 5%;
+    /* background-color: aquamarine; */
+}   
+
+.hr{
+    margin-left: 5%;
+    height: 90%;
+    background-color: rgb(173, 173, 173);
+}
+
+/* 정보 작성 css */
+.titleInput,
+.scheduleInput,
+.timeInput{
+    width: 95%;
+    height: 30px;
+    padding-left: 17px;
+    margin-top: 30%;
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: transparent; /* 배경색 없음 */
+    font-size: 13px;
+    outline: none; /* 클릭해도 테두리 없음 */
+}
+.titleInput{
+    margin-top: 12%;
+}
+
+/* 내용 작성 css */
+.detailInput{
+    display: flex;
+    width: 95%;
+    height: 73%;
+    margin-top: 10%;
+    padding-left: 17px;
+    border: none;
+    background-color: transparent; 
+    font-size: 15px;
+    outline: none; /* 클릭해도 테두리 없음 */
+    resize: none;  /*사이즈 변경 불가능*/
+}
+
+.raiseButton{
+    width: 30%;
+    height: 7%;
+    margin-left: 60%;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid rgb(115, 115, 115);
+    background-color: #6CC4A1;
+    color: white;
+}

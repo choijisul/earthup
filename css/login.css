@@ -1,0 +1,53 @@
+/* 로고 */
+.logo {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+
+/* 아이디 입력창 */
+.input-id {
+    width: 500px; 
+    height: 50px; 
+    padding-left: 10px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 비밀번호 입력창 */
+.input-pw {
+    width: 500px; 
+    height: 50px;
+    padding-left: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 로그인 버튼 */
+.loginButton {
+    width: 430px;
+    height: 50px;
+    background-color: #6CC4A1;
+    border: 1.3px solid #000000; 
+    border-radius: 5px;
+    position: absolute;
+    top: 60%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.goMembership{
+    font-size: 15px;  
+    margin-left: 47.9%;
+    display: block; 
+    color: gray;
+    font-style: normal;
+    margin-top: 480px;
+}
