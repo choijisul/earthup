@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/proggingNav.css">
+    <link rel="stylesheet" href="css/proggingWrite.css">
+    <title>플로깅 작성</title>
+</head>
+<body>
+    <!-- nav -->
+    <header>
+        <div class="nav_container">
+            <h1>
+                <p><button onClick="location.href='proggingBoard.html'" class="backButton">
+                    <img src="./img/backButton.png"></button>
+                    <i onClick="location.href='index.html'" class="topName">플로깅 작성</i>
+            </h1>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="backBorder">
+            <!-- 정보 작성 칸 (왼) -->
+            <div class="informationArea">
+                <input type="text" name="" class="titleInput" placeholder="제목을 입력하세요"><br>
+                <input type="text" name="" class="scheduleInput" placeholder="일정을 입력하세요"><br>
+                <input type="text" name="" class="timeInput" placeholder="시간을 입력하세요"><br>
+            </div>
+            <hr class="hr">
+            <!-- 내용 작성 칸(오) -->
+            <div class="writeArea">
+                <textarea class="detailInput" placeholder="내용을 입력하세요"></textarea>
+                <button class="raiseButton">올리기</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

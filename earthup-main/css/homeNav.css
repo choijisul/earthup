@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+/*header*/
+.nav_container {
+    position: absolute;
+    background-color: #ffffff;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    border-width: 0px 0px 1px 0px;
+    border-color: gray;
+    border-style: solid;
+}
+
+.logName {
+    font-size: 0.6cm;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 25px;
+    font-style: normal;
+}
+
+/* 밑 선택 header */
+.header_container{
+    position: absolute;
+    /* background-color: #ffffff; */
+    top: 40px;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    border-width: 0px 0px 1px 0px;
+    border-color: gray;
+    border-style: solid;
+}
+
+.garbageSearch,
+.proggingBoard,
+.membership,
+.login {
+    font-size: 0.35cm;
+    cursor: pointer;
+    font-style: normal;
+    margin-left: 25px;
+} 
+
+.garbageSearch{  
+    margin-left: 2%;
+}
+
+.membership{
+    margin-left: 72%;
+}

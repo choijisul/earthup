@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/proggingNav.css">
+    <link rel="stylesheet" href="css/proggingInformation.css">
+    <title> 플로깅 게시판</title>
+</head>
+
+<body>
+    <!-- nav -->
+    <header>
+        <div class="nav_container">
+            <h1>
+                <p><button onClick="location.href='proggingBoard.html'" class="backButton">
+                    <img src="./img/backButton.png"></button>
+                    <i onClick="location.href='index.html'" class="topName">플로깅 title 가져오기</i>
+            </h1>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="backBorder">
+            <!-- 정보 칸(왼) -->
+            <div class="informationArea">
+                <h3 class="informationTitle">제목 불러옴</h3>
+                <div class="sideInformation">
+                    <h4 class="informationSchedule">일정 <h6 class="informationSchedule"></h6>
+                    </h4>
+                    <h4 class="informationSchedule">시간 </h4>
+                </div>
+                <div class="informationIntroduction">
+                    블라블라<br>샬라샬라<br> 같이 해주세요ㅠㅠ
+                </div>
+                <hr>
+                <div class="likeDiv">
+                    <button class="likeButton"><img src="./img/heart.png"></button>
+                    <h5 class="likeText">누가누가 좋아한다 이거야.</h5>
+                </div>
+                <button class="enjoyButton">참여하기</button>
+            </div>
+
+            <!-- 댓글 칸(오) -->
+            <div class="chatArea">
+                <!-- 댓글 입력 -->
+                <input type="text" name="newChat" class="newChat" placeholder="댓글을 입력하세요"><br>
+                <div class="beforeChar">
+                    <!-- 이전 댓글 1개 -->
+                    <div class="chat">
+                        <div class="profileImg"><img src="./img/person-circle.png"></div>
+                        <div class="chatDetailed">
+                            <h5 class="nickname">최씨인건가</h5>
+                            <h5 class="detailed">아 제 5인격 아 베이스 하고싶어!!!!! 학교 싫어어!</h5>
+                        </div>
+                    </div>
+                    <!-- 이전 댓글 1개 -->
+                    <div class="chat">
+                        <div class="profileImg"><img src="./img/person-circle.png"></div>
+                        <div class="chatDetailed">
+                            <h5 class="nickname">박도도독</h5>
+                            <h5 class="detailed">나는야 최고 멋쟁이. 나는야 킹왕짱이지</h5>
+                        </div>
+                    </div>
+                    <!-- 이전 댓글 1개 -->
+                    <div class="chat">
+                        <div class="profileImg"><img src="./img/person-circle.png"></div>
+                        <div class="chatDetailed">
+                            <h5 class="nickname">솔솔솔솔</h5>
+                            <h5 class="detailed">나는 귀염뽀짝빵꾸가 될거얌. 일렉 좡좡좡좌라좡좡</h5>
+                        </div>
+                    </div>
+                    <!-- 이전 댓글 1개 -->
+                    <div class="chat">
+                        <div class="profileImg"><img src="./img/person-circle.png"></div>
+                        <div class="chatDetailed">
+                            <h5 class="nickname">민싱 그 잡체</h5>
+                            <h5 class="detailed">닭다리 과자!!!!!! 루피야 사랑햄~~~~~</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+<script src="js/proggingLikeButton.js"></script>
+
+</html>

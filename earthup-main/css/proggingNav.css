@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+/*header*/
+.nav_container {
+    position: absolute;
+    background-color: #ffffff;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    border-width: 0px 0px 1px 0px;
+    border-color: gray;
+    border-style: solid;
+}
+
+.topName {
+    font-size: 0.6cm;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 50%;
+    font-style: normal;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.backButton {
+    border: 0px;
+    background: none;
+    position: absolute; 
+    z-index: 0; 
+    width: 50px; 
+    height: 50px;
+    margin-left: 1%;
+}
+
+.backButton img {
+    width: 70%; 
+    height: auto; 
+}
+
+.bi {
+    font-size: 27px; 
+    margin-left: 97%;
+}
+
+/* 지역 선택 header */
+.subNav_container{
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    border-width: 0px 0px 1px 0px;
+    border-color: gray;
+    border-style: solid;
+    box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.1); 
+}
+
+.chooseArea {
+    position: absolute;
+    z-index: 1;
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 100px; 
+    height: 30px; 
+    /* background-color: aquamarine; */
+    border: 0px;
+    outline: none; /* 클릭 -> border (X)*/
+}
+
+.chooseArea:focus, /*포커스, 크릭*/
+.chooseArea:active { 
+    border: 0px;
+    outline: none; 
+}
+.area {
+    /* 추가 스타일이 필요하다면 여기에 추가하세요 */
+}
+
