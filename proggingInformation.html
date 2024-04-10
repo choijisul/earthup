@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="css/proggingNav.css">
     <link rel="stylesheet" href="css/proggingInformation.css">
     <title> 플로깅 게시판</title>
+    <script>
+        function changeImage(clickedImageId, otherImageId) {
+            var clickedImg = document.getElementById(clickedImageId);
+            var otherImg = document.getElementById(otherImageId);
+    
+            clickedImg.style.display = 'none';
+            otherImg.style.display = 'block';
+        }
+    </script>
+    
 </head>
 
 <body>
@@ -36,7 +46,12 @@
                 </div>
                 <hr>
                 <div class="likeDiv">
-                    <button class="likeButton"><img src="./img/heart.png"></button>
+                    <div class="icon-container">
+                        <button class="likeButton">
+                            <img id="image1" src="./img/icon5.png" onclick="changeImage('image1', 'image2')">
+                            <img id="image2" src="./img/icon6.png" onclick="changeImage('image2', 'image1')" style="display: none;">
+                        </button>
+                    </div>
                     <h5 class="likeText">누가누가 좋아한다 이거야.</h5>
                 </div>
                 <button class="enjoyButton">참여하기</button>

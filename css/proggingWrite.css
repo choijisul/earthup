@@ -72,4 +72,9 @@
     border: 1px solid rgb(115, 115, 115);
     background-color: #6CC4A1;
     color: white;
+    cursor: pointer;
+}
+
+.raiseButton:hover{
+    background-color: #5bbf97;
 }

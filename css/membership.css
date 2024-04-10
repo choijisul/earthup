@@ -60,4 +60,9 @@
     border: 1px solid #000000; 
     border-radius: 10px;
     color: white;
+    cursor: pointer;
+}
+
+.membershipButton:hover {
+    background-color: #5bbf97;
 }
