@@ -8,6 +8,17 @@
     <title>어썹</title>
 </head>
 <body>
+
+    <script>
+        function changeImage(clickedImageId, otherImageId) {
+            var clickedImg = document.getElementById(clickedImageId);
+            var otherImg = document.getElementById(otherImageId);
+    
+            clickedImg.style.display = 'none';
+            otherImg.style.display = 'block';
+        }
+    </script>
+    
      <!-- nav -->
      <header>
         <div class="nav_container">
@@ -52,8 +63,11 @@
             </div>
     
             <div class="icon5-container">
-                <img src="img/icon5.png" class="icon5">
-                <span class="user-count-text">user1214님 외 1,201명이 도움되었습니다!</span>
+                <div class="icon-container">
+                    <img id="image1" src="img/icon5.png" class="icon5" onclick="changeImage('image1', 'image2')">
+                    <img id="image2" src="img/icon6.png" class="icon5" onclick="changeImage('image2', 'image1')" style="display: none;">
+                    <span class="user-count-text">user1214님 외 1,201명이 도움되었습니다!</span>
+                </div>    
             </div>
         </div>
 
@@ -79,8 +93,11 @@
             </div>
     
             <div class="icon5-container">
-                <img src="img/icon5.png" class="icon5">
-                <span class="user-count-text">user1214님 외 1,201명이 도움되었습니다!</span>
+                <div class="icon-container">
+                    <img id="image3" src="img/icon5.png" class="icon5" onclick="changeImage('image3', 'image4')">
+                    <img id="image4" src="img/icon6.png" class="icon5" onclick="changeImage('image4', 'image3')" style="display: none;">
+                    <span class="user-count-text">user1214님 외 1,201명이 도움되었습니다!</span>
+                </div>
             </div>
         </div>
     </main>

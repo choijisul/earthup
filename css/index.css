@@ -36,12 +36,14 @@
   height: 1000px;
   padding: 5%;
   padding-left: 10%;
+  opacity: 0;
 }
 
 .leftzone-image {
   width: 100%; /* 레프트존의 너비에 맞춰 이미지 크기 조정 */
   height: auto; /* 이미지의 원래 비율을 유지하면서 높이 조정 */
   margin-bottom: 20px; /* 이미지 사이의 간격 조정 */
+  left: -50%;
 }
 
 
@@ -52,6 +54,7 @@
   padding: 5%;
   padding-right: 10%;
   padding-top: 7%;
+  opacity: 0;
 }
 
 .textzone {
@@ -60,9 +63,40 @@
   height: 500px;
   font-size: 45px;
   text-align: left;
-
+  right: -50%;
 }
 
 .earth-responsibility b {
   color:#4CACBC;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.leftzone.animated {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.rightzone.animated {
+  animation: slideInRight 1s ease forwards;
 }
