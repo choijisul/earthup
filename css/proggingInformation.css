@@ -61,6 +61,7 @@
     margin-right: 2%;
     border: none;
     /* background-color: #F1F1F1; */
+    cursor: pointer;
 }
 
 .enjoyButton{
@@ -73,7 +74,13 @@
     color: white;
     border-color: black;
     background-color: #6CC4A1;
+    cursor: pointer;
 }
+
+.enjoyButton:hover {
+    background-color: #5bbf97;
+}
+
 
 /* chat css */
 .newChat{
@@ -113,4 +120,11 @@
 .detailed{
     font-size: 11px;
     color: rgb(118, 118, 118);
+}
+
+.icon-container {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    margin-top: 1.3%;
 }

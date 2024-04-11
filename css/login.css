@@ -41,6 +41,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    cursor: pointer;
+}
+
+.loginButton:hover {
+    background-color: #5bbf97;
 }
 
 .goMembership{
@@ -50,4 +55,5 @@
     color: gray;
     font-style: normal;
     margin-top: 480px;
+    cursor: pointer;
 }

@@ -17,6 +17,7 @@
     border: 3px solid #6CC4A1; 
     line-height: 8px; 
     text-align: center; 
+    cursor: pointer;
 }
 
 .top-line {
@@ -31,6 +32,7 @@
     top: 70px; /* 원하는 위치로 조정 */
     right: 30px;
     width: 30px;
+    cursor: pointer;
 }
 
 .main{
@@ -125,6 +127,7 @@
     /* margin-right: ; */
     width: 20px; /* 이미지 너비 설정 */
     height: 20px; /* 이미지 높이 설정 */
+    cursor: pointer;
 }
 
 .user-count-text {
@@ -133,6 +136,13 @@
     left: 21%;
     font-size: 12px; /* 글자 크기 설정 */
     color: #555; /* 텍스트 색상 설정 */
+}
+
+.icon-container {
+    position: relative;
+    width: 300px;
+    height: 20px;
+    margin-top: 1.3%;
 }
 
 
