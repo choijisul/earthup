@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>쓰레기 검색</title>
+    <script src="css/camera.css"></script>
 </head>
 
 <body>
@@ -14,11 +15,13 @@
     <button>키워드추가</button>
     
     <!-- 이미지 업로드 -->
-    <form class="inputImg" method="post" enctype="multipart/form-data"> <!-- 이미지 파일 데이터에 알맞는 enctype 설정 -->
-        <div class="addImage" id="image-show"> <!-- 이미지 띄울 공간 -->
+    <form class="inputImg" method="post" enctype="multipart/form-data">
+        <div class="addImage" id="image-show">
+            
         </div>
         <input type="file" accept="image/*" onchange="loadFile(this)">
     </form>
+
 
 </body>
 <script src="js/camera.js"></script>
