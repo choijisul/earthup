@@ -9,18 +9,22 @@
 </head>
 
 <body>
-    <button onClick="location.href='index.html'">홈으로</button>
-    <button onClick="location.href='recofailure.html'">인실 실패</button>
-    <button onClick="location.href='recosuccess.html'">인식 성공</button>
-    <button>키워드추가</button>
-    
-    <!-- 이미지 업로드 -->
-    <form class="inputImg" method="post" enctype="multipart/form-data">
-        <div class="addImage" id="image-show">
-            
-        </div>
-        <input type="file" accept="image/*" onchange="loadFile(this)">
-    </form>
+    <!-- 뒤로가기 버튼 -->
+    <a href="javascript:history.back();">
+        <img src="img/btn-previous.png" alt="이전">
+    </a>
+
+    <!-- 인식하기 버튼 -->
+    <a href="#">
+        <img src="img/btn-camera.png" alt="인식">
+    </a>
+
+    <!-- 사진 불러오기 버튼 -->
+    <a href="#">
+        <img src="img/icon-image.png" alt="사진 불러오기">
+    </a>
+
+    <!-- 카메라 화면 (Teachable machine) -->
 
 
 </body>
