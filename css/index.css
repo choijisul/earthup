@@ -30,7 +30,6 @@
   justify-content: space-around;
   display: flex;
 }
-
 .leftzone {
   width: 50%;
   height: 1000px;
@@ -38,6 +37,7 @@
   padding-left: 10%;
   opacity: 0;
 }
+
 
 .leftzone-image {
   width: 100%; /* 레프트존의 너비에 맞춰 이미지 크기 조정 */
@@ -106,4 +106,8 @@
 .rightzone.animated {
   animation: slideInRight 1s ease forwards;
 }
->>>>>>> 34410b7170d0f463c59815eb343e4d0d0620c90c
+>>>>>>> 34410b7170d0f463c59815eb343e4d0d0620c90
+
+
+
+
