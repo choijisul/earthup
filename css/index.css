@@ -42,7 +42,8 @@
 .leftzone-image {
   width: 100%; /* 레프트존의 너비에 맞춰 이미지 크기 조정 */
   height: auto; /* 이미지의 원래 비율을 유지하면서 높이 조정 */
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  
   
 <<<<<<< HEAD
 =======
