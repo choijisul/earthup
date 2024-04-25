@@ -12,9 +12,9 @@
     <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='proggingBoard.html'" class="backButton">
+                <p><button onClick="location.href='proggingBoard.php'" class="backButton">
                     <img src="./img/backButton.png"></button>
-                    <i onClick="location.href='index.html'" class="topName">플로깅 작성</i>
+                    <a class="topName">플로깅 작성</a>
             </h1>
         </div>
     </header>
