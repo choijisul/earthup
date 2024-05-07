@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/proggingNav.css">
     <link rel="stylesheet" href="css/proggingTabel.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-    <title> 플로깅 게시판 !!</title>
+    <title>플로깅 게시판 !!</title>
 </head>
 
 <body>
@@ -15,11 +15,11 @@
     <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='index.html'" class="backButton"><img
+                <p><button onClick="location.href='index.php'" class="backButton"><img
                             src="./img/backButton.png"></button>
-                    <i onClick="location.href='index.html'" class="topName">플로깅</i>
+                    <i onClick="location.href='index.php'" class="topName">플로깅</i>
             </h1>
-            <i class="bi bi-pencil" onClick="location.href='proggingWrite.html'"></i>
+            <i class="bi bi-pencil" onClick="location.href='proggingWrite.php'"></i>
         </div>
     </header>
 
@@ -27,11 +27,12 @@
         <h1>
             <form>
                 <select name="area" class="chooseArea">
-                    <option value="area1" class="area" selected>신림동</option>
-                    <option value="area2" class="area">역삼동</option>
-                    <option value="area3" class="area">대치동</option>
-                    <option value="area4" class="area">지역1</option>
-                    <option value="area5" class="area">지역2</option>
+                    <?php
+                    $areas = array("신림동", "역삼동", "대치동", "지역1", "지역2");
+                    foreach ($areas as $area) {
+                        echo "<option value='area1' class='area'>$area</option>";
+                    }
+                    ?>
                 </select>
             </form>
         </h1>
@@ -40,75 +41,63 @@
     <main class="main">
         <section class="container">
             <!-- 첫 번째 칸 -->
-            <div class="div"  onClick="location.href='proggingInformation.html'">
+            <div class="div" onClick="location.href='proggingInformation.php'">
                 <div class="img"></div>
                 <div class="information">
                     <h4 class="proggingTitle">도림천에서 플로깅 해요</h4>
                     <div class="sideInformation">
-                        <h5>일정  |  어쩌구 저쩌구</h5>
-                        <h5>시간  |  어쩌구 저쩌구</h5>
+                        <h5>일정 | 어쩌구 저쩌구</h5>
+                        <h5>시간 | 어쩌구 저쩌구</h5>
                     </div>
                     <div class="personnelDiv">
                         <div class="personnelImg"></div>
-                        <h5 class="personnel">5</h5>
+                        <?php
+                        $personnel = 5;
+                        echo "<h5 class='personnel'>$personnel</h5>";
+                        ?>
                     </div>
                 </div>
             </div>
             <div class="div">
-                
             </div>
             <div class="div">
-                
             </div>
             <hr class="hr">
-            
+
             <!-- 두 번째 칸 -->
             <div class="div">
-                
             </div>
             <div class="div">
-                
             </div>
             <div class="div">
-                
             </div>
             <hr class="hr">
-            
+
             <!-- 세 번째 칸 -->
             <div class="div">
-                
             </div>
             <div class="div">
-                
             </div>
             <div class="div">
-                
             </div>
             <hr class="hr">
-            
+
             <!-- 네 번째 칸 -->
             <div class="div">
-                
             </div>
             <div class="div">
-                
             </div>
             <div class="div">
-                
             </div>
             <hr class="hr">
-            
+
             <!-- 다섯 번째 칸 -->
             <div class="div">
-                
             </div>
             <div class="div">
-                
             </div>
             <div class="div">
-                
             </div>
-            <!-- <hr class="hr"> -->
         </section>
     </main>
 </body>
