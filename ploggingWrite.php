@@ -9,6 +9,7 @@
     <title>플로깅 작성</title>
 </head>
 
+<!-- 안된 부분 : 아이디, 지역 전달x, 디자인 이상해짐 -->
 <body>
     <!-- nav -->
     <header>
@@ -25,14 +26,14 @@
     <main class="main">
         <div class="backBorder">
             <form method="post" action="">
-                <!-- 왼쪽 -->
+                <!-- 제목, 일정, 시간 입력 -->
                 <div class="informationArea">
                     <input type="text" name="title" class="titleInput" placeholder="제목을 입력하세요" required><br>
                     <input type="text" name="schedule" class="scheduleInput" placeholder="일정을 입력하세요" required><br>
                     <input type="text" name="time" class="timeInput" placeholder="시간을 입력하세요" required><br>
                 </div>
                 <hr class="hr">
-                <!-- 내용 작성 칸 -->
+                <!-- 내용 작성, 지역선택, 버튼 -->
                 <div class="writeArea">
                     <textarea name="detail" class="detailInput" placeholder="내용을 입력하세요" required></textarea>
                     <select name="location" class="locationSelect">
