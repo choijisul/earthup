@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/homeNav.css">
     <link rel="stylesheet" href="css/index.css">
-    <title> 어썹</title>
+    <title>어썹</title>
 </head>
 
 <body>
