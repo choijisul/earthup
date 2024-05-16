@@ -20,7 +20,7 @@
     </header>
     <div class="header_container">
         <h1>
-            <i onClick="location.href='http://localhost/camera.php.html'" class="garbageSearch">쓰레기 검색</i>
+            <i onClick="location.href='http://localhost/camera.php'" class="garbageSearch">쓰레기 검색</i>
             <i onClick="location.href='http://localhost/ploggingBoard.php'" class="proggingBoard">플로깅 게시판</i>
             <i onClick="location.href='http://localhost/membership.php'" class="membership">회원가입</i>
             <i onClick="location.href='http://localhost/login.php'" class="login">로그인</i>
