@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/homeNav.css">
     <link rel="stylesheet" href="css/index.css">
-    <title> 어썹</title>
+    <title>어썹</title>
 </head>
 
 <body>
@@ -20,10 +20,10 @@
     </header>
     <div class="header_container">
         <h1>
-            <i onClick="location.href='camera.html'" class="garbageSearch">쓰레기 검색</i>
-            <i onClick="location.href='proggingBoard.html'" class="proggingBoard">플로깅 게시판</i>
-            <i onClick="location.href='membership.html'" class="membership">회원가입</i>
-            <i onClick="location.href='login.html'" class="login">로그인</i>
+            <i onClick="location.href='http://localhost/camera.php'" class="garbageSearch">쓰레기 검색</i>
+            <i onClick="location.href='http://localhost/ploggingBoard.php'" class="proggingBoard">플로깅 게시판</i>
+            <i onClick="location.href='http://localhost/membership.php'" class="membership">회원가입</i>
+            <i onClick="location.href='http://localhost/login.php'" class="login">로그인</i>
         </h1>
     </div>
     
