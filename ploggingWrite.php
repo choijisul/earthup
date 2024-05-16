@@ -9,7 +9,8 @@
     <title>플로깅 작성</title>
 </head>
 
-<!-- 안된 부분 : 아이디, 지역 전달x, 디자인 이상해짐 -->
+<!-- 안된 부분 : 아이디 전달X , 디자인 이상해짐 -->
+
 <body>
     <!-- nav -->
     <header>
@@ -36,7 +37,7 @@
                 <!-- 내용 작성, 지역선택, 버튼 -->
                 <div class="writeArea">
                     <textarea name="detail" class="detailInput" placeholder="내용을 입력하세요" required></textarea>
-                    <select name="location" class="locationSelect">
+                    <select name="area" class="areaSelect">
                         <option value="sinrim">신림</option>
                         <option value="myeongdong">명동</option>
                         <option value="hongdae">홍대</option>
@@ -57,10 +58,9 @@
             $schedule = $conn->real_escape_string($_POST['schedule']);
             $time = $conn->real_escape_string($_POST['time']);
             $detail = $conn->real_escape_string($_POST['detail']);
-            $location = $conn->real_escape_string($_POST['location']);
+            $area = $conn->real_escape_string($_POST['area']);
 
             // 기본값 설정
-            $area = '신림';
             $writerMemberId = 'jisul';
 
             // SQL 쿼리
