@@ -1,3 +1,4 @@
+<?php require 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +17,7 @@
     <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='proggingBoard.php'" class="backButton">
+                <p><button onClick="location.href='http://localhost/ploggingBoard.php'" class="backButton">
                         <img src="./img/backButton.png"></button>
                     <a class="topName">플로깅 작성</a>
             </h1>
@@ -25,8 +26,8 @@
 
 
     <main class="main">
-        <div class="backBorder">
-            <form method="post" action="">
+        <form method="post" action="">
+            <div class="backBorder">
                 <!-- 제목, 일정, 시간 입력 -->
                 <div class="informationArea">
                     <input type="text" name="title" class="titleInput" placeholder="제목을 입력하세요" required><br>
@@ -45,14 +46,12 @@
                     </select>
                     <button type="submit" class="raiseButton">올리기</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
 
 
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            require './db_progging.php'; // DB연결
-
             // 폼 데이터 가져오기
             $title = $conn->real_escape_string($_POST['title']);
             $schedule = $conn->real_escape_string($_POST['schedule']);
