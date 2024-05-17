@@ -29,7 +29,7 @@
                 <select name="area" class="chooseArea" onchange="this.form.submit()">
                     <?php
                     $areas = array("모든", "신림", "명동", "홍대", "강남");
-                    $selected_area = isset($_GET['area']) ? $_GET['area'] : '강남';  // 기본값 설정
+                    $selected_area = isset($_GET['area']) ? $_GET['area'] : '모든';  // 기본값 설정
                     foreach ($areas as $area) {
                         $selected = $selected_area === $area ? "selected" : "";
                         echo "<option value='$area' class='area' $selected>$area</option>";
@@ -55,7 +55,7 @@
                 $count = 0;
                 while ($row = $result->fetch_assoc()) { // 조회 결과를 한 행씩 접근
             ?>
-                    <div class="div" onClick="location.href='proggingInformation.php'">
+                    <div class="div" onClick="location.href='ploggingInformation.php'">
                         <div class="img"></div>
                         <div class="information">
                             <h4 class="proggingTitle"><?php echo $row['title']; ?></h4>
