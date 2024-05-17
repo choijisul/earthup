@@ -55,7 +55,7 @@
                 $count = 0;
                 while ($row = $result->fetch_assoc()) { // 조회 결과를 한 행씩 접근
             ?>
-                    <div class="div" onClick="location.href='ploggingInformation.php'">
+                    <div class="div" onClick="location.href='ploggingInformation.php?id=<?php echo $row['id']; ?>'">
                         <div class="img"></div>
                         <div class="information">
                             <h4 class="proggingTitle"><?php echo $row['title']; ?></h4>

@@ -81,6 +81,9 @@
     background-color: #5bbf97;
 }
 
+.joinDiv{
+
+}
 
 /* chat css */
 .newChat{
@@ -128,3 +131,4 @@
     height: 20px;
     margin-top: 1.3%;
 }
+
