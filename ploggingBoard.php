@@ -25,12 +25,14 @@
 
     <div class="subNav_container">
         <h1>
-            <form>
-                <select name="area" class="chooseArea">
+            <form method="GET" action="">
+                <select name="area" class="chooseArea" onchange="this.form.submit()">
                     <?php
-                    $areas = array("신림동", "역삼동", "대치동", "지역1", "지역2");
+                    $areas = array("모든", "신림", "명동", "홍대", "강남");
+                    $selected_area = isset($_GET['area']) ? $_GET['area'] : '강남';  // 기본값 설정
                     foreach ($areas as $area) {
-                        echo "<option value='area1' class='area'>$area</option>";
+                        $selected = $selected_area === $area ? "selected" : "";
+                        echo "<option value='$area' class='area' $selected>$area</option>";
                     }
                     ?>
                 </select>
@@ -41,10 +43,16 @@
     <main class="main">
         <section class="container">
             <?php
-            $sql = "SELECT * FROM plogging ORDER BY id DESC LIMIT 100";
+            $area = isset($_GET['area']) ? $_GET['area'] : '모든';
+            // SQL 쿼리 조건 설정
+            if ($area == '모든') {
+                $sql = "SELECT * FROM plogging ORDER BY id DESC LIMIT 100";
+            } else {
+                $sql = "SELECT * FROM plogging WHERE area = '$area' ORDER BY id DESC LIMIT 100";
+            }
             $result = $conn->query($sql); // 쿼리 실행
             if ($result->num_rows > 0) { // 조회 결과가 있으면
-                $count = 0; // 카운터 변수 초기화
+                $count = 0;
                 while ($row = $result->fetch_assoc()) { // 조회 결과를 한 행씩 접근
             ?>
                     <div class="div" onClick="location.href='proggingInformation.php'">
