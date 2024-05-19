@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="css/proggingInformation.css">
     <title>플로깅 게시판</title>
     <script>
+        // 하트 수
+        // plusHeartNum(){
+            
+        // }
+
+        // 하트 이미지 바뀜
         function changeImage(clickedImageId, otherImageId) {
             var clickedImg = document.getElementById(clickedImageId);
             var otherImg = document.getElementById(otherImageId);
@@ -64,7 +70,7 @@
                         <hr>
                         <div class="likeDiv">
                             <div class="icon-container">
-                                <button class="likeButton">
+                                <button class="likeButton" onclick="plusHeartNum()">
                                     <img id="image1" src="./img/icon5.png" onclick="changeImage('image1', 'image2')">
                                     <img id="image2" src="./img/icon6.png" onclick="changeImage('image2', 'image1')" style="display: none;">
                                 </button>
@@ -105,7 +111,6 @@
                     ?>
                 </div>
             </div>
-                </div>
             </main>
 
 </body>
