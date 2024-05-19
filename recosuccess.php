@@ -70,7 +70,6 @@
                 </div>    
             </div>
         </div>
-
         <div class="board-container">
             <div class="content">
                 <p class="header-text">마라탕 배달 용기 알맞게 버리기!</p>
@@ -91,7 +90,6 @@
                     <p>베이킹소다 또는 과탄산소다 1스푼과 주방 세제 1방울과 함께 뜨거운 물을 넣고 10분동안 방치한 후, 물로 세척하여 플라스틱에 재활용해야 합니다</p>
                 </div>
             </div>
-    
             <div class="icon5-container">
                 <div class="icon-container">
                     <img id="image3" src="img/icon5.png" class="icon5" onclick="changeImage('image3', 'image4')">
@@ -101,7 +99,6 @@
             </div>
         </div>
     </main>
-
-
 </body>
 </html>
+<!-- DB 연결 준비 -->
