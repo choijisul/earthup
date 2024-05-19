@@ -1,8 +1,8 @@
-<?php
-session_start();
-session_destroy();
+<?php 
+setcookie("id", "", time() -3600, "/", ""); 
 ?>
+
 <script>
-    alert("You've been logged out");
+    alert("로그아웃 완료");
     location.replace('index.php');
 </script>

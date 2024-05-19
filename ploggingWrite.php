@@ -1,4 +1,6 @@
 <?php require 'db.php'; ?>
+<?php require 'auth.php'?>  <!--dp접근 php, 쿠키 관련 php 가져옴-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,10 +41,10 @@
                 <div class="writeArea">
                     <textarea name="detail" class="detailInput" placeholder="내용을 입력하세요" required></textarea>
                     <select name="area" class="areaSelect">
-                        <option value="sinrim">신림</option>
-                        <option value="myeongdong">명동</option>
-                        <option value="hongdae">홍대</option>
-                        <option value="gangnam">강남</option>
+                        <option value="신림">신림</option>
+                        <option value="명동">명동</option>
+                        <option value="홍대">홍대</option>
+                        <option value="강남">강남</option>
                     </select>
                     <button type="submit" class="raiseButton">올리기</button>
                 </div>
@@ -58,9 +60,7 @@
             $time = $conn->real_escape_string($_POST['time']);
             $detail = $conn->real_escape_string($_POST['detail']);
             $area = $conn->real_escape_string($_POST['area']);
-
-            // 기본값 설정
-            $writerMemberId = 'jisul';
+            $writerMemberId = $loginId;
 
             // SQL 쿼리
             $sql = "INSERT INTO plogging (area, title, schedule, time, writerMemberId, detail) " .

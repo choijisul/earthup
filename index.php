@@ -1,3 +1,6 @@
+<?php require 'db.php'; ?>
+<?php require 'auth.php'?>  <!--dp접근 php, 쿠키 관련 php 가져옴-->
+
 <!DOCTYPE html>
 <html lang="en">
 <!--테스트-->
@@ -20,10 +23,15 @@
     </header>
     <div class="header_container">
         <h1>
+            <!-- $authenticated -->
             <i onClick="location.href='http://localhost/camera.php'" class="garbageSearch">쓰레기 검색</i>
             <i onClick="location.href='http://localhost/ploggingBoard.php'" class="proggingBoard">플로깅 게시판</i>
+            <?php if($authenticated == true): ?>
+                <i onClick="location.href='http://localhost/logout.php'" class="membership"> <?php echo $loginId; ?>로그아웃</i>
+            <?php else: ?>
             <i onClick="location.href='http://localhost/membership.php'" class="membership">회원가입</i>
             <i onClick="location.href='http://localhost/login.php'" class="login">로그인</i>
+            <?php endif; ?>
         </h1>
     </div>
     

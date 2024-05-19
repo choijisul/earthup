@@ -1,3 +1,6 @@
+<?php require 'db.php'; ?>
+<?php require 'auth.php'?>  <!--dp접근 php, 쿠키 관련 php 가져옴-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +11,12 @@
     <link rel="stylesheet" href="css/proggingInformation.css">
     <title>플로깅 게시판</title>
     <script>
+        // 하트 수
+        // plusHeartNum(){
+            
+        // }
+
+        // 하트 이미지 바뀜
         function changeImage(clickedImageId, otherImageId) {
             var clickedImg = document.getElementById(clickedImageId);
             var otherImg = document.getElementById(otherImageId);
@@ -15,6 +24,11 @@
             clickedImg.style.display = 'none';
             otherImg.style.display = 'block';
         }
+
+        // 현재 페이지 URL에서 id 파라미터 값을 가져와서 콘솔에 출력
+        var urlParams = new URLSearchParams(window.location.search);
+        var id = urlParams.get('id');
+        // console.log("현재 페이지의 id 값:", id);
     </script>
 
 </head>
@@ -24,68 +38,53 @@
     <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='proggingBoard.php'" class="backButton">
-                    <img src="./img/backButton.png"></button>
-                    <i onClick="location.href='index.php'" class="topName">
-                        <?php
-                        // PHP 코드로 플로깅 title 가져오기
-                        $title = "플로깅 title 가져오기";
-                        echo $title;
-                        ?>
-                    </i>
+                <p><button onClick="location.href='ploggingBoard.php'" class="backButton">
+                        <img src="./img/backButton.png"></button>
             </h1>
         </div>
     </header>
 
-    <main class="main">
-        <div class="backBorder">
-            <!-- 정보 칸(왼) -->
-            <div class="informationArea">
-                <h3 class="informationTitle">
-                    <?php
-                    // PHP 코드로 제목 가져오기
-                    $title = "제목 불러옴";
-                    echo $title;
-                    ?>
-                </h3>
-                <div class="sideInformation">
-                    <h4 class="informationSchedule">일정
-                        <h6 class="informationSchedule">
-                            <?php
-                            // PHP 코드로 일정 가져오기
-                            $schedule = "일정 정보 불러오기";
-                            echo $schedule;
-                            ?>
-                        </h6>
-                    </h4>
-                    <h4 class="informationSchedule">시간
-                        <?php
-                        // PHP 코드로 시간 가져오기
-                        $time = "시간 정보 불러오기";
-                        echo $time;
-                        ?>
-                    </h4>
-                </div>
-                <div class="informationIntroduction">
-                    <?php
-                    // PHP 코드로 소개글 가져오기
-                    $introduction = "블라블라<br>샬라샬라<br> 같이 해주세요ㅠㅠ";
-                    echo $introduction;
-                    ?>
-                </div>
-                <hr>
-                <div class="likeDiv">
-                    <div class="icon-container">
-                        <button class="likeButton">
-                            <img id="image1" src="./img/icon5.png" onclick="changeImage('image1', 'image2')">
-                            <img id="image2" src="./img/icon6.png" onclick="changeImage('image2', 'image1')" style="display: none;">
-                        </button>
+    <?php
+    $id = isset($_GET['id']) ? $_GET['id'] : null;
+    $sql = "SELECT * FROM plogging WHERE id = '$id' ORDER BY id DESC LIMIT 1";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+    ?>
+            <main class="main">
+                <div class="backBorder">
+                    <!-- 정보 칸(왼) -->
+                    <div class="informationArea">
+                        <h3 class="informationTitle">
+                            <?php echo $row['title']; ?>
+                        </h3>
+                        <div class="sideInformation">
+                            <h4 class="informationSchedule">일정
+                                <?php echo $row['schedule']; ?>
+                            </h4>
+                            <h4 class="informationSchedule">시간
+                                <?php echo $row['time']; ?>
+                            </h4>
+                        </div>
+                        <div class="informationIntroduction">
+                            <?php echo $row['detail']; ?>
+                        </div>
+                        <hr>
+                        <div class="likeDiv">
+                            <div class="icon-container">
+                                <button class="likeButton" onclick="plusHeartNum()">
+                                    <img id="image1" src="./img/icon5.png" onclick="changeImage('image1', 'image2')">
+                                    <img id="image2" src="./img/icon6.png" onclick="changeImage('image2', 'image1')" style="display: none;">
+                                </button>
+                            </div>
+                            <h5 class="likeText"><?php echo $row['heartNum']; ?>명이 좋아요를 눌렀습니다.</h5>
+                        </div>
+                        <button class="enjoyButton">참여하기</button>
                     </div>
-                    <h5 class="likeText">누가누가 좋아한다 이거야.</h5>
-                </div>
-                <button class="enjoyButton">참여하기</button>
-            </div>
-
+            <?php
+        }
+    }
+            ?>
             <!-- 댓글 칸(오) -->
             <div class="chatArea">
                 <!-- 댓글 입력 -->
@@ -114,8 +113,7 @@
                     ?>
                 </div>
             </div>
-        </div>
-    </main>
+            </main>
 
 </body>
 <script src="js/proggingLikeButton.js"></script>

@@ -31,7 +31,7 @@ li {
 
 /* 밑 선택 header */
 .header_container{
-    position: absolute;
+    display:contents;
     /* background-color: #ffffff; */
     top: 40px;
     z-index: 1;
@@ -58,4 +58,11 @@ li {
 
 .membership{
     margin-left: 72%;
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+    margin-left: 300px;
+
 }

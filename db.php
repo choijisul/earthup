@@ -10,6 +10,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);  //DB연결 생�
 if ($conn->connect_error) {
   echo "<script>console.error('연결 실패: " . $conn->connect_error . "');</script>";
 }
-echo "<script>console.log('연결에 성공했습니다.');</script>";
+   echo "<script>console.log('연결에 성공했습니다.');</script>";
 ?>
 

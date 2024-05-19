@@ -1,4 +1,6 @@
 <?php require 'db.php'; ?>
+<?php require 'auth.php' ?> <!--dp접근 php, 쿠키 관련 php 가져옴-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +13,14 @@
     <title>플로깅 게시판 !!</title>
 </head>
 
+<script>
+    // 로그인 되어있는 경우
+    function showAlert() {
+        alert('로그인 후 이용 가능합니다.');
+        window.location.href = 'login.php';
+    }
+</script>
+
 <body>
     <!-- nav -->
     <header>
@@ -19,18 +29,20 @@
                 <p><button onClick="location.href='http://localhost/index.php'" class="backButton"><img src="./img/backButton.png"></button>
                     <i class="topName">플로깅</i>
             </h1>
-            <i class="bi bi-pencil" onClick="location.href='http://localhost/ploggingWrite.php'"></i>
+            <i class="bi bi-pencil" onClick="<?php echo $authenticated ? "location.href='http://localhost/ploggingWrite.php'" : "showAlert();" ?>"></i>
         </div>
     </header>
 
     <div class="subNav_container">
         <h1>
-            <form>
-                <select name="area" class="chooseArea">
+            <form method="GET" action="">
+                <select name="area" class="chooseArea" onchange="this.form.submit()">
                     <?php
-                    $areas = array("신림동", "역삼동", "대치동", "지역1", "지역2");
+                    $areas = array("모든", "신림", "명동", "홍대", "강남");
+                    $selected_area = isset($_GET['area']) ? $_GET['area'] : '모든';  // 기본값 설정
                     foreach ($areas as $area) {
-                        echo "<option value='area1' class='area'>$area</option>";
+                        $selected = $selected_area === $area ? "selected" : "";
+                        echo "<option value='$area' class='area' $selected>$area</option>";
                     }
                     ?>
                 </select>
@@ -41,13 +53,19 @@
     <main class="main">
         <section class="container">
             <?php
-            $sql = "SELECT * FROM plogging ORDER BY id DESC LIMIT 100";
+            $area = isset($_GET['area']) ? $_GET['area'] : '모든';
+            // SQL 쿼리 조건 설정
+            if ($area == '모든') {
+                $sql = "SELECT * FROM plogging ORDER BY id DESC LIMIT 100";
+            } else {
+                $sql = "SELECT * FROM plogging WHERE area = '$area' ORDER BY id DESC LIMIT 100";
+            }
             $result = $conn->query($sql); // 쿼리 실행
             if ($result->num_rows > 0) { // 조회 결과가 있으면
-                $count = 0; // 카운터 변수 초기화
+                $count = 0;
                 while ($row = $result->fetch_assoc()) { // 조회 결과를 한 행씩 접근
             ?>
-                    <div class="div" onClick="location.href='proggingInformation.php'">
+                    <div class="div" onClick="location.href='ploggingInformation.php?id=<?php echo $row['id']; ?>'">
                         <div class="img"></div>
                         <div class="information">
                             <h4 class="proggingTitle"><?php echo $row['title']; ?></h4>
