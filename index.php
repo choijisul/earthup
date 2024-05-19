@@ -1,5 +1,5 @@
 <?php require 'db.php'; ?>
-<?php require 'auth.php'?>
+<?php require 'auth.php'?>  <!--dp접근 php, 쿠키 관련 php 가져옴-->
 
 <!DOCTYPE html>
 <html lang="en">

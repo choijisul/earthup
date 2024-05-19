@@ -1,3 +1,6 @@
+
+<!-- cookie관련 건들지 않아야함!!! -->
+
 <?php
 $key = hex2bin("efa7c78de133aba59b05600ad6b59ee6");
 $iv = hex2bin("066fb77461b9e401f7f1461898e8cc91");

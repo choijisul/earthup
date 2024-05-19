@@ -1,5 +1,6 @@
 <?php require 'db.php'; ?>
-<?php require 'auth.php'?>
+<?php require 'auth.php'?>  <!--dp접근 php, 쿠키 관련 php 가져옴-->
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $conn->real_escape_string($_POST['id']);

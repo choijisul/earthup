@@ -1,4 +1,5 @@
 <?php require 'db.php'; ?>
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 폼 데이터 가져오기
