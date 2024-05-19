@@ -1,0 +1,55 @@
+button.myPage {
+    display: block;
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.menu {
+    width: 17%;
+    height: auto;
+    display: none;
+    flex-direction: column;
+    border: 1px solid #8c8787;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 15px;
+    border-radius: 3px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.title{
+    font-size: 12px;
+    color: rgb(105, 105, 105);
+    margin-bottom: 5px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+#section1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#section2 a {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+#section2 a:hover {
+    text-decoration: underline;
+}
+
+.logout{
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 10px;
+    color: white;
+}
