@@ -1,5 +1,5 @@
 <?php require 'db.php'; ?>
-<?php require 'auth.php'?>  <!--dp접근 php, 쿠키 관련 php 가져옴-->
+<?php require 'auth.php' ?> <!--dp접근 php, 쿠키 관련 php 가져옴-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,14 @@
     <title>플로깅 게시판 !!</title>
 </head>
 
+<script>
+    // 로그인 되어있는 경우
+    function showAlert() {
+        alert('로그인 후 이용 가능합니다.');
+        window.location.href = 'login.php';
+    }
+</script>
+
 <body>
     <!-- nav -->
     <header>
@@ -21,7 +29,7 @@
                 <p><button onClick="location.href='http://localhost/index.php'" class="backButton"><img src="./img/backButton.png"></button>
                     <i class="topName">플로깅</i>
             </h1>
-            <i class="bi bi-pencil" onClick="location.href='http://localhost/ploggingWrite.php'"></i>
+            <i class="bi bi-pencil" onClick="<?php echo $authenticated ? "location.href='http://localhost/ploggingWrite.php'" : "showAlert();" ?>"></i>
         </div>
     </header>
 

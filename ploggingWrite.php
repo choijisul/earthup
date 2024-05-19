@@ -60,9 +60,7 @@
             $time = $conn->real_escape_string($_POST['time']);
             $detail = $conn->real_escape_string($_POST['detail']);
             $area = $conn->real_escape_string($_POST['area']);
-
-            // 기본값 설정
-            $writerMemberId = 'jisul';
+            $writerMemberId = $loginId;
 
             // SQL 쿼리
             $sql = "INSERT INTO plogging (area, title, schedule, time, writerMemberId, detail) " .
