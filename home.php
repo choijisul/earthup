@@ -1,3 +1,7 @@
+<?php require 'db.php'; ?>
+<?php require 'auth.php'?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <!--테스트-->
