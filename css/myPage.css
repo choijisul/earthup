@@ -1,52 +1,66 @@
 button.myPage {
-    display: block;
-    margin: 20px;
-    padding: 10px 20px;
+    position: absolute; 
+    right: 0;
+    top: 30%; 
     font-size: 16px;
+    margin-right: 10px; 
+    border: none;
+    background-color: transparent;
+}
+.myPageImg {
+    width: 92%;
+    height: auto;
 }
 
 .menu {
+    margin-left: 82%;
+    margin-top: 11px;
     width: 17%;
     height: auto;
     display: none;
     flex-direction: column;
     border: 1px solid #8c8787;
-    padding: 10px;
-    margin: 20px 0;
+    padding: 20px;
     font-size: 15px;
     border-radius: 3px;
     color: rgb(0, 0, 0);
     background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.title{
+.idTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.title {
     font-size: 12px;
     color: rgb(105, 105, 105);
-    margin-bottom: 5px;
-}
-
-.section {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #section1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #section2 a {
     display: block;
-    margin: 5px 0;
+    margin: 6px 0;
+    margin-bottom: 10px;
     text-decoration: none;
     color: #333;
+    font-size: 15px;
 }
 
 #section2 a:hover {
     text-decoration: underline;
 }
 
-.logout{
+.logout {
     background-color: black;
     padding: 5px 10px;
     border-radius: 15px;

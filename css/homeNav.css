@@ -30,8 +30,8 @@ li {
 }
 
 /* 밑 선택 header */
-.header_container{
-    display:contents;
+.header_container {
+    display: contents;
     /* background-color: #ffffff; */
     top: 40px;
     z-index: 1;
@@ -50,13 +50,13 @@ li {
     cursor: pointer;
     font-style: normal;
     margin-left: 25px;
-} 
+}
 
-.garbageSearch{  
+.garbageSearch {
     margin-left: 2%;
 }
 
-.membership{
+.membership {
     margin-left: 72%;
 }
 
