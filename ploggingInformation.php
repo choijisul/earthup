@@ -1,5 +1,31 @@
 <?php require 'db.php'; ?>
-<?php require 'auth.php'?>  <!--dp접근 php, 쿠키 관련 php 가져옴-->
+<?php require 'auth.php' ?> <!--dp접근 php, 쿠키 관련 php 가져옴-->
+
+<?php
+if (isset($_POST['buttonClicked'])) {
+
+    //버튼 누르면 플로깅 참여됨. 실패
+
+    // $memberId = $loginId;
+    // $ploggingId = "1";
+
+    // // SQL 쿼리
+    // $sql2 = "INSERT INTO ploggingjoin (memberId, ploggingId) " .
+    //     "VALUES ('$memberId', '$ploggingId')";
+
+    // if ($conn->query($sql) === TRUE) {
+    //     echo "<script>
+    //             alert('플로깅 참여 완료!');
+    //             window.location.href = 'ploggingBoard.php';
+    //         </script>";
+    // } else {
+    //     echo "<script>console.error('추가 실패: " . $conn->error . "');</script>";
+    // }
+
+    // $conn->close();
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +39,7 @@
     <script>
         // 하트 수
         // plusHeartNum(){
-            
+
         // }
 
         // 하트 이미지 바뀜
@@ -29,6 +55,20 @@
         var urlParams = new URLSearchParams(window.location.search);
         var id = urlParams.get('id');
         // console.log("현재 페이지의 id 값:", id);
+
+        // 버튼 누르면 php실행
+        function executePHP() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // 요청이 완료되었을 때 할 일
+                    console.log(xhr.responseText); // PHP 스크립트로부터의 응답
+                }
+            };
+            xhr.send("buttonClicked=true");
+        }
     </script>
 
 </head>
@@ -79,7 +119,7 @@
                             </div>
                             <h5 class="likeText"><?php echo $row['heartNum']; ?>명이 좋아요를 눌렀습니다.</h5>
                         </div>
-                        <button class="enjoyButton">참여하기</button>
+                        <button class="enjoyButton" onclick="executePHP()">참여하기</button>
                     </div>
             <?php
         }
