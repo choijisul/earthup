@@ -38,9 +38,10 @@
                     <hr class="hr">
                     <div class="section" id="section2">
                         <h1 class="title">마이페이지</h1>
-                        <a href="#plogging1">참여한 플로깅</a>
-                        <a href="#plogging2">좋아요한 플로깅</a>
-                        <a href="#posts">좋아요한 글</a>
+                        <a href="http://localhost/myPloggingWrtie.php">작성한 플로깅</a>
+                        <a href="http://localhost/myPloggingJoin.php">참여한 플로깅</a>
+                        <a href="http://localhost/myPloggingHeart.php">좋아요한 플로깅</a>
+                        <a href="http://localhost/myRecofailueHeart.php">좋아요한 글</a>
                     </div>
                 </div>
             <?php else : ?>
