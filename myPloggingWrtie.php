@@ -24,7 +24,7 @@
 
     <div class="header_container">
         <h1>
-            <i onClick="location.href='http://localhost/myPloggingWrtie.php'" class="myPageChoose">작성한 플로깅</i>
+            <i onClick="location.href='http://localhost/myPloggingWrtie.php'" class="myPageChoose" style="font-size: 17px;">작성한 플로깅</i>
             <i onClick="location.href='http://localhost/myPloggingJoin.php'" class="myPageChoose">참여한 플로깅</i>
             <i onClick="location.href='http://localhost/myPloggingHeart.php'" class="myPageChoose">좋아요한 플로깅</i>
             <i onClick="location.href='http://localhost/myRecofailueHeart.php'" class="myPageChoose">좋아요한 글</i>
