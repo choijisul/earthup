@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto; 
+    margin: 0 auto;
     position: absolute;
     top: 10%;
     left: 50%;
@@ -17,17 +17,29 @@
 }
 
 /* 인식버튼 */
-.btn-camera {
+.btn-camera,
+.btn-image {
     position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
 }
 
-.btn-camera img {
+/* 버튼 스타일 */
+.btn-camera {
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.btn-image {
+    top: 85%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+}
+
+/* 버튼 형태가 보이지 않게 삭제 */
+.btn-camera img,
+.btn-image img {
     display: block;
 }

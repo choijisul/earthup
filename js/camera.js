@@ -10,12 +10,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 인식 확인
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var recognitionButton = document.querySelector('.btn-camera');
     var messageElement = document.querySelector('.message');
 
-    recognitionButton.addEventListener('click', function() {
+    recognitionButton.addEventListener('click', function () {
         alert('인식 중 입니다!');
         messageElement.style.display = 'block';
     });
 });
+
+// 이미지 불러오기
+function previewFile() {
+    var preview = document.getElementById("previewImage");
+    var file = document.getElementById("fileInput").files[0];
+    var reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        preview.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
