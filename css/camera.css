@@ -1,4 +1,33 @@
-.btn img {
-    opacity: 0.5;
-    /* 투명도 조정 (0이 투명, 1이 불투명) */
+/* 안내문구 */
+.message {
+    width: 30%;
+    height: 50px;
+    color: #FFFFFF;
+    background-color: #858585a4;
+    border-radius: 30px;
+    font-weight: 550;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; 
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 인식버튼 */
+.btn-camera {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-camera img {
+    display: block;
 }
