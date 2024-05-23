@@ -25,7 +25,6 @@
     <input type="file" id="fileInput" style="display: none;" onchange="previewFile()">
     <!-- 불러온 사진을 띄움 -->
     <img id="previewImage" src="" alt="">
-
 </body>
 
 <script src="js/camera.js"></script>
