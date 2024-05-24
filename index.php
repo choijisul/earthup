@@ -8,12 +8,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index.css?after">
     <link rel="stylesheet" href="css/homeNav.css?after">
-    <link rel="stylesheet" href="css/myPage.css">
+    <link rel="stylesheet" href="css/myPage.css?after">
+    <link rel="stylesheet" href="css/mypageDiv.css?after">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-    
     <title>어썹</title>
 </head>
 
