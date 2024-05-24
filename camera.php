@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
     <title>카메라</title>
     <link rel="stylesheet" href="css/camera.css">
 </head>
-
 <body>
     <!-- 안내문구 -->
     <div class="message">버릴 쓰레기를 인식해주세요!</div>
@@ -23,10 +21,10 @@
         <img src="img/btn-image.png" alt="Load image">
     </button>
     <input type="file" id="fileInput" style="display: none;" onchange="previewFile()">
+    
     <!-- 불러온 사진을 띄움 -->
     <img id="previewImage" src="" alt="">
+    
+    <script src="js/camera.js"></script>
 </body>
-
-<script src="js/camera.js"></script>
-
 </html>

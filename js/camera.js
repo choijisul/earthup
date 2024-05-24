@@ -1,6 +1,5 @@
 // 안내문구 3초 뒤에 자동삭제
 document.addEventListener("DOMContentLoaded", function () {
-    // 3초 후에 .message 요소를 숨김
     setTimeout(function () {
         var messageElement = document.querySelector('.message');
         if (messageElement) {

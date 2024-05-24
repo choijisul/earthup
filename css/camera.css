@@ -1,3 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
 /* 안내문구 */
 .message {
     width: 30%;
@@ -16,7 +27,7 @@
     transform: translate(-50%, -50%);
 }
 
-/* 인식버튼 */
+/* 인식버튼 및 이미지 불러오기 버튼 */
 .btn-camera,
 .btn-image {
     position: absolute;
@@ -26,20 +37,30 @@
     cursor: pointer;
 }
 
-/* 버튼 스타일 */
+/* 인식버튼 위치 */
 .btn-camera {
     top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* 이미지 불러오기 버튼 위치 */
 .btn-image {
     top: 85%;
     left: 43%;
     transform: translate(-50%, -50%);
 }
 
-/* 버튼 형태가 보이지 않게 삭제 */
+/* 버튼 이미지 스타일 */
 .btn-camera img,
 .btn-image img {
+    display: block;
+}
+
+/* 불러온 사진 미리보기 스타일 */
+#previewImage {
+    max-width: 80%;
+    max-height: 50vh;
+    margin-top: 20px;
     display: block;
 }
