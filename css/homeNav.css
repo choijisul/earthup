@@ -10,7 +10,7 @@ li {
 
 /*header*/
 .nav_container {
-    position: absolute;
+    /* position: absolute; */
     background-color: #ffffff;
     top: 0;
     z-index: 1;
@@ -32,7 +32,6 @@ li {
 /* 밑 선택 header */
 .header_container {
     display: contents;
-    /* background-color: #ffffff; */
     top: 40px;
     z-index: 1;
     width: 100%;

@@ -1,6 +1,5 @@
 
 #banner-container {
-  /* background-color: aqua; */
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -19,13 +18,11 @@
 }
 
 .bottom-part {
-  /* background-color: aquamarine; */
   width: 100%;
   height: 1000px;
 }
 
 .array {
-  /* background-color: green; */
   width: 100%;
   justify-content: space-around;
   display: flex;
@@ -40,10 +37,10 @@
 
 
 .leftzone-image {
-  width: 100%; /* 레프트존의 너비에 맞춰 이미지 크기 조정 */
-  height: auto; /* 이미지의 원래 비율을 유지하면서 높이 조정 */
+  width: 100%; 
+  height: auto; 
   margin-bottom: 10px;
-  margin-bottom: 20px; /* 이미지 사이의 간격 조정 */
+  margin-bottom: 20px; 
   left: -50%;
 
 }
@@ -58,7 +55,6 @@
 }
 
 .textzone {
-  /* background-color: brown; */
   width: 100%;
   height: 500px;
   font-size: 30px;
