@@ -11,7 +11,7 @@ li {
 /*header*/
 .nav_container {
     position: absolute;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     top: 0;
     z-index: 1;
     width: 100%;
