@@ -63,10 +63,10 @@
 
         <div class="bottom-part">
             <div class="array">
-                <div class="leftzone animated">
+                <div class="leftzone" data-aos="fade-right">
                     <img src="img/지구.jpg" class="leftzone-image">
                 </div>
-                <div class="rightzone animated">
+                <div class="rightzone" data-aos="fade-left">
                     <div class="textzone">
                         <div class="textzone">
                             <p>쓰레기를 찍어 쉽게<br> 분리수거를 해보세요.<br>
