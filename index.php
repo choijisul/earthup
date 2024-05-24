@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="css/homeNav.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/myPage.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    
     <title>어썹</title>
 </head>
 
@@ -75,10 +78,10 @@
         </div>
         <div class="bottom-part">
             <div class="array">
-                <div class="leftzone animated">
+                <div class="leftzone" data-aos="fade-right">
                     <img src="img/분리수거.jpg" class="leftzone-image">
                 </div>
-                <div class="rightzone animated">
+                <div class="rightzone" data-aos="fade-left">
                     <div class="textzone">
                         <p>쓰레기를 바르게 버리는 일,<br> 지구를 지키는 가장 쉬운<br>
                             방법입니다.</p>
@@ -88,11 +91,11 @@
         </div>
         <div class="bottom-part">
             <div class="array">
-                <div class="leftzone animated">
+                <div class="leftzone" data-aos="fade-right">
                     <!-- Consider using a different image for differentiation -->
                     <img src="img/환경캠페인.jpg" class="leftzone-image">
                 </div>
-                <div class="rightzone animated">
+                <div class="rightzone" data-aos="fade-left">
                     <div class="textzone">
                         <p class="earth-responsibility">
                         <p>우리가 만든 쓰레기,<br> 우리가 책임지는 지구.</b></p>

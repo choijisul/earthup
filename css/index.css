@@ -94,13 +94,6 @@
   }
 }
 
-.leftzone.animated {
-  animation: slideInLeft 1s ease forwards;
-}
-
-.rightzone.animated {
-  animation: slideInRight 1s ease forwards;
-}
 
 
 
