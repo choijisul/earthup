@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .btn img {
     opacity: 0.5;
     /* 투명도 조정 (0이 투명, 1이 불투명) */
@@ -19,3 +20,71 @@
 
 
 
+=======
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* 안내문구 */
+.message {
+    width: 30%;
+    height: 50px;
+    color: #FFFFFF;
+    background-color: #858585a4;
+    border-radius: 30px;
+    font-weight: 550;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 인식버튼 및 이미지 불러오기 버튼 */
+.btn-camera,
+.btn-image {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* 인식버튼 위치 */
+.btn-camera {
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 이미지 불러오기 버튼 위치 */
+.btn-image {
+    top: 85%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+}
+
+/* 버튼 이미지 스타일 */
+.btn-camera img,
+.btn-image img {
+    display: block;
+}
+
+/* 불러온 사진 미리보기 스타일 */
+#previewImage {
+    max-width: 80%;
+    max-height: 50vh;
+    margin-top: 20px;
+    display: block;
+}
+>>>>>>> 4ab057899b2af53050b9733181bf9af9d0e39a45

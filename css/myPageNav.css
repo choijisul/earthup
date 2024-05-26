@@ -4,13 +4,9 @@
     box-sizing: border-box;
 }
 
-li {
-    list-style: none;
-}
-
-/*header*/
 .nav_container {
-    /* position: absolute;  이거 넣으면 nav없어짐 하지 마셈 */ 
+    /* position: absolute; */
+    background-color: #ffffff;
     top: 0;
     z-index: 1;
     width: 100%;
@@ -20,17 +16,19 @@ li {
     border-style: solid;
 }
 
-.logName {
-    font-size: 0.6cm;
+.backButton {
+    border: 0px;
+    background: none;
+    position: absolute; 
+    z-index: 0; 
+    width: 50px; 
+    height: 50px;
+    margin-left: 1%;
     cursor: pointer;
-    margin-top: 20px;
-    margin-left: 25px;
-    font-style: normal;
 }
 
-/* 밑 선택 header */
 .header_container {
-    display: contents;
+    position: absolute;
     top: 40px;
     z-index: 1;
     width: 100%;
@@ -38,29 +36,12 @@ li {
     border-width: 0px 0px 1px 0px;
     border-color: gray;
     border-style: solid;
+    box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.1); 
 }
 
-.garbageSearch,
-.proggingBoard,
-.membership,
-.login {
+.myPageChoose {
     font-size: 0.35cm;
     cursor: pointer;
     font-style: normal;
     margin-left: 25px;
-}
-
-.garbageSearch {
-    margin-left: 2%;
-}
-
-.membership {
-    margin-left: 72%;
-}
-
-.user {
-    width: 40px;
-    height: 40px;
-    margin-left: 300px;
-
 }
