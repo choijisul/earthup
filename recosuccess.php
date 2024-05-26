@@ -1,10 +1,11 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/proggingNav.css">
-    <link rel="stylesheet" href="css/recosuccess.css">
+    <link rel="stylesheet" href="css/proggingNav.css?after">
+    <link rel="stylesheet" href="css/recosuccess.css?after">
     <title>어썹</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
             otherImg.style.display = 'block';
         }
     </script>
-    
+
      <!-- nav -->
      <header>
         <div class="nav_container">
@@ -36,10 +37,12 @@
         <div class="button-container">
             <button class="keyword-button">마라탕</button>
             <button class="keyword-button">배달용기</button>
+            <div class="searchtext">
+                <input type="text">
+    </div>
         </div>
         <img src="img/icon3.png" class="icon3">
     </div>  
-
     <main class="main">
         <div class="board-container">
             <div class="content">
@@ -61,7 +64,6 @@
                     <p>베이킹소다 또는 과탄산소다 1스푼과 주방 세제 1방울과 함께 뜨거운 물을 넣고 10분동안 방치한 후, 물로 세척하여 플라스틱에 재활용해야 합니다</p>
                 </div>
             </div>
-    
             <div class="icon5-container">
                 <div class="icon-container">
                     <img id="image1" src="img/icon5.png" class="icon5" onclick="changeImage('image1', 'image2')">
@@ -102,3 +104,18 @@
 </body>
 </html>
 <!-- DB 연결 준비 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -27,6 +27,26 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
+.searchtext {
+    background-color: khaki;
+    right: 400px; /* 오른쪽으로 100px 이동 */
+    width: 260px;
+}
+
+/* css/recosuccess.css */
+input[type="text"] {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 5px 0 2px; /* 위로 5px, 아래로 10px */
+}
+
+
 .icon3 {
     position: absolute; /* 절대 위치 지정 */
     top: 70px; /* 원하는 위치로 조정 */

@@ -60,7 +60,7 @@
             await predict();
             window.requestAnimationFrame(loop);
         }
-
+        
         // run the webcam image through the image model
         async function predict() {
             // predict can take in an image, video or canvas html element
