@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-.btn img {
-    opacity: 0.5;
-    /* 투명도 조정 (0이 투명, 1이 불투명) */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 body {
     display: flex;
     flex-direction: column;
@@ -87,4 +64,3 @@ body {
     margin-top: 20px;
     display: block;
 }
->>>>>>> 4ab057899b2af53050b9733181bf9af9d0e39a45
