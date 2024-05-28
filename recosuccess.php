@@ -1,3 +1,31 @@
+<?php
+require 'db.php';
+require 'auth.php';
+
+session_start();
+
+// 사용자 이름 가져오기
+$username = '';
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} elseif (isset($_COOKIE['id'])) {
+    $enc_id = $_COOKIE['id'];
+    $cookie_value = decrypt($enc_id);
+    $username = $cookie_value; // 사용자 이름이 쿠키에 저장되어 있다고 가정
+}
+
+// JavaScript 코드를 추가하여 HTML에 사용자 이름 설정
+echo "<script>
+    var username = '$username';
+    document.addEventListener('DOMContentLoaded', function() {
+        var userCountTextElements = document.getElementsByClassName('user-count-text');
+        for (var i = 0; i < userCountTextElements.length; i++) {
+            userCountTextElements[i].innerHTML = userCountTextElements[i].innerHTML.replace('user1214', username);
+        }
+    });
+</script>";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
