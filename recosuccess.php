@@ -6,44 +6,44 @@
     <link rel="stylesheet" href="css/proggingNav.css?after">
     <link rel="stylesheet" href="css/recosuccess.css?after">
     <title>어썹</title>
-</head>
-<body>
     <script>
         function changeImage(clickedImageId, otherImageId) {
             var clickedImg = document.getElementById(clickedImageId);
             var otherImg = document.getElementById(otherImageId);
-    
-            clickedImg.style.display = 'none';
-            otherImg.style.display = 'block';
+
+            if (clickedImg.style.display === 'none') {
+                clickedImg.style.display = 'block';
+                otherImg.style.display = 'none';
+            } else {
+                clickedImg.style.display = 'none';
+                otherImg.style.display = 'block';
+            }
         }
+
         function search() {
             var keyword = document.getElementById('searchInput').value;
-            // 검색어가 비어있는지 확인
             if (keyword.trim() === '') {
                 alert('검색어를 입력해주세요.');
                 return;
             }
-            // 검색 결과를 표시할 요소
             var searchResultElement = document.getElementById('searchResult');
-            // 검색 결과를 초기화
             searchResultElement.innerHTML = '검색 중...';
 
-            // 검색어를 PHP 파일로 전송
             fetch('search.php?keyword=' + encodeURIComponent(keyword))
                 .then(response => response.text())
                 .then(data => {
-                    // 검색 결과를 화면에 출력
                     searchResultElement.innerHTML = data;
                 })
                 .catch(error => console.error('Error:', error));
         }
     </script>
-     <!-- nav -->
-     <header>
+</head>
+<body>
+    <!-- nav -->
+    <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='camera.html'" class="backButton"><img
-                            src="./img/backButton.png"></button>
+                <p><button onClick="location.href='camera.html'" class="backButton"><img src="./img/backButton.png"></button>
                     <i onClick="location.href='index.html'" class="topName">인식 결과</i>
             </h1>
             <i class="bi bi-pencil" onClick="location.href='proggingWrite.html'"></i>
@@ -59,7 +59,9 @@
             </div>
         </div>
         <img src="img/icon3.png" class="icon3" onclick="search()">
-    </div>  
+    </div>
+    
+    <!-- First main section -->
     <main class="main">
         <div class="board-container">
             <div class="content">
@@ -75,8 +77,8 @@
                         플라스틱 재활용 공정에서는 깨끗한 상태의 플라스틱을 선호하며, 음식물이 묻어있으면 재활용이 어려워집니다.</p>
                 </div>
                 <div class="paragraph">
-                    <p>플라스틱은 자연 분해 과정이 매우 느리기 때문에, 플라스틱에 묻은 음식물이 환경에 버려지면 지속적으로 쓰레기로 남아있게 됩니다
-                    </div>
+                    <p>플라스틱은 자연 분해 과정이 매우 느리기 때문에, 플라스틱에 묻은 음식물이 환경에 버려지면 지속적으로 쓰레기로 남아있게 됩니다</p>
+                </div>
                 <div class="paragraph">
                     <p>플라스틱에 묻은 음식물이 환경에 버려지면 지속적으로 쓰레기로 남아있게 됩니다. 이는 비생분해성 폐기물의 양을 증가시키고, 쓰레기 처리에 어려움을 초래합니다.</p>
                 </div>
@@ -86,13 +88,15 @@
             </div>
             <div class="icon5-container">
                 <div class="icon-container">
-                    <img id="image3" src="img/icon5.png" class="icon5" onclick="changeImage('image3', 'image4')">
-                    <img id="image4" src="img/icon7.png" class="icon5" onclick="changeImage('image4', 'image3')" style="display: none;">
+                    <img id="image1" src="img/icon5.png" class="icon5" onclick="changeImage('image1', 'image2')">
+                    <img id="image2" src="img/icon7.png" class="icon5" onclick="changeImage('image2', 'image1')" style="display: none;">
                     <span class="user-count-text">user1214님 외 1,201명이 도움되었습니다!</span>
                 </div>
             </div>
         </div>
     </main>
+    
+    <!-- Second main section -->
     <main class="main">
         <div class="board-container">
             <div class="content">
@@ -108,8 +112,8 @@
                         플라스틱 재활용 공정에서는 깨끗한 상태의 플라스틱을 선호하며, 음식물이 묻어있으면 재활용이 어려워집니다.</p>
                 </div>
                 <div class="paragraph">
-                    <p>플라스틱은 자연 분해 과정이 매우 느리기 때문에, 플라스틱에 묻은 음식물이 환경에 버려지면 지속적으로 쓰레기로 남아있게 됩니다
-                    </div>
+                    <p>플라스틱은 자연 분해 과정이 매우 느리기 때문에, 플라스틱에 묻은 음식물이 환경에 버려지면 지속적으로 쓰레기로 남아있게 됩니다</p>
+                </div>
                 <div class="paragraph">
                     <p>플라스틱에 묻은 음식물이 환경에 버려지면 지속적으로 쓰레기로 남아있게 됩니다. 이는 비생분해성 폐기물의 양을 증가시키고, 쓰레기 처리에 어려움을 초래합니다.</p>
                 </div>

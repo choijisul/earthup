@@ -60,7 +60,7 @@
             <img src="img/숲속.jpg" class="banner-image" alt="">
             <img src="img/나무2.jpg" class="banner-image" alt="">
         </div>
-
+    
         <div class="bottom-part">
             <div class="array">
                 <div class="leftzone" data-aos="fade-right">
