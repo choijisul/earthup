@@ -65,7 +65,7 @@
     <main class="main">
         <div class="board-container">
             <div class="content">
-                <p class="header-text">마라탕 배달 용기 알맞게 버리기!</p>
+                <p class="header-text">마라탕</p>
                 <div class="header-line"></div>
                 <div class="paragraph">
                     <p>향신료를 넣어 알싸한 매운 맛이 인기인 마라탕이 요즘 길거리에서 많이 볼 수 있습니다.
@@ -100,7 +100,7 @@
     <main class="main">
         <div class="board-container">
             <div class="content">
-                <p class="header-text">마라탕 배달 용기 알맞게 버리기!</p>
+                <p class="header-text">마라탕 배달 용기</p>
                 <div class="header-line"></div>
                 <div class="paragraph">
                     <p>향신료를 넣어 알싸한 매운 맛이 인기인 마라탕이 요즘 길거리에서 많이 볼 수 있습니다.
@@ -125,7 +125,7 @@
                 <div class="icon-container">
                     <img id="image3" src="img/icon5.png" class="icon5" onclick="changeImage('image3', 'image4')">
                     <img id="image4" src="img/icon7.png" class="icon5" onclick="changeImage('image4', 'image3')" style="display: none;">
-                    <span class="user-count-text">user1214님 외 1,201명이 도움되었습니다!</span>
+                    <span class="user-count-text">user1201님 외 1004명이 도움되었습니다!</span>
                 </div>
             </div>
         </div>
