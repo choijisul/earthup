@@ -1,3 +1,5 @@
+
+
 .backBorder{
     display: flex;
     width: 70%;
@@ -20,10 +22,10 @@
 
 .chatArea{
     height: 85%;
-    width: 40%;
+    width: 43%;
     margin-left: 5%;
     margin-top: 3%;
-    /* background-color: aquamarine; */
+    overflow-y: auto;
 }   
 
 /* information css */
@@ -86,8 +88,14 @@
 }
 
 /* chat css */
-.newChat{
-    width: 95%;
+.chatUpdateArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.newChat {
+    width: 70%;
     height: 30px;
     padding-left: 17px;
     border: none;
@@ -95,6 +103,17 @@
     background-color: transparent; /* 배경색 없음 */
     font-size: 13px;
     outline: none; /* 클릭해도 테두리 없음 */
+}
+
+.chatUpdate {
+    padding-top: 7px;
+    padding-bottom: 5px;
+    width: 20%;
+    background-color: transparent;
+    border: none;
+    font-size: 13px; 
+    border-bottom: 1px solid;
+    text-align: center;
 }
 
 .beforeChar{

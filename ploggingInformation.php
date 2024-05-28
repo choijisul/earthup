@@ -1,4 +1,5 @@
 
+
 <?php require 'db.php'; ?>
 <?php require 'auth.php'; ?>
 
@@ -8,8 +9,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/proggingNav.css">
-    <link rel="stylesheet" href="css/proggingInformation.css">
+    <link rel="stylesheet" href="css/proggingNav.css?after">
+    <link rel="stylesheet" href="css/proggingInformation.css?after">
     <title>플로깅 게시판</title>
     <script>
         // 하트 이미지 바뀜
@@ -25,7 +26,30 @@
         var urlParams = new URLSearchParams(window.location.search);
         var id = urlParams.get('id');
         console.log("현재 페이지의 id 값:", id);
-        // console.log("현재 로그인 아이디 : ", <?php $loginId; ?>);
+        console.log("현재 로그인 아이디 : ", <?php echo json_encode($loginId); ?>);
+
+        // 댓글 다는 버튼 js
+        function updateChat() {
+            var newChatContent = document.querySelector('.newChat').value;
+
+            // 댓글 빈 문자인 경우
+            if (newChatContent === "") {
+                alert("댓글 내용을 입력하세요.");
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "updateChat.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    location.reload(); // 페이지 새로고침
+                }
+            };
+
+            xhr.send("content=" + encodeURIComponent(newChatContent) + "&id=" + encodeURIComponent(id) + "&loginId=" + encodeURIComponent(<?php echo json_encode($loginId); ?>));
+        }
     </script>
 
 </head>
@@ -82,7 +106,7 @@
                         $resultJoin = $conn->query($sqlJoin);
                         if ($resultJoin->num_rows > 0) {
                             $alreadyJoined = true;
-                        }else{
+                        } else {
                             $alreadyJoined = false;
                         }
                         $resultJoin->close();
@@ -107,22 +131,28 @@
             <!-- 댓글 칸(오) -->
             <div class="chatArea">
                 <!-- 댓글 입력 -->
-                <input type="text" name="newChat" class="newChat" placeholder="댓글을 입력하세요"><br>
+                <div class="chatUpdateArea">
+                    <input type="text" name="newChat" class="newChat" placeholder="댓글을 입력하세요" required><br>
+                    <button type="button" class="chatUpdate" onclick="updateChat()">댓글 등록</button>
+                </div>
                 <div class="beforeChar">
                     <?php
-                    $previousComments = array(
-                        array("nickname" => "최씨인건가", "comment" => "아 제 5인격 아 베이스 하고싶어!!!!! 학교 싫어어!"),
-                    );
-
-                    foreach ($previousComments as $comment) {
-                        echo "<div class='chat'>";
-                        echo "<div class='profileImg'><img src='./img/person-circle.png'></div>";
-                        echo "<div class='chatDetailed'>";
-                        echo "<h5 class='nickname'>" . $comment['nickname'] . "</h5>";
-                        echo "<h5 class='detailed'>" . $comment['comment'] . "</h5>";
-                        echo "</div>";
-                        echo "</div>";
+                    $sqlComments = "SELECT * FROM ploggingchat WHERE ploggingId = '$id'";
+                    $resultComments = $conn->query($sqlComments);
+                    if ($resultComments->num_rows > 0) {
+                        while ($comment = $resultComments->fetch_assoc()) {
+                    ?>
+                            <div class='chat'>
+                                <div class='profileImg'><img src='./img/person-circle.png'></div>
+                                <div class='chatDetailed'>
+                                    <h5 class='nickname'><?php echo $comment['chatMemberId']; ?></h5>
+                                    <h5 class='detailed'><?php echo $comment['content']; ?></h5>
+                                </div>
+                            </div>
+                    <?php
+                        }
                     }
+                    $resultComments->close();
                     ?>
                 </div>
             </div>
@@ -132,4 +162,3 @@
 <script src="js/proggingLikeButton.js"></script>
 
 </html>
-
