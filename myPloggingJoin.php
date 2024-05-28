@@ -62,8 +62,6 @@ ini_set('error_log', '/path/to/your/error.log'); // 로그 파일 경로 설정
                 echo "<p>참여한 플로깅이 없습니다.</p>";
             }
 
-            <?php
-
             // ploggingjoin과 plogging 테이블
             $sql = "
                 SELECT p.*, pj.memberId AS joinMemberId 
