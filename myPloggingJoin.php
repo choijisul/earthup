@@ -41,7 +41,26 @@ ini_set('error_log', '/path/to/your/error.log'); // 로그 파일 경로 설정
     </div>
     <main class="main" style="margin-top: 65px;">
         <section class="container">
-            <?php
+
+        <?php
+            $memberId = $loginId;  // auth.php에서 가져온 $loginId 사용
+            $sql = "SELECT p.title, p.schedule, p.time FROM ploggingjoin pj JOIN plogging p ON pj.ploggingId = p.id WHERE pj.memberId = '$memberId' ORDER BY pj.ploggingId DESC";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='div'>";
+                    echo "<div class='information'>";
+                    echo "<h4 class='proggingTitle'>" . $row['title'] . "</h4>";
+                    echo "<div class='sideInformation'>";
+                    echo "<h5>일정 | " . $row['schedule'] . "</h5>";
+                    echo "<h5>시간 | " . $row['time'] . "</h5>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>참여한 플로깅이 없습니다.</p>";
+            }
 
             // ploggingjoin과 plogging 테이블
             $sql = "
