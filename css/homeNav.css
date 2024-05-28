@@ -41,6 +41,7 @@ li {
 }
 
 .garbageSearch,
+.processingMethod,
 .proggingBoard,
 .membership,
 .login {
@@ -49,6 +50,8 @@ li {
     font-style: normal;
     margin-left: 25px;
 }
+
+
 
 .garbageSearch {
     margin-left: 2%;
