@@ -1,36 +1,6 @@
+
 <?php require 'db.php'; ?>
-
-<?php require 'auth.php' ?> <!--dp접근 php, 쿠키 관련 php 가져옴-->
-
-<?php
-if (isset($_POST['buttonClicked'])) {
-
-    //버튼 누르면 플로깅 참여됨. 실패
-
-    $memberId = $loginId;
-    $ploggingId = $_POST['ploggingId'];
-
-    // SQL 쿼리
-    $sql2 = "INSERT INTO ploggingjoin (memberId, ploggingId) VALUES ('$memberId', '$ploggingId')";
-
-    if ($conn->query($sql2) === TRUE) {
-        echo "<script>
-                alert('플로깅 참여 완료!');
-                window.location.href = 'myPloggingJoin.php';
-            </script>";
-    } else {
-        echo "<script>
-                alert('추가 실패: " . $conn->error . "');
-            </script>";
-    }
-
-    $conn->close();
-    exit;
-}
-?>
-
 <?php require 'auth.php'; ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,27 +19,11 @@ if (isset($_POST['buttonClicked'])) {
 
             clickedImg.style.display = 'none';
             otherImg.style.display = 'block';
-            
         }
 
         // 현재 페이지 URL에서 id 파라미터 값을 가져와서 콘솔에 출력
         var urlParams = new URLSearchParams(window.location.search);
         var id = urlParams.get('id');
-        // console.log("현재 페이지의 id 값:", id);
-
-        // 버튼 누르면 php실행
-        function executePHP() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // 요청이 완료되었을 때 할 일
-                    console.log(xhr.responseText); // PHP 스크립트로부터의 응답
-                }
-            };
-            xhr.send("buttonClicked=true&ploggingId=" + ploggingId);
-        }
         console.log("현재 페이지의 id 값:", id);
         // console.log("현재 로그인 아이디 : ", <?php $loginId; ?>);
     </script>
@@ -123,9 +77,6 @@ if (isset($_POST['buttonClicked'])) {
                             </div>
                             <h5 class="likeText"><?php echo $row['heartNum']; ?>명이 좋아요를 눌렀습니다.</h5>
                         </div>
-
-                        <button class="enjoyButton" onclick="executePHP('<?php echo $row['id']; ?>')">참여하기</button>
-
                         <?php
                         $sqlJoin = "SELECT * FROM ploggingjoin WHERE memberId = '$loginId' and ploggingId = '$id'";
                         $resultJoin = $conn->query($sqlJoin);
@@ -148,7 +99,6 @@ if (isset($_POST['buttonClicked'])) {
                         <?php
                         }
                         ?>
-
                     </div>
             <?php
         }
@@ -182,3 +132,4 @@ if (isset($_POST['buttonClicked'])) {
 <script src="js/proggingLikeButton.js"></script>
 
 </html>
+
