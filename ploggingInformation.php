@@ -6,23 +6,24 @@ if (isset($_POST['buttonClicked'])) {
 
     //버튼 누르면 플로깅 참여됨. 실패
 
-    // $memberId = $loginId;
-    // $ploggingId = "1";
+    $memberId = $loginId;
+    $ploggingId = $_POST['ploggingId'];
 
-    // // SQL 쿼리
-    // $sql2 = "INSERT INTO ploggingjoin (memberId, ploggingId) " .
-    //     "VALUES ('$memberId', '$ploggingId')";
+    // SQL 쿼리
+    $sql2 = "INSERT INTO ploggingjoin (memberId, ploggingId) VALUES ('$memberId', '$ploggingId')";
 
-    // if ($conn->query($sql) === TRUE) {
-    //     echo "<script>
-    //             alert('플로깅 참여 완료!');
-    //             window.location.href = 'ploggingBoard.php';
-    //         </script>";
-    // } else {
-    //     echo "<script>console.error('추가 실패: " . $conn->error . "');</script>";
-    // }
+    if ($conn->query($sql2) === TRUE) {
+        echo "<script>
+                alert('플로깅 참여 완료!');
+                window.location.href = 'myPloggingJoin.php';
+            </script>";
+    } else {
+        echo "<script>
+                alert('추가 실패: " . $conn->error . "');
+            </script>";
+    }
 
-    // $conn->close();
+    $conn->close();
     exit;
 }
 ?>
@@ -49,6 +50,7 @@ if (isset($_POST['buttonClicked'])) {
 
             clickedImg.style.display = 'none';
             otherImg.style.display = 'block';
+            
         }
 
         // 현재 페이지 URL에서 id 파라미터 값을 가져와서 콘솔에 출력
@@ -67,7 +69,7 @@ if (isset($_POST['buttonClicked'])) {
                     console.log(xhr.responseText); // PHP 스크립트로부터의 응답
                 }
             };
-            xhr.send("buttonClicked=true");
+            xhr.send("buttonClicked=true&ploggingId=" + ploggingId);
         }
     </script>
 
@@ -119,7 +121,7 @@ if (isset($_POST['buttonClicked'])) {
                             </div>
                             <h5 class="likeText"><?php echo $row['heartNum']; ?>명이 좋아요를 눌렀습니다.</h5>
                         </div>
-                        <button class="enjoyButton" onclick="executePHP()">참여하기</button>
+                        <button class="enjoyButton" onclick="executePHP('<?php echo $row['id']; ?>')">참여하기</button>
                     </div>
             <?php
         }
