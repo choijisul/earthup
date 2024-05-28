@@ -1,5 +1,5 @@
 <?php require 'db.php'; ?>
-<?php require 'auth.php' ?> <!--dp접근 php, 쿠키 관련 php 가져옴-->
+<?php require 'auth.php' ?> <!--db접근 php, 쿠키 관련 php 가져옴-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +31,7 @@
             <!-- $authenticated -->
             <i onClick="location.href='http://localhost/camera.php'" class="garbageSearch">쓰레기 검색</i>
             <i onClick="location.href='http://localhost/ploggingBoard.php'" class="proggingBoard">플로깅 게시판</i>
+            <i onClick="location.href='http://localhost/recosuccess.php'" class="processingMethod">처리 방법</i>
             <?php if ($authenticated == true) : ?>
                 <button class="myPage"><img src="img/myPage.png" class="myPageImg"></button>
                 <div class="menu">
@@ -98,8 +99,7 @@
                 <div class="rightzone" data-aos="fade-left">
                     <div class="textzone">
                         <p class="earth-responsibility">
-                        <p>우리가 만든 쓰레기,<br> 우리가 책임지는 지구.</b></p>
-
+                        <p>우리가 만든 쓰레기,<br> 우리가 책임지는 지구.</p>
                     </div>
                 </div>
             </div>
