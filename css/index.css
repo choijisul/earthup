@@ -26,6 +26,7 @@
   width: 100%;
   justify-content: space-around;
   display: flex;
+
 }
 .leftzone {
   width: 50%;
@@ -34,11 +35,15 @@
   padding-left: 10%;
   opacity: 0;
 }
-
-
 .leftzone-image {
+<<<<<<< HEAD
+  width: 100%; /* 레프트존의 너비에 맞춰 이미지 크기 조정 */
+  height: auto; /* 이미지의 원래 비율을 유지하면서 높이 조정 */
+  margin-bottom: 5px;
+=======
   width: 100%; 
   height: auto; 
+>>>>>>> 4ab057899b2af53050b9733181bf9af9d0e39a45
   margin-bottom: 10px;
   margin-bottom: 20px; 
   left: -50%;

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/proggingNav.css">
     <link rel="stylesheet" href="css/recofailure.css">
-
     <title> 어썹</title>
+
 </head>
 <body>
     <!-- nav -->
@@ -20,8 +21,6 @@
             <i class="bi bi-pencil" onClick="location.href='proggingWrite.html'"></i>
         </div>
     </header>
-
-
     <div class="failure-message">인식에 실패하였습니다.</div>
     <div class="focus-message">
         <div>사진 초점을 맞추어</div>
@@ -35,6 +34,14 @@
     <div class="top-line"></div>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
