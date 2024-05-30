@@ -1,29 +1,6 @@
 <?php
 require 'db.php';
 require 'auth.php';
-
-session_start();
-
-// 사용자 이름 가져오기
-$username = '';
-if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
-} elseif (isset($_COOKIE['id'])) {
-    $enc_id = $_COOKIE['id'];
-    $cookie_value = decrypt($enc_id);
-    $username = $cookie_value; // 사용자 이름이 쿠키에 저장되어 있다고 가정
-}
-
-// JavaScript 코드를 추가하여 HTML에 사용자 이름 설정
-echo "<script>
-    var username = '$username';
-    document.addEventListener('DOMContentLoaded', function() {
-        var userCountTextElements = document.getElementsByClassName('user-count-text');
-        for (var i = 0; i < userCountTextElements.length; i++) {
-            userCountTextElements[i].innerHTML = userCountTextElements[i].innerHTML.replace('user1214', username);
-        }
-    });
-</script>";
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +13,7 @@ echo "<script>
     <link rel="stylesheet" href="css/recosuccess.css?after">
     <title>어썹</title>
     <script>
+        // 하트 이미지 변함
         function changeImage(clickedImageId, otherImageId) {
             var clickedImg = document.getElementById(clickedImageId);
             var otherImg = document.getElementById(otherImageId);
@@ -49,21 +27,13 @@ echo "<script>
             }
         }
 
+        // 검색 관련
         function search() {
             var keyword = document.getElementById('searchInput').value;
             if (keyword.trim() === '') {
                 alert('검색어를 입력해주세요.');
                 return;
             }
-            var searchResultElement = document.getElementById('searchResult');
-            searchResultElement.innerHTML = '검색 중...';
-
-            fetch('search.php?keyword=' + encodeURIComponent(keyword))
-                .then(response => response.text())
-                .then(data => {
-                    searchResultElement.innerHTML = data;
-                })
-                .catch(error => console.error('Error:', error));
         }
     </script>
 </head>
@@ -73,10 +43,9 @@ echo "<script>
     <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='camera.html'" class="backButton"><img src="./img/backButton.png"></button>
-                    <i onClick="location.href='index.html'" class="topName">인식 결과</i>
+                <p><button onClick="location.href='http://localhost/camera.php'" class="backButton"><img src="./img/backButton.png"></button>
+                    <i onClick="location.href='http://localhost/index.php'"class="topName">인식 결과</i>
             </h1>
-            <i class="bi bi-pencil" onClick="location.href='proggingWrite.html'"></i>
         </div>
     </header>
 
@@ -94,7 +63,7 @@ echo "<script>
 
     <!-- 글 화면 -->
     <?php
-    $sql = "SELECT * FROM methodpost ORDER BY id DESC LIMIT 100";
+     $sql = "SELECT * FROM methodpost ORDER BY id DESC LIMIT 100";
     $result = $conn->query($sql); // 쿼리 실행
     if ($result->num_rows > 0) { // 조회 결과가 있으면
         while ($row = $result->fetch_assoc()) { // 조회 결과를 한 행씩 접근
