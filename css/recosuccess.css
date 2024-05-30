@@ -69,13 +69,12 @@ input[type="text"] {
 }
 
 .main{
-    margin-bottom: 50px;  /*밑 공간 추가*/
+    margin-bottom: 50px; 
     display: block;
 }
 
 .board-container {
     width: 70%; 
-    height: 400px;
     margin-top: 3%; 
     margin-left: 17%;
     padding: 20px; 
