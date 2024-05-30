@@ -98,7 +98,8 @@ input[type="text"]:focus {
     margin-bottom: 7px; /* 각 문단 사이의 간격 설정 */
     border-radius: 15px; 
     background-color: #f0f0f0; /* 배경색 지정 */
-    margin-top: 40px; /* 위쪽 여백 설정 */    margin-bottom: 10px; /* 아래쪽 여백을 조정 */
+    margin-top: 40px; /* 위쪽 여백 설정 */    
+    margin-bottom: 10px; /* 아래쪽 여백을 조정 */
 }
 
 .paragraph p {

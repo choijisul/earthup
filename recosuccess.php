@@ -9,6 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,17 +22,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>어썹</title>
     <script>
         // 하트 이미지 변함
-        function changeImage(clickedImageId, otherImageId) {
+        function changeImage(clickedImageId, otherImageId, postId) {
             var clickedImg = document.getElementById(clickedImageId);
             var otherImg = document.getElementById(otherImageId);
+            var heartNumElement = document.getElementById('heartNum_' + postId);
 
             if (clickedImg.style.display === 'none') {
                 clickedImg.style.display = 'block';
                 otherImg.style.display = 'none';
+                heartNumElement.textContent = parseInt(heartNumElement.textContent) - 1;
             } else {
                 clickedImg.style.display = 'none';
                 otherImg.style.display = 'block';
+                heartNumElement.textContent = parseInt(heartNumElement.textContent) + 1;
             }
+            // heartNum 값을 서버에 저장
+            fetch('update_heartNum.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ post_id: postId, heartNum: parseInt(heartNumElement.textContent) })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
         }
     </script>
 </head>
@@ -85,9 +101,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="icon5-container">
                             <div class="icon-container">
-                                <img id="image1" src="img/icon5.png" class="icon5" onclick="changeImage('image1', 'image2')">
-                                <img id="image2" src="img/icon7.png" class="icon5" onclick="changeImage('image2', 'image1')" style="display: none;">
-                                <span class="user-count-text"><?php echo $row['heartNum']; ?>명이 좋아요를 눌렀습니다!</span>
+                            <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage('image_<?php echo $postId; ?>_1', 'image_<?php echo $postId; ?>_2', <?php echo $postId; ?>)">
+                                <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage('image_<?php echo $postId; ?>_2', 'image_<?php echo $postId; ?>_1', <?php echo $postId; ?>)" style="display: none;">
+                                <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>명이 좋아요를 눌렀습니다!</span>
                             </div>
                         </div>
                     </div>
@@ -108,6 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) { // 조회 결과가 있으면
             while ($row = $result->fetch_assoc()) { // 조회 결과를 한 행씩 접근
+                $postId = $row['id'];
     ?>
                 <main class="main">
                     <div class="board-container">
@@ -120,9 +137,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="icon5-container">
                             <div class="icon-container">
-                                <img id="image1" src="img/icon5.png" class="icon5" onclick="changeImage('image1', 'image2')">
-                                <img id="image2" src="img/icon7.png" class="icon5" onclick="changeImage('image2', 'image1')" style="display: none;">
-                                <span class="user-count-text"><?php echo $row['heartNum']; ?>명이 좋아요를 눌렀습니다!</span>
+                            <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage('image_<?php echo $postId; ?>_1', 'image_<?php echo $postId; ?>_2', <?php echo $postId; ?>)">
+                                <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage('image_<?php echo $postId; ?>_2', 'image_<?php echo $postId; ?>_1', <?php echo $postId; ?>)" style="display: none;">
+                                <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>명이 좋아요를 눌렀습니다!</span>
                             </div>
                         </div>
                     </div>
