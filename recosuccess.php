@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/proggingNav.css?after">
-    <link rel="stylesheet" href="css/recosuccess.css?after">
+    <link rel="stylesheet" href="css/recosuccess.css?val1">
     <title>어썹</title>
     <script>
         // 하트 이미지 변함
@@ -50,11 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="top-line">
         <div class="keyword-text">인식 결과의 키워드</div>
         <div class="button-container">
-            <button class="keyword-button">마라탕</button>
+            <?php if ($keyword !== ''): ?>
+                <button class="keyword-button"><?php echo htmlspecialchars($keyword); ?></button>
+            <?php endif; ?>
             <div class="searchtext">
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <input type="text" name="keyword" id="searchInput" value="<?php echo htmlspecialchars($keyword); ?>">
-                    <button type="submit"><img src="img/icon3.png" class="icon3"></button>
+                    <button type="submit" class="search_button"><img src="img/icon3.png" class="icon3"></button>
                 </form>
             </div>
         </div>
@@ -94,7 +96,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         } else {
             ?>
-            <p>검색결과를 찾지 못했습니다.</p>
+            <img src="img/error.png" class="error">
+            <p class="failSearch">검색결과를 찾지 못했습니다.</p>
+            <p class="failComment">이렇게 검색해 주세요<br> ex 페트병, 캔</p>
     <?php
         }
         $stmt->close();
