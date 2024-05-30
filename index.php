@@ -15,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <title>어썹</title>
-    <link rel="icon" href="img/logo2.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
 
 
 
@@ -25,7 +25,8 @@
     <header>
         <div class="nav_container">
             <h1>
-                <i onClick="location.href='index.html'" class="logName">어썹</i>
+            <img src="img/logo2.png" alt="어썹" class="logName">
+
             </h1>
         </div>
     </header>
@@ -60,21 +61,21 @@
 
     <main class="main">
         <div id="banner-container">
-            <img src="img/나무.jpg" class="banner-image" alt="">
-            <img src="img/숲속.jpg" class="banner-image" alt="">
-            <img src="img/나무2.jpg" class="banner-image" alt="">
+            <img src="img/메인사진1.png" class="banner-image" alt="">
+            <img src="img/메인사진2.png" class="banner-image" alt="">
+            <img src="img/메인사진3.png" class="banner-image" alt="">
         </div>
     
         <div class="bottom-part">
             <div class="array">
                 <div class="leftzone" data-aos="fade-right">
-                    <img src="img/지구.jpg" class="leftzone-image">
+                    <!--<img src="img/지구.jpg" class="leftzone-image">!-->
                 </div>
                 <div class="rightzone" data-aos="fade-left">
                     <div class="textzone">
                         <div class="textzone">
-                            <p>쓰레기를 찍어 쉽게<br> 분리수거를 해보세요.<br>
-                                쓰레기를 버리는 방법을<br> 터득하여 지구를 보호해주세요.</p>
+                            <p>쓰레기를 찍어  처리방법에 따라<br>
+                                알맞게 버려주세요<br>
                         </div>
                     </div>
                 </div>
@@ -83,12 +84,13 @@
         <div class="bottom-part">
             <div class="array">
                 <div class="leftzone" data-aos="fade-right">
-                    <img src="img/분리수거.jpg" class="leftzone-image">
+                    <!--<img src="img/분리수거.jpg" class="leftzone-image">!-->
                 </div>
                 <div class="rightzone" data-aos="fade-left">
                     <div class="textzone">
-                        <p>쓰레기를 바르게 버리는 일,<br> 지구를 지키는 가장 쉬운<br>
-                            방법입니다.</p>
+                    <p>플로깅 게시판에서 다양한 사람들과,<br>
+                        함께 쓰레기를 줍고 환경을 지켜요!</p>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -97,12 +99,12 @@
             <div class="array">
                 <div class="leftzone" data-aos="fade-right">
                     <!-- Consider using a different image for differentiation -->
-                    <img src="img/환경캠페인.jpg" class="leftzone-image">
+                    <!--<img src="img/환경캠페인.jpg" class="leftzone-image">!-->
                 </div>
                 <div class="rightzone" data-aos="fade-left">
                     <div class="textzone">
                         <p class="earth-responsibility">
-                        <p>우리가 만든 쓰레기,<br> 우리가 책임지는 지구.</p>
+                        <p>우리 모두 함께<br>지구를 지켜나가요!</p>
                     </div>
                 </div>
             </div>
