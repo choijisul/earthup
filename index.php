@@ -15,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <title>어썹</title>
-    <link rel="icon" href="img/logo2.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
 
 
 
@@ -25,7 +25,8 @@
     <header>
         <div class="nav_container">
             <h1>
-                <i onClick="location.href='index.html'" class="logName">어썹</i>
+            <img src="img/logo2.png" alt="어썹" class="logName">
+
             </h1>
         </div>
     </header>
@@ -60,9 +61,9 @@
 
     <main class="main">
         <div id="banner-container">
-            <img src="img/나무.jpg" class="banner-image" alt="">
-            <img src="img/숲속.jpg" class="banner-image" alt="">
-            <img src="img/나무2.jpg" class="banner-image" alt="">
+            <img src="img/메인사진1.png" class="banner-image" alt="">
+            <img src="img/메인사진2.png" class="banner-image" alt="">
+            <img src="img/메인사진3.png" class="banner-image" alt="">
         </div>
     
         <div class="bottom-part">

@@ -22,20 +22,20 @@ li {
 }
 
 .logName {
-    font-size: 0.6cm;
-    cursor: pointer;
     margin-top: 2px;
-    margin-left: 20px;
-    font-style: normal;
+    margin-left: 23px;
     position: absolute;
+    width: 45px; /* 원하는 너비로 조정 */
+    height: auto; /* 이미지의 원래 비율을 유지하도록 설정 */
     top: 50%;
     transform: translateY(-50%);
-    color: #6CC4A1;
-    font-family: Bubblegum Sans;
+    width: px; /* 원하는 너비로 조정 */
+    height: auto; /* 이미지의 원래 비율을 유지하도록 설정 */
+
 }
 
 
-/* 밑 선택 header */
+/* 밑 선택 header */ㅡ  
 .header_container {
     display: contents;
     top: 40px;
@@ -52,11 +52,12 @@ li {
 .proggingBoard,
 .membership,
 .login {
-    font-size: 0.35cm;
+    font-size: 0.37cm;
     cursor: pointer;
     font-style: normal;
-    margin-left: 1px; /* 간격을 10px로 조절 */
+    margin-left: 0.9px; /* 왼쪽으로 5px 이동 */
 }
+
 
 
 .garbageSearch {
@@ -64,7 +65,7 @@ li {
 }
 
 .membership {
-    margin-left: 72%;
+    margin-left: 70%;
 }
 
 .user {
