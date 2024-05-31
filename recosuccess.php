@@ -9,11 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,31 +18,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/recosuccess.css?val1">
     <title>어썹</title>
     <script>
-        // 하트 이미지 변함
-        function changeImage(clickedImageId, otherImageId, postId) {
-            var clickedImg = document.getElementById(clickedImageId);
-            var otherImg = document.getElementById(otherImageId);
+        // 하트 이미지 변환 및 heartNum 업데이트
+        function changeImage(postId) {
+            var clickedImg1 = document.getElementById('image_' + postId + '_1');
+            var clickedImg2 = document.getElementById('image_' + postId + '_2');
             var heartNumElement = document.getElementById('heartNum_' + postId);
+            var newHeartNum;
 
-            if (clickedImg.style.display === 'none') {
-                clickedImg.style.display = 'block';
-                otherImg.style.display = 'none';
-                heartNumElement.textContent = parseInt(heartNumElement.textContent) - 1;
+            if (clickedImg1.style.display === 'none') {
+                clickedImg1.style.display = 'block';
+                clickedImg2.style.display = 'none';
+                newHeartNum = parseInt(heartNumElement.textContent) - 1;
             } else {
-                clickedImg.style.display = 'none';
-                otherImg.style.display = 'block';
-                heartNumElement.textContent = parseInt(heartNumElement.textContent) + 1;
+                clickedImg1.style.display = 'none';
+                clickedImg2.style.display = 'block';
+                newHeartNum = parseInt(heartNumElement.textContent) + 1;
             }
+
+            heartNumElement.textContent = newHeartNum;
+
             // heartNum 값을 서버에 저장
             fetch('update_heartNum.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ post_id: postId, heartNum: parseInt(heartNumElement.textContent) })
+                body: JSON.stringify({ post_id: postId, heartNum: newHeartNum })
             })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (!data.success) {
+                    console.error('Failed to update heartNum');
+                }
+            })
             .catch(error => console.error('Error:', error));
         }
     </script>
@@ -89,6 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) { // 조회 결과가 있으면
             while ($row = $result->fetch_assoc()) { // 조회 결과를 한 행씩 접근
+                $postId = $row['id'];
     ?>
                 <main class="main">
                     <div class="board-container">
@@ -101,8 +107,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="icon5-container">
                             <div class="icon-container">
-                            <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage('image_<?php echo $postId; ?>_1', 'image_<?php echo $postId; ?>_2', <?php echo $postId; ?>)">
-                                <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage('image_<?php echo $postId; ?>_2', 'image_<?php echo $postId; ?>_1', <?php echo $postId; ?>)" style="display: none;">
+                                <?php if ($authenticated): ?>
+                                    <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
+                                    <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)" style="display: none;">
+                                <?php else: ?>
+                                    <img src="img/icon5.png" class="icon5">
+                                <?php endif; ?>
                                 <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>명이 좋아요를 눌렀습니다!</span>
                             </div>
                         </div>
@@ -137,8 +147,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="icon5-container">
                             <div class="icon-container">
-                            <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage('image_<?php echo $postId; ?>_1', 'image_<?php echo $postId; ?>_2', <?php echo $postId; ?>)">
-                                <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage('image_<?php echo $postId; ?>_2', 'image_<?php echo $postId; ?>_1', <?php echo $postId; ?>)" style="display: none;">
+                                <?php if ($authenticated): ?>
+                                    <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
+                                    <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)" style="display: none;">
+                                <?php else: ?>
+                                    <img src="img/icon5.png" class="icon5">
+                                <?php endif; ?>
                                 <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>명이 좋아요를 눌렀습니다!</span>
                             </div>
                         </div>
@@ -150,7 +164,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $conn->close();
     ?>
-
 </body>
-
 </html>
