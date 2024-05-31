@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/proggingNav.css">
     <link rel="stylesheet" href="css/proggingWrite.css">
     <title>플로깅 작성</title>
+    <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
 </head>
 
 <!-- 안된 부분 : 아이디 전달X  -->
