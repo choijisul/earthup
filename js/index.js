@@ -29,3 +29,9 @@ document.addEventListener("DOMContentLoaded", function() {
   setInterval(nextImage, 5000); // 5초마다 다음 이미지로 전환
 });
 
+var logo = document.querySelector(".logName");
+
+    // When the user clicks on the logo, navigate to the footer
+    logo.addEventListener("click", function() {
+        window.location.href = "#footer";
+    });
