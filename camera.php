@@ -30,7 +30,6 @@
 
     <!-- 웹캠과 인식 결과를 표시할 컨테이너 -->
     <div id="webcam-container"></div>
-    <div id="label-container"></div>
 
     <script src="js/camera.js"></script>
     <script type="text/javascript">
@@ -57,10 +56,6 @@
 
             // 웹캠 캔버스를 DOM에 추가
             document.getElementById("webcam-container").appendChild(webcam.canvas);
-            labelContainer = document.getElementById("label-container");
-            for (let i = 0; i < maxPredictions; i++) {
-                labelContainer.appendChild(document.createElement("div"));
-            }
         }
 
         // 웹캠 프레임 업데이트 및 예측 함수
@@ -75,7 +70,7 @@
             const prediction = await model.predict(webcam.canvas);
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                labelContainer.childNodes[i].innerHTML = classPrediction;
+                console.log(classPrediction);
             }
         }
 
@@ -93,6 +88,8 @@
                 reader.readAsDataURL(file);
             }
         }
+
+
     </script>
 </body>
 </html>

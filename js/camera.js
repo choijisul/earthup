@@ -33,3 +33,19 @@ function previewFile() {
         reader.readAsDataURL(file);
     }
 }
+
+async function predict() {
+    const prediction = await model.predict(webcam.canvas);
+    for (let i = 0; i < maxPredictions; i++) {
+        const className = prediction[i].className;
+        const probability = prediction[i].probability.toFixed(2);
+        const classPrediction = className + ": " + probability;
+
+        // 확률이 80% 이상인 경우에만 콘솔에 표시
+        if (probability >= 0.8) {
+            console.log(classPrediction);
+        }
+
+        labelContainer.childNodes[i].innerHTML = classPrediction;
+    }
+}
