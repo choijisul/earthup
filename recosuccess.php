@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/proggingNav.css?after">
     <link rel="stylesheet" href="css/recosuccess.css?val1">
     <title>어썹</title>
+    <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
     <script>
         // 하트 이미지 변환 및 heartNum 업데이트
         function changeImage(postId) {

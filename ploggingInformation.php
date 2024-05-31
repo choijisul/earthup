@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/proggingNav.css?after">
     <link rel="stylesheet" href="css/proggingInformation.css?after">
     <title>플로깅 게시판</title>
+    <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
     <script>
         // 하트 이미지 바뀜
         function changeImage(clickedImageId, otherImageId) {

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/proggingTabel.css">
     <link rel="stylesheet" href="css/myPageNav.css">
     <title>내가 좋아요한 플로깅</title>
+    <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
 </head>
 
 <body>

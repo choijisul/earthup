@@ -111,17 +111,15 @@
     <p>&copy; 2024 earthup <a href="https://github.com/choijisul/earthup" target="_blank"><img src="img/github-mark.png" alt="GitHub" class="social-icon"></a></p>
 
         <p>Contact us: 
-            <a href="mailto:w2209@e-mirim.hs.kr">w2209@e-mirim.hs.kr</a>,
-            <a href="mailto:w2217@e-mirim.hs.kr">w2209@e-mirim.hs.kr</a>
-            <p>Contact us: 
-            <a href="mailto:w2209@e-mirim.hs.kr">w2212@e-mirim.hs.kr</a>,
+            <a href="mailto:w2204@e-mirim.hs.kr">w2204@e-mirim.hs.kr</a>,
+            <a href="mailto:w2209@e-mirim.hs.kr">w2209@e-mirim.hs.kr</a>
+        <p>Contact us: 
+            <a href="mailto:w2212@e-mirim.hs.kr">w2212@e-mirim.hs.kr</a>,
             <a href="mailto:w2217@e-mirim.hs.kr">w2217@e-mirim.hs.kr</a>
             </p>
         </div>
     </div>
 </footer>
-
-
     <script src="js/index.js"></script>
     <script src="js/script.js"></script>
 </body>
