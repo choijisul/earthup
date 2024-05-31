@@ -13,7 +13,7 @@
     <div class="message">버릴 쓰레기를 인식해주세요!</div>
 
     <!-- 인식버튼 -->
-    <button class="btn-camera">
+    <button class="btn-camera" onclick="init()">
         <img src="img/btn-camera.png" alt="인식버튼">
     </button>
 
@@ -22,10 +22,16 @@
         <img src="img/btn-image.png" alt="Load image">
     </button>
     <input type="file" id="fileInput" style="display: none;" onchange="previewFile()">
-    
+
     <!-- 불러온 사진을 띄움 -->
     <img id="previewImage" src="" alt="">
     
+    <!-- 웹캠 및 결과 표시 -->
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script src="js/camera.js"></script>
 </body>
 </html>
