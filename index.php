@@ -47,7 +47,6 @@
                         <a href="http://localhost/myPloggingWrtie.php">작성한 플로깅</a>
                         <a href="http://localhost/myPloggingJoin.php">참여한 플로깅</a>
                         <a href="http://localhost/myPloggingHeart.php">좋아요한 플로깅</a>
-                        <a href="http://localhost/myRecofailueHeart.php">좋아요한 글</a>
                     </div>
                 </div>
             <?php else : ?>

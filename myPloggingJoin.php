@@ -36,7 +36,6 @@ ini_set('error_log', '/path/to/your/error.log'); // 로그 파일 경로 설정
             <i onClick="location.href='http://localhost/myPloggingWrtie.php'" class="myPageChoose">작성한 플로깅</i>
             <i onClick="location.href='http://localhost/myPloggingJoin.php'" class="myPageChoose" style="font-size: 17px;">참여한 플로깅</i>
             <i onClick="location.href='http://localhost/myPloggingHeart.php'" class="myPageChoose">좋아요한 플로깅</i>
-            <i onClick="location.href='http://localhost/myRecofailueHeart.php'" class="myPageChoose">좋아요한 글</i>
         </h1>
     </div>
     <main class="main" style="margin-top: 65px;">
