@@ -69,24 +69,3 @@ body {
     opacity: 0.5;
     /* 투명도 조정 (0이 투명, 1이 불투명) */
 }
-
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-div {
-    margin: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#webcam-container, #label-container {
-    margin-top: 20px;
-}

@@ -9,13 +9,6 @@
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
 </head>
 <body>
-    <div>Teachable Machine Image Model</div>
-    <button type="button" onclick="init()">Start</button>
-    <div id="webcam-container"></div>
-    <div id="label-container"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-    <script src="script.js"></script>
     <!-- 안내문구 -->
     <div class="message">버릴 쓰레기를 인식해주세요!</div>
 
