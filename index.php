@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css?after">
+    <link rel="stylesheet" href="css/index.css?val2"> <!--after, val1-->
     <link rel="stylesheet" href="css/homeNav.css?after">
     <link rel="stylesheet" href="css/myPage.css?after">
     <link rel="stylesheet" href="css/mypageDiv.css?after">
