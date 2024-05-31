@@ -114,7 +114,7 @@
         <p>Contact us: 
             <a href="mailto:w2209@e-mirim.hs.kr">w2209@e-mirim.hs.kr</a>,
             <a href="mailto:w2217@e-mirim.hs.kr">w2209@e-mirim.hs.kr</a>
-            <p>Contact us: 
+        <p>Contact us: 
             <a href="mailto:w2209@e-mirim.hs.kr">w2212@e-mirim.hs.kr</a>,
             <a href="mailto:w2217@e-mirim.hs.kr">w2217@e-mirim.hs.kr</a>
             </p>
