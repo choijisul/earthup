@@ -55,14 +55,14 @@
     padding-top: 5%;
     font-size: 13px;
 }
+
 .likeButton{
     height: 25px;
     width: 25px;
-    margin-top: -1.2%;
+    margin-top: -25%;
     margin-left: 3%;
     margin-right: 2%;
     border: none;
-    /* background-color: #F1F1F1; */
     cursor: pointer;
 }
 
