@@ -42,10 +42,14 @@
                 <div class="writeArea">
                     <textarea name="detail" class="detailInput" placeholder="내용을 입력하세요" required></textarea>
                     <select name="area" class="areaSelect">
-                        <option value="신림">신림</option>
-                        <option value="명동">명동</option>
-                        <option value="홍대">홍대</option>
-                        <option value="강남">강남</option>
+                        <option value="관악구">관악구</option>
+                        <option value="도봉구">도봉구</option>
+                        <option value="종로구">종로구</option>
+                        <option value="구로구">구로구</option>
+                        <option value="영등포구">영등포구</option>
+                        <option value="동작구">동작구</option>
+                        <option value="금천구">금천구</option>
+                        <option value="강남구">강남구</option>
                     </select>
                     <button type="submit" class="raiseButton">올리기</button>
                 </div>

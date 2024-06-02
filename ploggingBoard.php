@@ -56,7 +56,7 @@
             <form method="GET" action="">
                 <select name="area" class="chooseArea" onchange="this.form.submit()">
                     <?php
-                    $areas = array("모든", "신림", "명동", "홍대", "강남");
+                    $areas = array("모든", "관악구", "도봉구", "종로구", "구로구", "영등포구", "동작구", "금천구", "강남구");
                     $selected_area = isset($_GET['area']) ? $_GET['area'] : '모든';  // 기본값 설정
                     foreach ($areas as $area) {
                         $selected = $selected_area === $area ? "selected" : "";
