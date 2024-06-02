@@ -64,6 +64,10 @@ require 'auth.php'; ?>
                 return;
             }
 
+            var urlParams = new URLSearchParams(window.location.search);
+            var id = urlParams.get('id');
+            var loginId = <?php echo json_encode($loginId); ?>;
+
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "updateChat.php", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -74,8 +78,9 @@ require 'auth.php'; ?>
                 }
             };
 
-            xhr.send("content=" + encodeURIComponent(newChatContent) + "&id=" + encodeURIComponent(id) + "&loginId=" + encodeURIComponent(<?php echo json_encode($loginId); ?>));
+            xhr.send("content=" + encodeURIComponent(newChatContent) + "&id=" + encodeURIComponent(id) + "&loginId=" + encodeURIComponent(loginId));
         }
+
 
         // 하트 이미지 설정
         window.onload = function() {

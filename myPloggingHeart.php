@@ -32,7 +32,47 @@
     </div>
     <main class="main" style="margin-top: 65px;">
         <section class="container">
-            
+            <?php
+
+            // ploggingheart와 plogging 테이블 좋아요한 플로깅
+            $sql = "
+                SELECT p.* 
+                FROM plogging p 
+                JOIN ploggingheart ph ON p.id = ph.ploggingId
+                WHERE ph.memberId = '$loginId'
+                ORDER BY p.writerMemberId DESC 
+                LIMIT 100";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) :
+                $count = 0;
+                while ($row = $result->fetch_assoc()) {
+            ?>
+                    <div class="div" onClick="location.href='ploggingInformation.php?id=<?php echo $row['id']; ?>'">
+                        <div class="img"></div>
+                        <div class="information">
+                            <h4 class="proggingTitle"><?php echo $row['title']; ?></h4>
+                            <div class="sideInformation">
+                                <h5>일정 | <?php echo $row['schedule']; ?></h5>
+                                <h5>시간 | <?php echo $row['time']; ?></h5>
+                            </div>
+                            <div class="personnelDiv">
+                                <div class="personnelImg"></div>
+                                <h5 class='personnel'><?php echo $row['joinNum']; ?></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                    $count++;
+                    // 카운터가 3배수일 때 hr 태그
+                    if ($count % 3 == 0) {
+                        echo "<hr class='hr'>";
+                    } ?>
+            <?php
+                }
+            endif;
+            $conn->close();
+            ?>
         </section>
     </main>
 
