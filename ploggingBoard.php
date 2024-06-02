@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/proggingNav.css">
-    <link rel="stylesheet" href="css/proggingTabel.css?val1">
+    <link rel="stylesheet" href="css/proggingTabel.css?val2">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <title>플로깅 게시판 !!</title>
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
