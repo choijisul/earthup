@@ -16,7 +16,7 @@ ini_set('error_log', '/path/to/your/error.log'); // 로그 파일 경로 설정
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/proggingTabel.css">
+    <link rel="stylesheet" href="css/proggingTabel.css?after">
     <link rel="stylesheet" href="css/myPageNav.css">
     <title>내가 작성한</title>
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
@@ -45,11 +45,12 @@ ini_set('error_log', '/path/to/your/error.log'); // 로그 파일 경로 설정
 
             // ploggingjoin과 plogging 테이블
             $sql = "
-                SELECT p.*, pj.memberId AS joinMemberId 
-                FROM plogging p 
-                LEFT JOIN ploggingjoin pj ON p.id = pj.ploggingId
-                ORDER BY p.writerMemberId DESC, pj.memberId DESC 
-                LIMIT 100";
+            SELECT p.*, pj.memberId AS joinMemberId 
+            FROM plogging p 
+            JOIN ploggingjoin pj ON p.id = pj.ploggingId
+            WHERE pj.memberId = '$loginId'
+            ORDER BY p.writerMemberId DESC, pj.memberId DESC 
+            LIMIT 100;";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) :
@@ -76,9 +77,8 @@ ini_set('error_log', '/path/to/your/error.log'); // 로그 파일 경로 설정
                         // 카운터가 3배수일 때 hr 태그
                         if ($count % 3 == 0) {
                             echo "<hr class='hr'>";
-                        }
-                        ?>
-                    <?php
+                        } ?>
+                <?php
                     endif;
                 }
             else :
@@ -86,6 +86,7 @@ ini_set('error_log', '/path/to/your/error.log'); // 로그 파일 경로 설정
                 <div class="noResult">참여한 플로깅이 없습니다.</div>
             <?php
             endif;
+
             $conn->close();
             ?>
         </section>
