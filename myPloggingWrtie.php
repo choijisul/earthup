@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/proggingTabel.css">
+    <link rel="stylesheet" href="css/proggingTabel.css?after">
     <link rel="stylesheet" href="css/myPageNav.css">
     <title>내가 작성한</title>
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
@@ -61,9 +61,13 @@
                         if ($count % 3 == 0) {
                             echo "<hr class='hr'>";
                         } ?>
-            <?php
+                <?php
                     endif;
                 }
+            else :
+                ?>
+                <div class="noResult">작성한 플로깅이 없습니다.</div>
+            <?php
             endif;
             $conn->close();
             ?>

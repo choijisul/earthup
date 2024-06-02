@@ -1,5 +1,4 @@
-
-.main{
+.main {
     padding: 0 5% 0 5%;
     margin-top: 100px;
     height: 100%;
@@ -11,27 +10,27 @@
     height: 800px;
 }
 
-.div{
+.div {
     display: flex;
     /* border: 1px solid gold;  */
     float: left;
-    width: 30%; 
+    width: 30%;
     height: 75px;
     margin: 0 0% 1% 3.3%;
 }
 
-.hr{
+.hr {
     margin-bottom: 1%;
 }
 
 /* 칸 안 내용물 */
-.img{
+.img {
     width: 20%;
     height: 100%;
     background-color: aqua;
 }
 
-.information{
+.information {
     width: 80%;
     height: 100%;
     /* background-color: rgb(40, 117, 117); */
@@ -39,16 +38,16 @@
     padding-left: 10px;
 }
 
-.proggingTitle{
+.proggingTitle {
     font-size: 17px;
 }
 
-.sideInformation{
+.sideInformation {
     padding-top: 2px;
     font-size: 12px;
 }
 
-.personnelDiv{
+.personnelDiv {
     display: flex;
     margin-top: 6px;
     width: 20%;
@@ -56,9 +55,20 @@
     /* background-color: beige; */
 }
 
-.personnelImg{
+.personnelImg {
     width: 40%;
     height: 100%;
     background-color: rgb(154, 154, 120);
     margin-right: 5px;
+}
+
+/* 마이페이지 관련 */
+.noResult {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
 }

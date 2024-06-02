@@ -76,10 +76,15 @@ ini_set('error_log', '/path/to/your/error.log'); // 로그 파일 경로 설정
                         // 카운터가 3배수일 때 hr 태그
                         if ($count % 3 == 0) {
                             echo "<hr class='hr'>";
-                        } ?>
-            <?php
+                        }
+                        ?>
+                    <?php
                     endif;
                 }
+            else :
+                ?>
+                <div class="noResult">참여한 플로깅이 없습니다.</div>
+            <?php
             endif;
             $conn->close();
             ?>
