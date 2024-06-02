@@ -24,11 +24,21 @@
 }
 
 /* 칸 안 내용물 */
-.img {
+.ploggingImgDiv {
     width: 20%;
     height: 100%;
-    background-color: aqua;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.ploggingImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
 
 .information {
     width: 80%;

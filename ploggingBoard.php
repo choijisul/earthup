@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/proggingNav.css">
-    <link rel="stylesheet" href="css/proggingTabel.css">
+    <link rel="stylesheet" href="css/proggingTabel.css?after">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <title>플로깅 게시판 !!</title>
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
@@ -20,6 +20,23 @@
         alert('로그인 후 이용 가능합니다.');
         window.location.href = 'login.php';
     }
+
+    // 플로깅 커버 이미지 랜덤
+    const numberOfImages = 16;
+    const imagePath = 'img/ploggingRandomImg/';
+    const imagePrefix = 'ploggingImg';
+    const imageExtension = '.png';
+
+    function getRandomImage() {
+        const randomIndex = Math.floor(Math.random() * numberOfImages) + 1;
+        return imagePath + imagePrefix + randomIndex + imageExtension;
+    }
+
+    window.onload = function() {
+        document.querySelectorAll('.randomPloggingImg').forEach(img => {
+            img.src = getRandomImage();
+        });
+    };
 </script>
 
 <body>
@@ -67,7 +84,9 @@
                 while ($row = $result->fetch_assoc()) { // 조회 결과를 한 행씩 접근
             ?>
                     <div class="div" onClick="location.href='ploggingInformation.php?id=<?php echo $row['id']; ?>'">
-                        <div class="img"></div>
+                        <div class="ploggingImgDiv">
+                            <img src="" class="ploggingImg randomPloggingImg">
+                        </div>
                         <div class="information">
                             <h4 class="proggingTitle"><?php echo $row['title']; ?></h4>
                             <div class="sideInformation">
