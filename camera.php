@@ -7,67 +7,17 @@
     <title>카메라</title>
     <link rel="stylesheet" href="css/camera.css">
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
     <!-- 안내문구 -->
     <div class="message">버릴 쓰레기를 인식해주세요!</div>
 
-<<<<<<< HEAD
-        // the link to your model provided by Teachable Machine export panel
-        const URL = "./my_model/";
-
-        let model, webcam, labelContainer, maxPredictions;
-
-        // Load the image model and setup the webcam
-        async function init() {
-            const modelURL = URL + "model.json";
-            const metadataURL = URL + "metadata.json";
-
-            // load the model and metadata
-            // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-            // or files from your local hard drive
-            // Note: the pose library adds "tmImage" object to your window (window.tmImage)
-            model = await tmImage.load(modelURL, metadataURL);
-            maxPredictions = model.getTotalClasses();
-
-            // Convenience function to setup a webcam
-            const flip = true; // whether to flip the webcam
-            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-            await webcam.setup(); // request access to the webcam
-            await webcam.play();
-            window.requestAnimationFrame(loop);
-
-            // append elements to the DOM
-            document.getElementById("webcam-container").appendChild(webcam.canvas);
-            labelContainer = document.getElementById("label-container");
-            for (let i = 0; i < maxPredictions; i++) { // and class labels
-                labelContainer.appendChild(document.createElement("div"));
-            }
-        }
-
-        async function loop() {
-            webcam.update(); // update the webcam frame
-            await predict();
-            window.requestAnimationFrame(loop);
-        }
-        
-        // run the webcam image through the image model
-        async function predict() {
-            // predict can take in an image, video or canvas html element
-            const prediction = await model.predict(webcam.canvas);
-            for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction =
-                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                labelContainer.childNodes[i].innerHTML = classPrediction;
-            }
-        }
-    </script>
-=======
     <!-- 인식버튼 -->
-    <button class="btn-camera">
+    <button class="btn-camera" onclick="init()">
         <img src="img/btn-camera.png" alt="인식버튼">
     </button>
->>>>>>> 4ab057899b2af53050b9733181bf9af9d0e39a45
 
     <!-- 사진 불러오기 -->
     <button class="btn-image" onclick="document.getElementById('fileInput').click()">
@@ -77,7 +27,69 @@
     
     <!-- 불러온 사진을 띄움 -->
     <img id="previewImage" src="" alt="">
-    
+
+    <!-- 웹캠과 인식 결과를 표시할 컨테이너 -->
+    <div id="webcam-container"></div>
+
     <script src="js/camera.js"></script>
+    <script type="text/javascript">
+        // Teachable Machine 모델 URL
+        const URL = "https://teachablemachine.withgoogle.com/models/wpm7vVOQJ/";
+
+        let model, webcam, labelContainer, maxPredictions;
+
+        // 모델과 웹캠 초기화 함수
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            // 모델과 메타데이터 로드
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            // 웹캠 설정
+            const flip = true;
+            webcam = new tmImage.Webcam(200, 200, flip);
+            await webcam.setup();
+            await webcam.play();
+            window.requestAnimationFrame(loop);
+
+            // 웹캠 캔버스를 DOM에 추가
+            document.getElementById("webcam-container").appendChild(webcam.canvas);
+        }
+
+        // 웹캠 프레임 업데이트 및 예측 함수
+        async function loop() {
+            webcam.update();
+            await predict();
+            window.requestAnimationFrame(loop);
+        }
+
+        // 예측 실행 함수
+        async function predict() {
+            const prediction = await model.predict(webcam.canvas);
+            for (let i = 0; i < maxPredictions; i++) {
+                const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                console.log(classPrediction);
+            }
+        }
+
+        // 파일 프리뷰 함수 (추가 기능)
+        function previewFile() {
+            const preview = document.getElementById('previewImage');
+            const file = document.getElementById('fileInput').files[0];
+            const reader = new FileReader();
+
+            reader.addEventListener("load", function () {
+                preview.src = reader.result;
+            }, false);
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+
+
+    </script>
 </body>
 </html>
