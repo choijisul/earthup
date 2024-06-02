@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/proggingNav.css">
-    <link rel="stylesheet" href="css/proggingTabel.css?after">
+    <link rel="stylesheet" href="css/proggingTabel.css?val1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <title>플로깅 게시판 !!</title>
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
@@ -22,7 +22,7 @@
     }
 
     // 플로깅 커버 이미지 랜덤
-    const numberOfImages = 16;
+    const numberOfImages = 20;
     const imagePath = 'img/ploggingRandomImg/';
     const imagePrefix = 'ploggingImg';
     const imageExtension = '.png';
@@ -94,7 +94,7 @@
                                 <h5>시간 | <?php echo $row['time']; ?></h5>
                             </div>
                             <div class="personnelDiv">
-                                <div class="personnelImg"></div>
+                                <div class="personnelImg"><img src="img/JoinPloggingIcon.png" class="joinPloggingIcon"></div>
                                 <h5 class='personnel'><?php echo $row['joinNum']; ?></h5>
                             </div>
                         </div>

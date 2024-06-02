@@ -68,8 +68,12 @@
 .personnelImg {
     width: 40%;
     height: 100%;
-    background-color: rgb(154, 154, 120);
     margin-right: 5px;
+}
+
+.joinPloggingIcon{
+    width: 85%;
+    height: auto;
 }
 
 /* 마이페이지 관련 */
