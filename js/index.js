@@ -35,3 +35,7 @@ var logo = document.querySelector(".logName");
     logo.addEventListener("click", function() {
         window.location.href = "#footer";
     });
+
+
+
+    
