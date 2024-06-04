@@ -1,7 +1,6 @@
-
-
-<?php require 'db.php'; ?>
-<?php require 'auth.php'; ?>
+<?php
+require 'db.php';
+require 'auth.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,10 +9,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/proggingNav.css?after">
-    <link rel="stylesheet" href="css/proggingInformation.css?after">
+    <link rel="stylesheet" href="css/proggingInformation.css?val1"> <!-- after -->
     <title>플로깅 게시판</title>
+    <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
     <script>
-        // 하트 이미지 바뀜
+        // 하트 이미지 바꾸기
         function changeImage(clickedImageId, otherImageId) {
             var clickedImg = document.getElementById(clickedImageId);
             var otherImg = document.getElementById(otherImageId);
@@ -22,11 +22,37 @@
             otherImg.style.display = 'block';
         }
 
-        // 현재 페이지 URL에서 id 파라미터 값을 가져와서 콘솔에 출력
-        var urlParams = new URLSearchParams(window.location.search);
-        var id = urlParams.get('id');
-        console.log("현재 페이지의 id 값:", id);
-        console.log("현재 로그인 아이디 : ", <?php echo json_encode($loginId); ?>);
+        // 좋아요 관련 함수
+        function plusHeartNum() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var ploggingId = urlParams.get('id');
+            var loginId = <?php echo json_encode($loginId); ?>;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "updateHeart.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var likeText = document.querySelector('.likeText');
+                    var currentLikes = parseInt(likeText.textContent) || 0;
+
+                    // 좋아요 수, 이미지 변경
+                    if (xhr.responseText === 'liked') {
+                        likeText.textContent = (currentLikes + 1) + '명이 좋아요를 눌렀습니다.';
+                        changeImage('image1', 'image2');
+                    } else if (xhr.responseText === 'unliked') {
+                        likeText.textContent = (currentLikes - 1) + '명이 좋아요를 눌렀습니다.';
+                        changeImage('image2', 'image1');
+                    } else {
+                        console.error('좋아요 처리 실패:', xhr.responseText);
+                    }
+                    location.reload(); // 페이지 새로고침
+                }
+            };
+
+            xhr.send("ploggingId=" + encodeURIComponent(ploggingId) + "&loginId=" + encodeURIComponent(loginId));
+        }
 
         // 댓글 다는 버튼 js
         function updateChat() {
@@ -38,6 +64,10 @@
                 return;
             }
 
+            var urlParams = new URLSearchParams(window.location.search);
+            var id = urlParams.get('id');
+            var loginId = <?php echo json_encode($loginId); ?>;
+
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "updateChat.php", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -48,10 +78,28 @@
                 }
             };
 
-            xhr.send("content=" + encodeURIComponent(newChatContent) + "&id=" + encodeURIComponent(id) + "&loginId=" + encodeURIComponent(<?php echo json_encode($loginId); ?>));
+            xhr.send("content=" + encodeURIComponent(newChatContent) + "&id=" + encodeURIComponent(id) + "&loginId=" + encodeURIComponent(loginId));
+        }
+
+
+        // 하트 이미지 설정
+        window.onload = function() {
+            var liked = <?php
+                        $id = isset($_GET['id']) ? $_GET['id'] : null;
+                        $sqlCheckLiked = "SELECT * FROM ploggingheart WHERE memberId = '$loginId' AND ploggingId = '$id'";
+                        $resultCheckLiked = $conn->query($sqlCheckLiked);
+                        echo json_encode($resultCheckLiked->num_rows > 0);
+                        $resultCheckLiked->close();
+                        ?>;
+            if (liked) {
+                document.getElementById('image1').style.display = 'none';
+                document.getElementById('image2').style.display = 'block';
+            } else {
+                document.getElementById('image1').style.display = 'block';
+                document.getElementById('image2').style.display = 'none';
+            }
         }
     </script>
-
 </head>
 
 <body>
@@ -75,7 +123,7 @@
     ?>
             <main class="main">
                 <div class="backBorder">
-                    <!-- 정보 칸(왼) -->
+                    <!-- 정보 보여줌 -->
                     <div class="informationArea">
                         <h3 class="informationTitle">
                             <?php echo $row['title']; ?>
@@ -92,15 +140,19 @@
                             <?php echo $row['detail']; ?>
                         </div>
                         <hr>
+
+                        <!-- 좋아요 -->
                         <div class="likeDiv">
                             <div class="icon-container">
                                 <button class="likeButton" onclick="plusHeartNum()">
-                                    <img id="image1" src="./img/icon5.png" onclick="changeImage('image1', 'image2')">
-                                    <img id="image2" src="./img/icon6.png" onclick="changeImage('image2', 'image1')" style="display: none;">
+                                    <img id="image1" src="./img/icon5.png">
+                                    <img id="image2" src="./img/icon7.png" style="display: none;">
                                 </button>
                             </div>
                             <h5 class="likeText"><?php echo $row['heartNum']; ?>명이 좋아요를 눌렀습니다.</h5>
                         </div>
+
+                        <!-- 참여하기 -->
                         <?php
                         $sqlJoin = "SELECT * FROM ploggingjoin WHERE memberId = '$loginId' and ploggingId = '$id'";
                         $resultJoin = $conn->query($sqlJoin);

@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css?after">
+    <link rel="stylesheet" href="css/index.css?val2"> <!--after, val1-->
     <link rel="stylesheet" href="css/homeNav.css?after">
     <link rel="stylesheet" href="css/myPage.css?after">
     <link rel="stylesheet" href="css/mypageDiv.css?after">
@@ -16,9 +16,10 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <title>어썹</title>
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
-
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
 
 <body>
     <!-- nav -->
@@ -26,10 +27,10 @@
         <div class="nav_container">
             <h1>
             <img src="img/logo2.png" alt="어썹" class="logName">
-
             </h1>
         </div>
     </header>
+
     <div class="header_container">
         <h1>
             <!-- $authenticated -->
@@ -49,7 +50,6 @@
                         <a href="http://localhost/myPloggingWrtie.php">작성한 플로깅</a>
                         <a href="http://localhost/myPloggingJoin.php">참여한 플로깅</a>
                         <a href="http://localhost/myPloggingHeart.php">좋아요한 플로깅</a>
-                        <a href="http://localhost/myRecofailueHeart.php">좋아요한 글</a>
                     </div>
                 </div>
             <?php else : ?>
@@ -58,7 +58,6 @@
             <?php endif; ?>
         </h1>
     </div>
-
     <main class="main">
         <div id="banner-container">
             <img src="img/메인사진1.png" class="banner-image" alt="">
@@ -69,7 +68,7 @@
         <div class="bottom-part">
             <div class="array">
                 <div class="leftzone" data-aos="fade-right">
-                    <!--<img src="img/지구.jpg" class="leftzone-image">!-->
+                    <img src="img/서브사진1.png" class="leftzone-image">
                 </div>
                 <div class="rightzone" data-aos="fade-left">
                     <div class="textzone">
@@ -84,7 +83,7 @@
         <div class="bottom-part">
             <div class="array">
                 <div class="leftzone" data-aos="fade-right">
-                    <!--<img src="img/분리수거.jpg" class="leftzone-image">!-->
+                    <img src="img/서브사진2.png" class="leftzone-image">
                 </div>
                 <div class="rightzone" data-aos="fade-left">
                     <div class="textzone">
@@ -98,8 +97,7 @@
         <div class="bottom-part">
             <div class="array">
                 <div class="leftzone" data-aos="fade-right">
-                    <!-- Consider using a different image for differentiation -->
-                    <!--<img src="img/환경캠페인.jpg" class="leftzone-image">!-->
+                    <img src="img/서브사진3.png" class="leftzone-image">
                 </div>
                 <div class="rightzone" data-aos="fade-left">
                     <div class="textzone">
@@ -110,8 +108,22 @@
             </div>
         </div>
     </main>
-</body>
-<script src="js/index.js"></script>
-<script src="js/script.js"></script>
 
+    <footer class="footer" id="footer">
+    <div class="footer-content">
+    <p>&copy; 2024 earthup <a href="https://github.com/choijisul/earthup" target="_blank"><img src="img/github-mark.png" alt="GitHub" class="social-icon"></a></p>
+
+        <p>Contact us: 
+            <a href="mailto:w2204@e-mirim.hs.kr">w2204@e-mirim.hs.kr</a>,
+            <a href="mailto:w2209@e-mirim.hs.kr">w2209@e-mirim.hs.kr</a>
+        <p>Contact us: 
+            <a href="mailto:w2212@e-mirim.hs.kr">w2212@e-mirim.hs.kr</a>,
+            <a href="mailto:w2217@e-mirim.hs.kr">w2217@e-mirim.hs.kr</a>
+            </p>
+        </div>
+    </div>
+</footer>
+    <script src="js/index.js"></script>
+    <script src="js/script.js"></script>
+</body>
 </html>
