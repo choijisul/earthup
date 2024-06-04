@@ -23,19 +23,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             var clickedImg1 = document.getElementById('image_' + postId + '_1');
             var clickedImg2 = document.getElementById('image_' + postId + '_2');
             var heartNumElement = document.getElementById('heartNum_' + postId);
-            var newHeartNum;
 
             if (clickedImg1.style.display === 'none') {
                 clickedImg1.style.display = 'block';
                 clickedImg2.style.display = 'none';
-                newHeartNum = parseInt(heartNumElement.textContent) - 1;
+                heartNumElement.textContent = parseInt(heartNumElement.textContent) - 1;
             } else {
                 clickedImg1.style.display = 'none';
                 clickedImg2.style.display = 'block';
-                newHeartNum = parseInt(heartNumElement.textContent) + 1;
+                heartNumElement.textContent = parseInt(heartNumElement.textContent) + 1;
             }
-
-            heartNumElement.textContent = newHeartNum;
 
             // heartNum 값을 서버에 저장
             fetch('update_heartNum.php', {
@@ -43,14 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ post_id: postId, heartNum: newHeartNum })
+                body: JSON.stringify({ post_id: postId, heartNum: parseInt(heartNumElement.textContent) })
             })
             .then(response => response.json())
-            .then(data => {
-                if (!data.success) {
-                    console.error('Failed to update heartNum');
-                }
-            })
+            .then(data => console.log(data))
             .catch(error => console.error('Error:', error));
         }
     </script>
