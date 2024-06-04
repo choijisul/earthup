@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/proggingNav.css">
     <link rel="stylesheet" href="css/recofailure.css">
     <title> 어썹</title>
+    <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
 
 </head>
 <body>

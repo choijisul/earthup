@@ -1,121 +1,169 @@
+<?php
+require 'db.php';
+require 'auth.php';
+
+// 검색 키워드
+$keyword = '';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $keyword = $_POST['keyword'];
+}
+?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/proggingNav.css?after">
-    <link rel="stylesheet" href="css/recosuccess.css?after">
+    <link rel="stylesheet" href="css/recosuccess.css?val1">
     <title>어썹</title>
-</head>
-<body>
-
+    <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
     <script>
-        function changeImage(clickedImageId, otherImageId) {
-            var clickedImg = document.getElementById(clickedImageId);
-            var otherImg = document.getElementById(otherImageId);
-    
-            clickedImg.style.display = 'none';
-            otherImg.style.display = 'block';
+        // 하트 이미지 변환 및 heartNum 업데이트
+        function changeImage(postId) {
+            var clickedImg1 = document.getElementById('image_' + postId + '_1');
+            var clickedImg2 = document.getElementById('image_' + postId + '_2');
+            var heartNumElement = document.getElementById('heartNum_' + postId);
+            var newHeartNum;
+
+            if (clickedImg1.style.display === 'none') {
+                clickedImg1.style.display = 'block';
+                clickedImg2.style.display = 'none';
+                newHeartNum = parseInt(heartNumElement.textContent) - 1;
+            } else {
+                clickedImg1.style.display = 'none';
+                clickedImg2.style.display = 'block';
+                newHeartNum = parseInt(heartNumElement.textContent) + 1;
+            }
+
+            heartNumElement.textContent = newHeartNum;
+
+            // heartNum 값을 서버에 저장
+            fetch('update_heartNum.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ post_id: postId, heartNum: newHeartNum })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    console.error('Failed to update heartNum');
+                }
+            })
+            .catch(error => console.error('Error:', error));
         }
     </script>
+</head>
 
-     <!-- nav -->
-     <header>
+<body>
+    <!-- nav -->
+    <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='camera.html'" class="backButton"><img
-                            src="./img/backButton.png"></button>
-                    <i onClick="location.href='index.html'" class="topName">인식 결과</i>
+                <p><button onClick="location.href='http://localhost/camera.php'" class="backButton"><img src="./img/backButton.png"></button>
+                    <i onClick="location.href='http://localhost/index.php'" class="topName">인식 결과</i>
             </h1>
-            <i class="bi bi-pencil" onClick="location.href='proggingWrite.html'"></i>
         </div>
     </header>
 
+    <!-- 검색결과 -->
     <div class="top-line">
         <div class="keyword-text">인식 결과의 키워드</div>
         <div class="button-container">
-            <button class="keyword-button">마라탕</button>
-            <button class="keyword-button">배달용기</button>
+            <?php if ($keyword !== ''): ?>
+                <button class="keyword-button"><?php echo htmlspecialchars($keyword); ?></button>
+            <?php endif; ?>
             <div class="searchtext">
-                <input type="text">
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <input type="text" name="keyword" id="searchInput" value="<?php echo htmlspecialchars($keyword); ?>">
+                    <button type="submit" class="search_button"><img src="img/icon3.png" class="icon3"></button>
+                </form>
+            </div>
+        </div>
     </div>
-        </div>
-        <img src="img/icon3.png" class="icon3">
-    </div>  
-    <main class="main">
-        <div class="board-container">
-            <div class="content">
-                <p class="header-text">마라탕 배달 용기 알맞게 버리기!</p>
-                <div class="header-line"></div>
-                <div class="paragraph">
-                    <p>향신료를 넣어 알싸한 매운 맛이 인기인 마라탕이 요즘 길거리에서 많이 볼 수 있습니다.
-                        하지만 고추기름, 마라기름과 같이 기름이 많이 들어가는 마라탕 특성 상 다 먹고나서 배달 용기에 묻어있는 기름을 닦기 정말 힘들뿐만이 아니라 알맞은 방법으로 
-                        버리지 않는다면 심각한 생태계 오염이 일어날 수 있습니다.😢</p>
-                </div>
-                <div class="paragraph">
-                    <p>플라스틱에 묻은 음식물이 있다면, 이는 플라스틱 재활용을 어렵게 만듭니다. 
-                        플라스틱 재활용 공정에서는 깨끗한 상태의 플라스틱을 선호하며, 음식물이 묻어있으면 재활용이 어려워집니다.</p>
-                </div>
-                <div class="paragraph">
-                    <p>플라스틱은 자연 분해 과정이 매우 느리기 때문에, 플라스틱에 묻은 음식물이 환경에 버려지면 지속적으로 쓰레기로 남아있게 됩니다. 이는 비생분해성 폐기물의 양을 증가시키고, 쓰레기 처리에 어려움을 초래합니다.</p>
-                </div>
-                <div class="paragraph">
-                    <p>베이킹소다 또는 과탄산소다 1스푼과 주방 세제 1방울과 함께 뜨거운 물을 넣고 10분동안 방치한 후, 물로 세척하여 플라스틱에 재활용해야 합니다</p>
-                </div>
-            </div>
-            <div class="icon5-container">
-                <div class="icon-container">
-                    <img id="image1" src="img/icon5.png" class="icon5" onclick="changeImage('image1', 'image2')">
-                    <img id="image2" src="img/icon6.png" class="icon5" onclick="changeImage('image2', 'image1')" style="display: none;">
-                    <span class="user-count-text">user1214님 외 1,201명이 도움되었습니다!</span>
-                </div>    
-            </div>
-        </div>
-        <div class="board-container">
-            <div class="content">
-                <p class="header-text">마라탕 배달 용기 알맞게 버리기!</p>
-                <div class="header-line"></div>
-                <div class="paragraph">
-                    <p>향신료를 넣어 알싸한 매운 맛이 인기인 마라탕이 요즘 길거리에서 많이 볼 수 있습니다.
-                        하지만 고추기름, 마라기름과 같이 기름이 많이 들어가는 마라탕 특성 상 다 먹고나서 배달 용기에 묻어있는 기름을 닦기 정말 힘들뿐만이 아니라 알맞은 방법으로 
-                        버리지 않는다면 심각한 생태계 오염이 일어날 수 있습니다.😢</p>
-                </div>
-                <div class="paragraph">
-                    <p>플라스틱에 묻은 음식물이 있다면, 이는 플라스틱 재활용을 어렵게 만듭니다. 
-                        플라스틱 재활용 공정에서는 깨끗한 상태의 플라스틱을 선호하며, 음식물이 묻어있으면 재활용이 어려워집니다.</p>
-                </div>
-                <div class="paragraph">
-                    <p>플라스틱은 자연 분해 과정이 매우 느리기 때문에, 플라스틱에 묻은 음식물이 환경에 버려지면 지속적으로 쓰레기로 남아있게 됩니다. 이는 비생분해성 폐기물의 양을 증가시키고, 쓰레기 처리에 어려움을 초래합니다.</p>
-                </div>
-                <div class="paragraph">
-                    <p>베이킹소다 또는 과탄산소다 1스푼과 주방 세제 1방울과 함께 뜨거운 물을 넣고 10분동안 방치한 후, 물로 세척하여 플라스틱에 재활용해야 합니다</p>
-                </div>
-            </div>
-            <div class="icon5-container">
-                <div class="icon-container">
-                    <img id="image3" src="img/icon5.png" class="icon5" onclick="changeImage('image3', 'image4')">
-                    <img id="image4" src="img/icon6.png" class="icon5" onclick="changeImage('image4', 'image3')" style="display: none;">
-                    <span class="user-count-text">user1214님 외 1,201명이 도움되었습니다!</span>
-                </div>
-            </div>
-        </div>
-    </main>
+
+    <!-- 글 화면 -->
+    <?php
+    if ($keyword !== '') {
+        $sql = "SELECT * FROM methodpost WHERE keyword = ? ORDER BY id DESC LIMIT 100";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('s', $keyword);
+        $stmt->execute();
+        $result = $stmt->get_result(); // 쿼리 실행
+
+        if ($result->num_rows > 0) { // 조회 결과가 있으면
+            while ($row = $result->fetch_assoc()) { // 조회 결과를 한 행씩 접근
+                $postId = $row['id'];
+    ?>
+                <main class="main">
+                    <div class="board-container">
+                        <div class="content">
+                            <p class="header-text"><?php echo $row['title']; ?></p>
+                            <div class="header-line"></div>
+                            <div class="paragraph">
+                                <p><?php echo $row['detail']; ?></p>
+                            </div>
+                        </div>
+                        <div class="icon5-container">
+                            <div class="icon-container">
+                                <?php if ($authenticated): ?>
+                                    <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
+                                    <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)" style="display: none;">
+                                <?php else: ?>
+                                    <img src="img/icon5.png" class="icon5">
+                                <?php endif; ?>
+                                <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>명이 좋아요를 눌렀습니다!</span>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            <?php
+            }
+        } else {
+            ?>
+            <img src="img/error.png" class="error">
+            <p class="failSearch">검색결과를 찾지 못했습니다.</p>
+            <p class="failComment">이렇게 검색해 주세요<br> ex 페트병, 캔</p>
+    <?php
+        }
+        $stmt->close();
+    } else {
+        $sql = "SELECT * FROM methodpost ORDER BY id DESC LIMIT 100";
+        $result = $conn->query($sql); // 쿼리 실행
+
+        if ($result->num_rows > 0) { // 조회 결과가 있으면
+            while ($row = $result->fetch_assoc()) { // 조회 결과를 한 행씩 접근
+                $postId = $row['id'];
+    ?>
+                <main class="main">
+                    <div class="board-container">
+                        <div class="content">
+                            <p class="header-text"><?php echo $row['title']; ?></p>
+                            <div class="header-line"></div>
+                            <div class="paragraph">
+                                <p><?php echo $row['detail']; ?></p>
+                            </div>
+                        </div>
+                        <div class="icon5-container">
+                            <div class="icon-container">
+                                <?php if ($authenticated): ?>
+                                    <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
+                                    <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)" style="display: none;">
+                                <?php else: ?>
+                                    <img src="img/icon5.png" class="icon5">
+                                <?php endif; ?>
+                                <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>명이 좋아요를 눌렀습니다!</span>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            <?php
+            }
+        }
+    }
+    $conn->close();
+    ?>
 </body>
 </html>
-<!-- DB 연결 준비 -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

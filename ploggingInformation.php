@@ -1,31 +1,6 @@
-<?php require 'db.php'; ?>
-<?php require 'auth.php' ?> <!--dp접근 php, 쿠키 관련 php 가져옴-->
-
 <?php
-if (isset($_POST['buttonClicked'])) {
-
-    //버튼 누르면 플로깅 참여됨. 실패
-
-    // $memberId = $loginId;
-    // $ploggingId = "1";
-
-    // // SQL 쿼리
-    // $sql2 = "INSERT INTO ploggingjoin (memberId, ploggingId) " .
-    //     "VALUES ('$memberId', '$ploggingId')";
-
-    // if ($conn->query($sql) === TRUE) {
-    //     echo "<script>
-    //             alert('플로깅 참여 완료!');
-    //             window.location.href = 'ploggingBoard.php';
-    //         </script>";
-    // } else {
-    //     echo "<script>console.error('추가 실패: " . $conn->error . "');</script>";
-    // }
-
-    // $conn->close();
-    exit;
-}
-?>
+require 'db.php';
+require 'auth.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,16 +8,12 @@ if (isset($_POST['buttonClicked'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/proggingNav.css">
-    <link rel="stylesheet" href="css/proggingInformation.css">
+    <link rel="stylesheet" href="css/proggingNav.css?after">
+    <link rel="stylesheet" href="css/proggingInformation.css?val1"> <!-- after -->
     <title>플로깅 게시판</title>
+    <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
     <script>
-        // 하트 수
-        // plusHeartNum(){
-
-        // }
-
-        // 하트 이미지 바뀜
+        // 하트 이미지 바꾸기
         function changeImage(clickedImageId, otherImageId) {
             var clickedImg = document.getElementById(clickedImageId);
             var otherImg = document.getElementById(otherImageId);
@@ -51,26 +22,84 @@ if (isset($_POST['buttonClicked'])) {
             otherImg.style.display = 'block';
         }
 
-        // 현재 페이지 URL에서 id 파라미터 값을 가져와서 콘솔에 출력
-        var urlParams = new URLSearchParams(window.location.search);
-        var id = urlParams.get('id');
-        // console.log("현재 페이지의 id 값:", id);
+        // 좋아요 관련 함수
+        function plusHeartNum() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var ploggingId = urlParams.get('id');
+            var loginId = <?php echo json_encode($loginId); ?>;
 
-        // 버튼 누르면 php실행
-        function executePHP() {
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "", true);
+            xhr.open("POST", "updateHeart.php", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4 && xhr.status == 200) {
-                    // 요청이 완료되었을 때 할 일
-                    console.log(xhr.responseText); // PHP 스크립트로부터의 응답
+                    var likeText = document.querySelector('.likeText');
+                    var currentLikes = parseInt(likeText.textContent) || 0;
+
+                    // 좋아요 수, 이미지 변경
+                    if (xhr.responseText === 'liked') {
+                        likeText.textContent = (currentLikes + 1) + '명이 좋아요를 눌렀습니다.';
+                        changeImage('image1', 'image2');
+                    } else if (xhr.responseText === 'unliked') {
+                        likeText.textContent = (currentLikes - 1) + '명이 좋아요를 눌렀습니다.';
+                        changeImage('image2', 'image1');
+                    } else {
+                        console.error('좋아요 처리 실패:', xhr.responseText);
+                    }
+                    location.reload(); // 페이지 새로고침
                 }
             };
-            xhr.send("buttonClicked=true");
+
+            xhr.send("ploggingId=" + encodeURIComponent(ploggingId) + "&loginId=" + encodeURIComponent(loginId));
+        }
+
+        // 댓글 다는 버튼 js
+        function updateChat() {
+            var newChatContent = document.querySelector('.newChat').value;
+
+            // 댓글 빈 문자인 경우
+            if (newChatContent === "") {
+                alert("댓글 내용을 입력하세요.");
+                return;
+            }
+
+            var urlParams = new URLSearchParams(window.location.search);
+            var id = urlParams.get('id');
+            var loginId = <?php echo json_encode($loginId); ?>;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "updateChat.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    location.reload(); // 페이지 새로고침
+                }
+            };
+
+            xhr.send("content=" + encodeURIComponent(newChatContent) + "&id=" + encodeURIComponent(id) + "&loginId=" + encodeURIComponent(loginId));
+        }
+
+
+        // 하트 이미지 설정
+        window.onload = function() {
+            var liked = <?php
+                        $id = isset($_GET['id']) ? $_GET['id'] : null;
+                        $sqlCheckLiked = "SELECT * FROM ploggingheart WHERE memberId = '$loginId' AND ploggingId = '$id'";
+                        $resultCheckLiked = $conn->query($sqlCheckLiked);
+                        echo json_encode($resultCheckLiked->num_rows > 0);
+                        $resultCheckLiked->close();
+                        ?>;
+            if (liked) {
+                document.getElementById('image1').style.display = 'none';
+                document.getElementById('image2').style.display = 'block';
+            } else {
+                document.getElementById('image1').style.display = 'block';
+                document.getElementById('image2').style.display = 'none';
+            }
         }
     </script>
-
 </head>
 
 <body>
@@ -86,14 +115,15 @@ if (isset($_POST['buttonClicked'])) {
 
     <?php
     $id = isset($_GET['id']) ? $_GET['id'] : null;
-    $sql = "SELECT * FROM plogging WHERE id = '$id' ORDER BY id DESC LIMIT 1";
+    $sql = "SELECT * FROM plogging WHERE id = '$id'";
+
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
     ?>
             <main class="main">
                 <div class="backBorder">
-                    <!-- 정보 칸(왼) -->
+                    <!-- 정보 보여줌 -->
                     <div class="informationArea">
                         <h3 class="informationTitle">
                             <?php echo $row['title']; ?>
@@ -110,16 +140,41 @@ if (isset($_POST['buttonClicked'])) {
                             <?php echo $row['detail']; ?>
                         </div>
                         <hr>
+
+                        <!-- 좋아요 -->
                         <div class="likeDiv">
                             <div class="icon-container">
                                 <button class="likeButton" onclick="plusHeartNum()">
-                                    <img id="image1" src="./img/icon5.png" onclick="changeImage('image1', 'image2')">
-                                    <img id="image2" src="./img/icon6.png" onclick="changeImage('image2', 'image1')" style="display: none;">
+                                    <img id="image1" src="./img/icon5.png">
+                                    <img id="image2" src="./img/icon7.png" style="display: none;">
                                 </button>
                             </div>
                             <h5 class="likeText"><?php echo $row['heartNum']; ?>명이 좋아요를 눌렀습니다.</h5>
                         </div>
-                        <button class="enjoyButton" onclick="executePHP()">참여하기</button>
+
+                        <!-- 참여하기 -->
+                        <?php
+                        $sqlJoin = "SELECT * FROM ploggingjoin WHERE memberId = '$loginId' and ploggingId = '$id'";
+                        $resultJoin = $conn->query($sqlJoin);
+                        if ($resultJoin->num_rows > 0) {
+                            $alreadyJoined = true;
+                        } else {
+                            $alreadyJoined = false;
+                        }
+                        $resultJoin->close();
+                        if ($alreadyJoined == false) {
+                        ?>
+                            <form id="joinPloggingForm" method="POST" action="./ploggingJoin.php">
+                                <input type="hidden" name="id" value="<?php echo $id ?>"> <!-- 참여하기 버튼을 누르면 POST 데이터에 joinPlogging이라는 키가 전송됩니다. -->
+                                <button type="submit" class="enjoyButton">참여하기</button>
+                            </form>
+                        <?php
+                        } else {
+                        ?>
+                            <button type="button" class="enjoyButton" disabled>참여완료</button>
+                        <?php
+                        }
+                        ?>
                     </div>
             <?php
         }
@@ -128,28 +183,28 @@ if (isset($_POST['buttonClicked'])) {
             <!-- 댓글 칸(오) -->
             <div class="chatArea">
                 <!-- 댓글 입력 -->
-                <input type="text" name="newChat" class="newChat" placeholder="댓글을 입력하세요"><br>
+                <div class="chatUpdateArea">
+                    <input type="text" name="newChat" class="newChat" placeholder="댓글을 입력하세요" required><br>
+                    <button type="button" class="chatUpdate" onclick="updateChat()">댓글 등록</button>
+                </div>
                 <div class="beforeChar">
-                    <!-- 이전 댓글 1개 -->
                     <?php
-                    // PHP 코드로 이전 댓글 가져오기
-                    // 이전 댓글들을 루프를 통해 동적으로 생성하거나 데이터베이스 등에서 가져와서 출력할 수 있습니다.
-                    $previousComments = array(
-                        array("nickname" => "최씨인건가", "comment" => "아 제 5인격 아 베이스 하고싶어!!!!! 학교 싫어어!"),
-                        array("nickname" => "박도도독", "comment" => "나는야 최고 멋쟁이. 나는야 킹왕짱이지"),
-                        array("nickname" => "솔솔솔솔", "comment" => "나는 귀염뽀짝빵꾸가 될거얌. 일렉 좡좡좡좌라좡좡"),
-                        array("nickname" => "민싱 그 잡체", "comment" => "닭다리 과자!!!!!! 루피야 사랑햄~~~~~")
-                    );
-
-                    foreach ($previousComments as $comment) {
-                        echo "<div class='chat'>";
-                        echo "<div class='profileImg'><img src='./img/person-circle.png'></div>";
-                        echo "<div class='chatDetailed'>";
-                        echo "<h5 class='nickname'>" . $comment['nickname'] . "</h5>";
-                        echo "<h5 class='detailed'>" . $comment['comment'] . "</h5>";
-                        echo "</div>";
-                        echo "</div>";
+                    $sqlComments = "SELECT * FROM ploggingchat WHERE ploggingId = '$id'";
+                    $resultComments = $conn->query($sqlComments);
+                    if ($resultComments->num_rows > 0) {
+                        while ($comment = $resultComments->fetch_assoc()) {
+                    ?>
+                            <div class='chat'>
+                                <div class='profileImg'><img src='./img/person-circle.png'></div>
+                                <div class='chatDetailed'>
+                                    <h5 class='nickname'><?php echo $comment['chatMemberId']; ?></h5>
+                                    <h5 class='detailed'><?php echo $comment['content']; ?></h5>
+                                </div>
+                            </div>
+                    <?php
+                        }
                     }
+                    $resultComments->close();
                     ?>
                 </div>
             </div>
