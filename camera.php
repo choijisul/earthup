@@ -31,12 +31,12 @@
     <!-- 웹캠과 인식 결과를 표시할 컨테이너 -->
     <div id="webcam-container"></div>
 
-    <script src="js/camera.js"></script>
     <script type="text/javascript">
         // Teachable Machine 모델 URL
         const URL = "https://teachablemachine.withgoogle.com/models/wpm7vVOQJ/";
 
         let model, webcam, labelContainer, maxPredictions;
+        let predictionMade = false; 
 
         // 모델과 웹캠 초기화 함수
         async function init() {
@@ -61,7 +61,10 @@
         // 웹캠 프레임 업데이트 및 예측 함수
         async function loop() {
             webcam.update();
-            await predict();
+            if (!predictionMade) { 
+                await predict();
+                predictionMade = true; 
+            }
             window.requestAnimationFrame(loop);
         }
 
@@ -72,6 +75,7 @@
                 const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
                 console.log(classPrediction);
             }
+            webcam.stop();
         }
 
         // 파일 프리뷰 함수 (추가 기능)
@@ -88,8 +92,6 @@
                 reader.readAsDataURL(file);
             }
         }
-
-
     </script>
 </body>
 </html>
