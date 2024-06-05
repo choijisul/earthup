@@ -21,19 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script>
         // 하트 이미지 변환 및 heartNum 업데이트
         function changeImage(postId) {
-            var clickedImg1 = document.getElementById('image_' + postId + '_1');
-            var clickedImg2 = document.getElementById('image_' + postId + '_2');
             var heartNumElement = document.getElementById('heartNum_' + postId);
 
-            if (clickedImg1.style.display === 'none') {
-                clickedImg1.style.display = 'block';
-                clickedImg2.style.display = 'none';
-                heartNumElement.textContent = parseInt(heartNumElement.textContent) - 1;
-            } else {
-                clickedImg1.style.display = 'none';
-                clickedImg2.style.display = 'block';
-                heartNumElement.textContent = parseInt(heartNumElement.textContent) + 1;
-            }
+            var newHeartNum = parseInt(heartNumElement.textContent) + 1;
+            heartNumElement.textContent = newHeartNum;
 
             // heartNum 값을 서버에 저장
             fetch('update_heartNum.php', {
@@ -41,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ post_id: postId, heartNum: parseInt(heartNumElement.textContent) })
+                body: JSON.stringify({ post_id: postId, heartNum: newHeartNum })
             })
             .then(response => response.json())
             .then(data => console.log(data))
@@ -101,11 +92,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="icon5-container">
                             <div class="icon-container">
-                                <?php if ($authenticated): ?>
-                                    <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
-                                    <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)" style="display: none;">
+                            <?php if ($authenticated): ?>
+                                    <img id="image_<?php echo $postId; ?>" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
                                 <?php else: ?>
-                                    <img src="img/icon5.png" class="icon5">
+                                    <img src="img/icon7.png" class="icon5">
                                 <?php endif; ?>
                                 <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>명이 좋아요를 눌렀습니다!</span>
                             </div>
@@ -141,11 +131,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="icon5-container">
                             <div class="icon-container">
-                                <?php if ($authenticated): ?>
-                                    <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
-                                    <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)" style="display: none;">
+                            <?php if ($authenticated): ?>
+                                    <img id="image_<?php echo $postId; ?>" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
                                 <?php else: ?>
-                                    <img src="img/icon5.png" class="icon5">
+                                    <img src="img/icon7.png" class="icon5">
                                 <?php endif; ?>
                                 <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>명이 좋아요를 눌렀습니다!</span>
                             </div>
