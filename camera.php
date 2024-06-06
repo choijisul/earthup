@@ -44,8 +44,9 @@
             // 안내문구 자동 삭제
             setTimeout(function () {
                 var messageElement = document.querySelector('.message');
+                // 웹사이트에 처음 들어왔을 때만 (그 이후로 X)
                 if (messageElement) {
-                    messageElement.style.display = 'none';
+                    messageElement.style.display = 'none';  
                 }
             }, 2000); // 2초
 
@@ -76,6 +77,7 @@
                 frameCount++;
                 if (frameCount === 3 && !predictionMade) {
                     const highestProbability = await predict();
+                    // 만약 인식률이 30%이하라면 인식 안내 페이지로 이동
                     if (highestProbability <= 0.3) {
                         setTimeout(function () {
                             window.location.href = 'recofailure.php'; // 3초 후에 페이지 이동
@@ -98,8 +100,8 @@
                         highestClass = prediction[i].className;
                     }
                 }
-
-                console.log("가장 높은 확률:", `${highestClass}: ${(highestProbability * 100).toFixed(2)}%`); // 가장 높은 확률 출력
+                // 가장 높은 확률을 콘솔창에 표시
+                console.log("가장 높은 확률:", `${highestClass}: ${(highestProbability * 100).toFixed(2)}%`);
                 return highestProbability;
             }
         }
