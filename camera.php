@@ -56,6 +56,7 @@
 
             let model, webcam, maxPredictions;
             let predictionMade = false;
+            let frameCount = 0;
 
             // 모델과 메타데이터 로드
             model = await tmImage.load(modelURL, metadataURL);
@@ -72,7 +73,8 @@
             // 웹캠 프레임 업데이트 및 예측 함수
             async function loop() {
                 webcam.update();
-                if (!predictionMade) {
+                frameCount++;
+                if (frameCount === 3 && !predictionMade) {
                     const highestProbability = await predict();
                     if (highestProbability <= 0.3) {
                         setTimeout(function () {
@@ -81,6 +83,7 @@
                     }
                     predictionMade = true;
                 }
+                window.requestAnimationFrame(loop);
             }
 
             // 예측 실행 함수
