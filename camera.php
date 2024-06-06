@@ -19,7 +19,7 @@
             if (messageElement) {
                 messageElement.style.display = 'none';
             }
-        }, 2000); // 2초
+        }, 1500); // 2초
 
         // 이벤트 발생 시간 설정
         let eventOccurred = false;
