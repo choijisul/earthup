@@ -80,10 +80,7 @@
                         }, 3000); // 3초
                     }
                     predictionMade = true;
-                } else {
-                    await predict(); // 각 프레임마다 예측
                 }
-                window.requestAnimationFrame(loop);
             }
 
             // 예측 실행 함수
