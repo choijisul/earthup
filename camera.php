@@ -74,7 +74,7 @@
                 webcam.update();
                 if (!predictionMade) {
                     const highestProbability = await predict();
-                    if (highestProbability <= 0.5) {
+                    if (highestProbability <= 0.3) {
                         setTimeout(function () {
                             window.location.href = 'recofailure.php'; // 3초 후에 페이지 이동
                         }, 3000); // 3초
