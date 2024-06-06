@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -90,13 +90,16 @@
             async function predict() {
                 const prediction = await model.predict(webcam.canvas);
                 let highestProbability = 0;
+                let highestClass = '';
+
                 for (let i = 0; i < maxPredictions; i++) {
                     if (prediction[i].probability > highestProbability) {
                         highestProbability = prediction[i].probability;
+                        highestClass = prediction[i].className;
                     }
                 }
-                console.log("Predictions:", prediction.map(p => `${p.className}: ${(p.probability * 100).toFixed(2)}%`));
-                console.log("Highest probability:", highestProbability.toFixed(2)); // 가장 높은 확률 출력
+
+                console.log("가장 높은 확률:", `${highestClass}: ${(highestProbability * 100).toFixed(2)}%`); // 가장 높은 확률 출력
                 return highestProbability;
             }
         }
