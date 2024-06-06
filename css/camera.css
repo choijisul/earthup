@@ -11,7 +11,7 @@ body {
 }
 
 /* 안내문구 */
-.message {
+/* .message {
     width: 30%;
     height: 50px;
     color: #FFFFFF;
@@ -26,6 +26,40 @@ body {
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.message {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.btn-camera,
+.btn-image {
+    background-color: transparent;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#previewImage {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+#webcam-container {
+    margin-top: 20px;
 }
 
 /* 인식버튼 및 이미지 불러오기 버튼 */

@@ -34,18 +34,63 @@ function previewFile() {
     }
 }
 
+// Teachable Machine 모델 URL
+const URL = "https://teachablemachine.withgoogle.com/models/wpm7vVOQJ/";
+
+let model, webcam, labelContainer, maxPredictions;
+let predictionMade = false;
+
+// 모델과 웹캠 초기화 함수
+async function init() {
+    const modelURL = URL + "model.json";
+    const metadataURL = URL + "metadata.json";
+
+    // 모델과 메타데이터 로드
+    model = await tmImage.load(modelURL, metadataURL);
+    maxPredictions = model.getTotalClasses();
+
+    // 웹캠 설정
+    const flip = true;
+    webcam = new tmImage.Webcam(200, 200, flip);
+    await webcam.setup();
+    await webcam.play();
+    window.requestAnimationFrame(loop);
+
+    // 웹캠 캔버스를 DOM에 추가
+    document.getElementById("webcam-container").appendChild(webcam.canvas);
+}
+
+// 웹캠 프레임 업데이트 및 예측 함수
+async function loop() {
+    webcam.update();
+    if (!predictionMade) {
+        await predict();
+        predictionMade = true;
+    }
+    window.requestAnimationFrame(loop);
+}
+
+// 예측 실행 함수
 async function predict() {
     const prediction = await model.predict(webcam.canvas);
     for (let i = 0; i < maxPredictions; i++) {
-        const className = prediction[i].className;
-        const probability = prediction[i].probability.toFixed(2);
-        const classPrediction = className + ": " + probability;
+        const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        console.log(classPrediction);
+    }
+    webcam.stop();
+}
 
-        // 확률이 80% 이상인 경우에만 콘솔에 표시
-        if (probability >= 0.8) {
-            console.log(classPrediction);
-        }
+// 파일 프리뷰 함수 (추가 기능)
+function previewFile() {
+    const preview = document.getElementById('previewImage');
+    const file = document.getElementById('fileInput').files[0];
+    const reader = new FileReader();
 
-        labelContainer.childNodes[i].innerHTML = classPrediction;
+    reader.addEventListener("load", function () {
+        preview.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
     }
 }
