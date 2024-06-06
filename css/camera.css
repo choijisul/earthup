@@ -29,9 +29,6 @@ body {
     margin-top: 20px;
 }
 
-#webcam-container {
-    margin-top: 20px;
-}
 
 /* 인식버튼 및 이미지 불러오기 버튼 */
 .btn-camera,
