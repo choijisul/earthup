@@ -10,35 +10,6 @@ body {
     position: relative;
 }
 
-/* 안내문구 */
-/* .message {
-    width: 30%;
-    height: 50px;
-    color: #FFFFFF;
-    background-color: #858585a4;
-    border-radius: 30px;
-    font-weight: 550;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
-
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-}
-
 .message {
     font-size: 1.5em;
     margin-bottom: 20px;

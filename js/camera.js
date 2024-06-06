@@ -19,21 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// 이미지 불러오기
-function previewFile() {
-    var preview = document.getElementById("previewImage");
-    var file = document.getElementById("fileInput").files[0];
-    var reader = new FileReader();
-
-    reader.addEventListener("load", function () {
-        preview.src = reader.result;
-    }, false);
-
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-}
-
 // Teachable Machine 모델 URL
 const URL = "https://teachablemachine.withgoogle.com/models/wpm7vVOQJ/";
 
@@ -78,19 +63,4 @@ async function predict() {
         console.log(classPrediction);
     }
     webcam.stop();
-}
-
-// 파일 프리뷰 함수 (추가 기능)
-function previewFile() {
-    const preview = document.getElementById('previewImage');
-    const file = document.getElementById('fileInput').files[0];
-    const reader = new FileReader();
-
-    reader.addEventListener("load", function () {
-        preview.src = reader.result;
-    }, false);
-
-    if (file) {
-        reader.readAsDataURL(file);
-    }
 }
