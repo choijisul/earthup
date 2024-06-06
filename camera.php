@@ -46,7 +46,7 @@
                 var messageElement = document.querySelector('.message');
                 // 웹사이트에 처음 들어왔을 때만 (그 이후로 X)
                 if (messageElement) {
-                    messageElement.style.display = 'none';  
+                    messageElement.style.display = 'none';
                 }
             }, 2000); // 2초
 
@@ -77,11 +77,13 @@
                 frameCount++;
                 if (frameCount === 3 && !predictionMade) {
                     const result = await predict();
-                    // 만약 인식률이 30%이하라면 인식 안내 페이지로 이동
+                    // 만약 인식률이 30% 이하라면 인식 안내 페이지로 이동
                     if (result.highestProbability <= 0.3) {
                         setTimeout(function () {
                             window.location.href = 'recofailure.php'; // 3초 후에 페이지 이동
                         }, 3000); // 3초
+                    } else {
+                        sendResultToServer(result);
                     }
                     predictionMade = true;
                     // 결과 출력
@@ -105,9 +107,24 @@
                 // 가장 높은 확률을 객체에 담아 반환
                 return { highestProbability, highestClass };
             }
+
+            // 서버로 결과를 전송하는 함수
+            function sendResultToServer(result) {
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = 'recosuccess.php';
+
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'highestClass';
+                input.value = result.highestClass;
+                form.appendChild(input);
+
+                document.body.appendChild(form);
+                form.submit();
+            }
         }
     });
-
 </script>
 
 <body>

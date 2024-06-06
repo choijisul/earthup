@@ -2,10 +2,10 @@
 require 'db.php';
 require 'auth.php';
 
-// 검색 키워드
+// 인식 결과를 키워드로 설정
 $keyword = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $keyword = $_POST['keyword'];
+    $keyword = $_POST['highestClass'];
 }
 ?>
 
