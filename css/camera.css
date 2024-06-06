@@ -23,13 +23,6 @@ body {
     cursor: pointer;
 }
 
-#previewImage {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-}
-
-
 /* 인식버튼 및 이미지 불러오기 버튼 */
 .btn-camera,
 .btn-image {
@@ -60,14 +53,7 @@ body {
     display: block;
 }
 
-/* 불러온 사진 미리보기 스타일 */
-#previewImage {
-    max-width: 80%;
-    max-height: 50vh;
-    margin-top: 20px;
-    display: block;
-}
-
+/* 버튼 스타일 */
 .btn img {
     opacity: 0.5;
 }

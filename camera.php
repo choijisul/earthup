@@ -20,15 +20,6 @@
         <img src="img/btn-camera.png" alt="인식버튼">
     </button>
 
-    <!-- 사진 불러오기 -->
-    <button class="btn-image" onclick="document.getElementById('fileInput').click()">
-        <img src="img/btn-image.png" alt="Load image">
-    </button>
-    <input type="file" id="fileInput" style="display: none;" onchange="previewFile()">
-    
-    <!-- 불러온 사진을 띄움 -->
-    <img id="previewImage" src="" alt="">
-
     <!-- 웹캠과 인식 결과를 표시할 컨테이너 -->
     <div id="webcam-container"></div>
 </body>
