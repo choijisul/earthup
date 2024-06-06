@@ -80,6 +80,8 @@
                         }, 3000); // 3초
                     }
                     predictionMade = true;
+                } else {
+                    await predict(); // 각 프레임마다 예측
                 }
                 window.requestAnimationFrame(loop);
             }
@@ -93,6 +95,7 @@
                         highestProbability = prediction[i].probability;
                     }
                 }
+                console.log("Predictions:", prediction.map(p => `${p.className}: ${(p.probability * 100).toFixed(2)}%`));
                 console.log("Highest probability:", highestProbability.toFixed(2)); // 가장 높은 확률 출력
                 return highestProbability;
             }
