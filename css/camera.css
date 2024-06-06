@@ -10,6 +10,7 @@ body {
     position: relative;
 }
 
+/* 안내문구 */
 .message {
     font-size: 1.5em;
     margin-bottom: 20px;
