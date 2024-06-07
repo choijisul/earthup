@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ?>
             <img src="img/error.png" class="error">
             <p class="failSearch">검색결과를 찾지 못했습니다.</p>
-            <p class="failComment">이렇게 검색해 주세요<br> ex 페트병, 캔</p>
+            <p class="failComment">이렇게 검색해 주세요<br> ex 비닐 의류 폐건전지</p>
     <?php
         }
         $stmt->close();
