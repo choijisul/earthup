@@ -2,11 +2,16 @@
 require 'db.php';
 require 'auth.php';
 
-// 검색 키워드
+// 인식 결과를 키워드로 설정
 $keyword = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $keyword = $_POST['keyword'];
+    if (isset($_POST['highestClass'])) {
+        $keyword = $_POST['highestClass'];
+    } elseif (isset($_POST['keyword'])) {
+        $keyword = $_POST['keyword'];
+    }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -21,21 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script>
         // 하트 이미지 변환 및 heartNum 업데이트
         function changeImage(postId) {
-            var clickedImg1 = document.getElementById('image_' + postId + '_1');
-            var clickedImg2 = document.getElementById('image_' + postId + '_2');
             var heartNumElement = document.getElementById('heartNum_' + postId);
-            var newHeartNum;
 
-            if (clickedImg1.style.display === 'none') {
-                clickedImg1.style.display = 'block';
-                clickedImg2.style.display = 'none';
-                newHeartNum = parseInt(heartNumElement.textContent) - 1;
-            } else {
-                clickedImg1.style.display = 'none';
-                clickedImg2.style.display = 'block';
-                newHeartNum = parseInt(heartNumElement.textContent) + 1;
-            }
-
+            var newHeartNum = parseInt(heartNumElement.textContent) + 1;
             heartNumElement.textContent = newHeartNum;
 
             // heartNum 값을 서버에 저장
@@ -47,11 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 body: JSON.stringify({ post_id: postId, heartNum: newHeartNum })
             })
             .then(response => response.json())
-            .then(data => {
-                if (!data.success) {
-                    console.error('Failed to update heartNum');
-                }
-            })
+            .then(data => console.log(data))
             .catch(error => console.error('Error:', error));
         }
     </script>
@@ -87,6 +76,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- 글 화면 -->
     <?php
     if ($keyword !== '') {
+        // Debug: Check if keyword is correctly set
+        echo "<script>console.log('Debug: keyword = " . htmlspecialchars($keyword) . "');</script>";
+
         $sql = "SELECT * FROM methodpost WHERE keyword = ? ORDER BY id DESC LIMIT 100";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('s', $keyword);
@@ -108,21 +100,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="icon5-container">
                             <div class="icon-container">
-                                <?php if ($authenticated): ?>
-                                    <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
-                                    <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)" style="display: none;">
+                            <?php if ($authenticated): ?>
+                                    <img id="image_<?php echo $postId; ?>" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
                                 <?php else: ?>
-                                    <img src="img/icon5.png" class="icon5">
+                                    <img src="img/icon7.png" class="icon5">
                                 <?php endif; ?>
                                 <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>명이 좋아요를 눌렀습니다!</span>
                             </div>
                         </div>
                     </div>
                 </main>
-            <?php
+    <?php
             }
         } else {
-            ?>
+    ?>
             <img src="img/error.png" class="error">
             <p class="failSearch">검색결과를 찾지 못했습니다.</p>
             <p class="failComment">이렇게 검색해 주세요<br> ex 페트병, 캔</p>
@@ -148,18 +139,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="icon5-container">
                             <div class="icon-container">
-                                <?php if ($authenticated): ?>
-                                    <img id="image_<?php echo $postId; ?>_1" src="img/icon5.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
-                                    <img id="image_<?php echo $postId; ?>_2" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)" style="display: none;">
+                            <?php if ($authenticated): ?>
+                                    <img id="image_<?php echo $postId; ?>" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
                                 <?php else: ?>
-                                    <img src="img/icon5.png" class="icon5">
+                                    <img src="img/icon7.png" class="icon5">
                                 <?php endif; ?>
                                 <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>명이 좋아요를 눌렀습니다!</span>
                             </div>
                         </div>
                     </div>
                 </main>
-            <?php
+    <?php
             }
         }
     }
