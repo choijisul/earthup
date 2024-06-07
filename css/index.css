@@ -2,7 +2,6 @@ body {
   font-family: 'Jua', sans-serif;
 }
 
-
 #banner-container {
   width: 100%;
   overflow: hidden;
@@ -30,8 +29,8 @@ body {
   width: 100%;
   justify-content: space-around;
   display: flex;
-
 }
+
 .leftzone {
   margin-left: 10%;
   width: 40%;
@@ -40,11 +39,10 @@ body {
   padding-left: 10%;
   opacity: 0;
 }
+
 .leftzone-image {
   width: 100%; /* 레프트존의 너비에 맞춰 이미지 크기 조정 */
   height: auto; /* 이미지의 원래 비율을 유지하면서 높이 조정 */
-  /* left: -50%; */
-
 }
 
 .rightzone {
@@ -71,19 +69,15 @@ body {
   width: 100%; /* 내부 div가 부모 요소의 전체 너비를 차지하게 함 */
 }
 
-
-
 .earth-responsibility b {
-  color:#4CACBC;
+  color: #4CACBC;
 }
-
 
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);
     opacity: 0;
   }
-
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -100,6 +94,7 @@ body {
     opacity: 1;
   }
 }
+
 .footer {
   margin-top: 200px;
   background-color: #6CC4A1;
@@ -127,5 +122,52 @@ body {
 
 .social-icon {
   vertical-align: middle; /* 이미지와 텍스트를 수직 가운데 정렬 */
+}
+
+/* 더보기 버튼 스타일 */
+.more-button {
+  display: block;
+  margin: 57px 0 0 20%; /* 왼쪽으로 20%, 아래로 60px */
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #6CC4A1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.more-button:hover {
+  background-color: #45a049;
+}
+
+/* 추가된 섹션들 초기 숨김 */
+.more-content {
+  display: none;
+}
+
+/* 부드러운 전환 효과 (선택사항) */
+.bottom-part {
+  transition: all 0.3s ease;
+}
+
+/* 닫기 버튼 스타일 */
+.close-button {
+  padding: 8px 16px; /* 내부 여백 설정 */
+  font-size: 14px; /* 글꼴 크기 설정 */
+  background-color: #6CC4A1; /* 배경색 설정 */
+  color: white; /* 텍스트 색상 설정 */
+  border: none; /* 테두리 없음 */
+  border-radius: 4px; /* 모서리 둥글게 설정 */
+  cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능한 상태 표시 */
+  transition: background-color 0.3s; /* 배경색 변화에 대한 전환 효과 */
+  margin-top: 60px; /* 위쪽 여백 설정 */
+  margin-left: 275px; /* 왼쪽 여백 설정 */
+}
+
+/* 닫기 버튼 호버 효과 */
+.close-button:hover {
+  background-color: #45a049; /* 호버 시 배경색 변경 */
 }
 
