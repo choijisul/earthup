@@ -94,7 +94,7 @@
                 </div>
             </div>
         </div>
-        <div class="bottom-part">
+        <div class="bottom-part"_>
             <div class="array">
                 <div class="leftzone" data-aos="fade-right">
                     <img src="img/서브사진3.png" class="leftzone-image">
@@ -145,7 +145,6 @@
     </div>
 </div>
     </main>
-
     <footer class="footer" id="footer">
     <div class="footer-content">
     <p>&copy; 2024 earthup <a href="https://github.com/choijisul/earthup" target="_blank"><img src="img/github-mark.png" alt="GitHub" class="social-icon"></a></p>
