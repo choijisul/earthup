@@ -163,7 +163,7 @@ body {
   transition: background-color 0.3s;
   margin-top: 60px;
   margin-left: 275px;
-  font-family: 'Jua', sans-serif; /* 폰트 스타일을 명시적으로 설정 */
+  font-family: 'Jua', sans-serif; /* 폰트 스타일을 명시적으로 설정했어요 */
 }
 
 .close-button:hover {
