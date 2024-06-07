@@ -5,8 +5,13 @@ require 'auth.php';
 // 인식 결과를 키워드로 설정
 $keyword = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $keyword = $_POST['highestClass'];
+    if (isset($_POST['highestClass'])) {
+        $keyword = $_POST['highestClass'];
+    } elseif (isset($_POST['keyword'])) {
+        $keyword = $_POST['keyword'];
+    }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -71,6 +76,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- 글 화면 -->
     <?php
     if ($keyword !== '') {
+        // Debug: Check if keyword is correctly set
+        echo "<script>console.log('Debug: keyword = " . htmlspecialchars($keyword) . "');</script>";
+
         $sql = "SELECT * FROM methodpost WHERE keyword = ? ORDER BY id DESC LIMIT 100";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('s', $keyword);
@@ -102,10 +110,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                 </main>
-            <?php
+    <?php
             }
         } else {
-            ?>
+    ?>
             <img src="img/error.png" class="error">
             <p class="failSearch">검색결과를 찾지 못했습니다.</p>
             <p class="failComment">이렇게 검색해 주세요<br> ex 페트병, 캔</p>
@@ -141,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                 </main>
-            <?php
+    <?php
             }
         }
     }
