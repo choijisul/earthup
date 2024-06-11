@@ -16,17 +16,15 @@
     transform: translate(-50%, -50%);
 }
 
-.btn-camera,
-.btn-image {
+/* 인식버튼 */
+.btn-camera {
     background-color: transparent;
     border: none;
     margin: 10px;
     cursor: pointer;
 }
 
-/* 인식버튼 및 이미지 불러오기 버튼 */
-.btn-camera,
-.btn-image {
+.btn-camera {
     position: absolute;
     background: none;
     border: none;
@@ -49,7 +47,6 @@
 }
 
 /* 버튼 이미지 스타일 */
-.btn-camera img,
 .btn-image img {
     display: block;
 }
