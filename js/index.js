@@ -29,37 +29,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // 일정한 간격으로 다음 이미지로 전환하는 타이머 설정
   setInterval(nextImage, 5000); // 5초마다 다음 이미지로 전환
-
-  // 로고 클릭 시 페이지 하단으로 이동
-  var logo = document.querySelector(".logName");
-  logo.addEventListener("click", function() {
-    window.location.href = "#footer";
-  });
-
-  // 더보기 버튼 클릭 시 추가 컨텐츠 표시
-  document.getElementById('moreBtn').addEventListener('click', function() {
-    const moreContent = document.querySelectorAll('.more-content');
-    moreContent.forEach(function(content) {
-      content.style.display = 'block';
-    });
-    // 닫기 버튼 생성
-    const closeButton = document.createElement('button');
-    closeButton.textContent = '닫기';
-    closeButton.classList.add('close-button');
-    this.parentNode.appendChild(closeButton);
-
-    // 더보기 버튼 숨김
-    this.style.display = 'none';
-
-    // 닫기 버튼에 이벤트 추가
-    closeButton.addEventListener('click', function() {
-      moreContent.forEach(function(content) {
-        content.style.display = 'none';
-      });
-      // 더보기 버튼 표시
-      document.getElementById('moreBtn').style.display = 'block';
-      // 닫기 버튼 삭제
-      closeButton.parentNode.removeChild(closeButton);
-    });
-  });
 });

@@ -2,6 +2,7 @@
 .html,
 .main{
     display: flex;
+    
 }
 
 #searchInput {
@@ -113,6 +114,7 @@ input[type="text"]:focus {
     font-size: 20px; /* 글자 크기 설정 */
     margin-top: 5px; /* 위쪽 여백 설정 */
     position: relative; /* 상대 위치 설정 */
+    
 }
 
 .header-text:after {
@@ -211,6 +213,8 @@ input[type="text"]:focus {
     color: #787878;
     text-align: center; 
 }
+
+
 
 
 
