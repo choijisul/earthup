@@ -15,9 +15,9 @@
      <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='http://localhost/camera.php'" class="backButton"><img
+                <p><button onClick="location.href='http://localhost/index.php'" class="backButton"><img
                             src="./img/backButton.png"></button>
-                    <i onClick="location.href='index.html'" class="topName">인식 결과</i>
+                    <i class="topName">인식 결과</i>
             </h1>
         </div>
     </header>

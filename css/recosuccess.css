@@ -5,6 +5,10 @@
     
 }
 
+.body{
+    overflow-x: hidden;
+}
+
 #searchInput {
     width: 230px; /* 원하는 크기로 설정 */
     padding: 5px; /* 패딩 조정 */
