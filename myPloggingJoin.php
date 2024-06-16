@@ -46,16 +46,16 @@ ini_set('error_log', '/path/to/your/error.log'); // 로그 파일 경로 설정
     <header>
         <div class="nav_container">
             <h1>
-                <button onClick="location.href='http://localhost/index.php'" class="backButton"><img src="./img/backButton.png"></button>
+                <button onClick="location.href='/index.php'" class="backButton"><img src="./img/backButton.png"></button>
             </h1>
         </div>
     </header>
 
     <div class="header_container">
         <h1>
-            <i onClick="location.href='http://localhost/myPloggingWrtie.php'" class="myPageChoose">작성한 플로깅</i>
-            <i onClick="location.href='http://localhost/myPloggingJoin.php'" class="myPageChoose" style="font-size: 17px;">참여한 플로깅</i>
-            <i onClick="location.href='http://localhost/myPloggingHeart.php'" class="myPageChoose">좋아요한 플로깅</i>
+            <i onClick="location.href='/myPloggingWrtie.php'" class="myPageChoose">작성한 플로깅</i>
+            <i onClick="location.href='/myPloggingJoin.php'" class="myPageChoose" style="font-size: 17px;">참여한 플로깅</i>
+            <i onClick="location.href='/myPloggingHeart.php'" class="myPageChoose">좋아요한 플로깅</i>
         </h1>
     </div>
     <main class="main" style="margin-top: 65px;">

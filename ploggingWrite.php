@@ -20,7 +20,7 @@
     <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='http://localhost/ploggingBoard.php'" class="backButton">
+                <p><button onClick="location.href='/ploggingBoard.php'" class="backButton">
                         <img src="./img/backButton.png"></button>
                     <a class="topName">플로깅 작성</a>
             </h1>

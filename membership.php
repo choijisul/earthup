@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='http://localhost/index.php'" class="backButton"><img src="./img/backButton.png"></button></p>
+                <p><button onClick="location.href='/index.php'" class="backButton"><img src="./img/backButton.png"></button></p>
             </h1>
         </div>
     </header>
