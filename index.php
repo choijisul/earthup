@@ -122,10 +122,8 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </div>
 </div>
-=======
         <div class="bottom-part more-content" style="display: none;">
             <div class="array">
                 <div class="leftzone" data-aos="fade-right">
@@ -150,7 +148,6 @@
                 </div>
             </div>
         </div>
->>>>>>> 557959f4df5ce1e2c1df13f2e0b995c57fd842e0
     </main>
     <footer class="footer" id="footer">
         <div class="footer-content">
