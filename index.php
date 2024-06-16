@@ -34,27 +34,27 @@
     <div class="header_container">
         <h1>
             <!-- $authenticated -->
-            <i onClick="location.href='http://localhost/camera.php'" class="garbageSearch">쓰레기 검색</i>
-            <i onClick="location.href='http://localhost/ploggingBoard.php'" class="proggingBoard">플로깅 게시판</i>
-            <i onClick="location.href='http://localhost/recosuccess.php'" class="processingMethod">처리 방법</i>
+            <i onClick="location.href='/camera.php'" class="garbageSearch">쓰레기 검색</i>
+            <i onClick="location.href='/ploggingBoard.php'" class="proggingBoard">플로깅 게시판</i>
+            <i onClick="location.href='/recosuccess.php'" class="processingMethod">처리 방법</i>
             <?php if ($authenticated == true) : ?>
                 <button class="myPage"><img src="img/myPage.png" class="myPageImg"></button>
                 <div class="menu">
                     <div class="section" id="section1">
                         <span class="idTitle"><?php echo $loginId; ?></span>
-                        <button class="logout" onClick="location.href='http://localhost/logout.php'">로그아웃</button>
+                        <button class="logout" onClick="location.href='/logout.php'">로그아웃</button>
                     </div>
                     <hr class="hr">
                     <div class="section" id="section2">
                         <h1 class="title">마이페이지</h1>
-                        <a href="http://localhost/myPloggingWrtie.php">작성한 플로깅</a>
-                        <a href="http://localhost/myPloggingJoin.php">참여한 플로깅</a>
-                        <a href="http://localhost/myPloggingHeart.php">좋아요한 플로깅</a>
+                        <a href="/myPloggingWrtie.php">작성한 플로깅</a>
+                        <a href="/myPloggingJoin.php">참여한 플로깅</a>
+                        <a href="/myPloggingHeart.php">좋아요한 플로깅</a>
                     </div>
                 </div>
             <?php else : ?>
-                <i onClick="location.href='http://localhost/membership.php'" class="membership">회원가입</i>
-                <i onClick="location.href='http://localhost/login.php'" class="login">로그인</i>
+                <i onClick="location.href='/membership.php'" class="membership">회원가입</i>
+                <i onClick="location.href='/login.php'" class="login">로그인</i>
             <?php endif; ?>
         </h1>
     </div>

@@ -15,7 +15,7 @@
      <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='http://localhost/index.php'" class="backButton"><img
+                <p><button onClick="location.href='/index.php'" class="backButton"><img
                             src="./img/backButton.png"></button>
                     <i class="topName">인식 결과</i>
             </h1>
@@ -28,7 +28,7 @@
 
         <div class="try-again-container">
             <div class="try-again-message">다시 인식을 시도해 보세요!</div>
-            <button class="recognize-button" onClick="location.href='http://localhost/camera.php'">다시 인식하기</button>
+            <button class="recognize-button" onClick="location.href='/camera.php'">다시 인식하기</button>
         </div>
     </div>
     <div class="top-line"></div>

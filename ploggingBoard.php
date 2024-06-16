@@ -44,10 +44,10 @@
     <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='http://localhost/index.php'" class="backButton"><img src="./img/backButton.png"></button>
+                <p><button onClick="location.href='/index.php'" class="backButton"><img src="./img/backButton.png"></button>
                     <i class="topName">플로깅</i>
             </h1>
-            <i class="bi bi-pencil" onClick="<?php echo $authenticated ? "location.href='http://localhost/ploggingWrite.php'" : "showAlert();" ?>"></i>
+            <i class="bi bi-pencil" onClick="<?php echo $authenticated ? "location.href='/ploggingWrite.php'" : "showAlert();" ?>"></i>
         </div>
     </header>
 

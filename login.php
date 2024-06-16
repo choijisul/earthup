@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='http://localhost/index.php'" class="backButton"><img src="./img/backButton.png"></button></p>
+                <p><button onClick="location.href='/index.php'" class="backButton"><img src="./img/backButton.png"></button></p>
             </h1>
         </div>
     </header>
@@ -71,9 +71,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" placeholder="비밀번호" class="input-pw" name="pwd">
 
         <!-- 로그인 버튼 -->
-        <button class="loginButton" onClick="location.href='http://localhost/index.php'">로그인</button>
+        <button class="loginButton" onClick="location.href='/index.php'">로그인</button>
 
-        <a href="http://localhost/membership.php" class="goMembership">회원가입</a>
+        <a href="/membership.php" class="goMembership">회원가입</a>
     </form>
 
     <script src="js/index.js"></script>
