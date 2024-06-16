@@ -87,14 +87,11 @@
                 </div>
                 <div class="rightzone" data-aos="fade-left">
                     <div class="textzone">
-<<<<<<< HEAD
                     <p>인식결과로 나온 처리방법에 따라<br>
                         알맞게 쓰레기를 버려주세요!</p>
                     </div>
-=======
                         <p>플로깅 게시판에서 다양한 사람들과,<br>
-                            함께 쓰레기를 줍고 환경을 지켜요!</p>
->>>>>>> 557959f4df5ce1e2c1df13f2e0b995c57fd842e0
+                            함께 쓰레기를 줍고 환경을 지켜요!</p
                     </div>
                 </div>
             </div>
