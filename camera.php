@@ -57,7 +57,6 @@
 
             let model, webcam, maxPredictions;
             let predictionMade = false;
-            let frameCount = 0;
 
             // 모델과 메타데이터 로드
             model = await tmImage.load(modelURL, metadataURL);
@@ -71,24 +70,30 @@
             window.requestAnimationFrame(loop);
             document.getElementById("webcam-container").appendChild(webcam.canvas);
 
-            // 웹캠 프레임 업데이트 및 예측 함수
-            async function loop() {
-                webcam.update();
-                frameCount++;
-                if (frameCount === 3 && !predictionMade) {
+            // 8초 대기 후 예측 시작
+            setTimeout(async function () {
+                if (!predictionMade) {
                     const result = await predict();
                     // 만약 인식률이 30% 이하라면 인식 안내 페이지로 이동
                     if (result.highestProbability <= 0.3) {
                         setTimeout(function () {
-                            window.location.href = 'recofailure.php'; // 3초 후에 페이지 이동
-                        }, 3000); // 3초
+                            window.location.href = 'recofailure.php'; // 10초 후에 페이지 이동
+                        }, 10000); // 10초
                     } else {
                         sendResultToServer(result);
+                        setTimeout(function () {
+                            window.location.href = 'recosuccess.php'; // 10초 후에 페이지 이동
+                        }, 10000); // 10초
                     }
                     predictionMade = true;
                     // 결과 출력
                     console.log("가장 높은 인식 결과:", result);
                 }
+            }, 5000); // 5초
+
+            // 웹캠 프레임 업데이트 및 예측 함수
+            async function loop() {
+                webcam.update();
                 window.requestAnimationFrame(loop);
             }
 
