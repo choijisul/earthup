@@ -62,7 +62,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <!-- 로고 이미지 -->
-    <div class="logo">로고</div>
+    <div class="logo">
+        <img src="img\logo.png" alt="로고">
+    </div>
 
     <form method="POST" action="">
         <!-- 아이디 입력창 -->
