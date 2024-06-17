@@ -8,10 +8,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css?val3"> <!--after, val1-->
-    <link rel="stylesheet" href="css/homeNav.css?after">
-    <link rel="stylesheet" href="css/myPage.css?after">
-    <link rel="stylesheet" href="css/mypageDiv.css?after">
+    <link rel="stylesheet" href="css/index.css?val4"> <!--after, val1-->
+    <link rel="stylesheet" href="css/homeNav.css?val1">
+    <link rel="stylesheet" href="css/myPage.css?val2">
+    <link rel="stylesheet" href="css/mypageDiv.css?val1s">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <title>어썹</title>
@@ -91,7 +91,7 @@
                         알맞게 쓰레기를 버려주세요!</p>
                     </div>
                         <p>플로깅 게시판에서 다양한 사람들과,<br>
-                            함께 쓰레기를 줍고 환경을 지켜요!</p
+                            함께 쓰레기를 줍고 환경을 지켜요!</p>
                     </div>
                 </div>
             </div>
