@@ -135,12 +135,7 @@
 <body>
     <!-- 안내문구 -->
     <div class="message">버릴 쓰레기를 인식해주세요!</div>
-
-    <!-- 인식버튼 -->
-    <button class="btn-camera" onclick="init()">
-        <img src="img/btn-camera.png" alt="인식버튼">
-    </button>
-
+    
     <!-- 웹캠과 인식 결과를 표시할 컨테이너 -->
     <div id="webcam-container"></div>
 </body>

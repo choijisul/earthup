@@ -16,29 +16,6 @@
     transform: translate(-50%, -50%);
 }
 
-/* 인식버튼 */
-.btn-camera {
-    background-color: transparent;
-    border: none;
-    margin: 10px;
-    cursor: pointer;
-}
-
-.btn-camera {
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-/* 인식버튼 위치 */
-.btn-camera {
-    top: 85%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 /* 이미지 불러오기 버튼 위치 */
 .btn-image {
     top: 85%;
