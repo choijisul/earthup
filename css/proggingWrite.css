@@ -1,4 +1,10 @@
-.backBorder{
+body {
+    font-family: 'Jua', sans-serif;
+    overflow-x: hidden;
+}
+
+
+.backBorder {
     display: flex;
     width: 70%;
     height: 550px;
@@ -10,7 +16,7 @@
     border: 2px solid rgb(209, 209, 209);
 }
 
-.informationArea{
+.informationArea {
     height: 93%;
     width: 40%;
     margin-left: 7%;
@@ -18,14 +24,14 @@
     /* background-color: aqua; */
 }
 
-.writeArea{
+.writeArea {
     height: 93%;
     width: 40%;
     margin-left: 5%;
     /* background-color: aquamarine; */
-}   
+}
 
-.hr{
+.hr {
     margin-left: 5%;
     height: 90%;
     background-color: rgb(173, 173, 173);
@@ -34,36 +40,41 @@
 /* 정보 작성 css */
 .titleInput,
 .scheduleInput,
-.timeInput{
+.timeInput {
     width: 95%;
     height: 30px;
     padding-left: 17px;
     margin-top: 30%;
     border: none;
     border-bottom: 1px solid gray;
-    background-color: transparent; /* 배경색 없음 */
+    background-color: transparent;
+    /* 배경색 없음 */
     font-size: 13px;
-    outline: none; /* 클릭해도 테두리 없음 */
+    outline: none;
+    /* 클릭해도 테두리 없음 */
 }
-.titleInput{
+
+.titleInput {
     margin-top: 12%;
 }
 
 /* 내용 작성 css */
-.detailInput{
+.detailInput {
     display: flex;
     width: 95%;
     height: 73%;
     margin-top: 10%;
     padding-left: 17px;
     border: none;
-    background-color: transparent; 
+    background-color: transparent;
     font-size: 15px;
-    outline: none; /* 클릭해도 테두리 없음 */
-    resize: none;  /*사이즈 변경 불가능*/
+    outline: none;
+    /* 클릭해도 테두리 없음 */
+    resize: none;
+    /*사이즈 변경 불가능*/
 }
 
-.raiseButton{
+.raiseButton {
     width: 30%;
     height: 7%;
     margin-left: 60%;
@@ -75,6 +86,6 @@
     cursor: pointer;
 }
 
-.raiseButton:hover{
+.raiseButton:hover {
     background-color: #5bbf97;
 }

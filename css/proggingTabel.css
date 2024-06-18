@@ -4,6 +4,11 @@
     height: 100%;
 }
 
+body {
+    font-family: 'Jua', sans-serif;
+    overflow-x: hidden;
+}
+
 .container {
     padding-top: 10px;
     height: auto;
@@ -25,7 +30,7 @@
 .ploggingImgDiv {
     width: 20%;
     height: 100%;
-    overflow: hidden; 
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +39,7 @@
 .ploggingImg {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 
@@ -69,7 +74,7 @@
     margin-right: 5px;
 }
 
-.joinPloggingIcon{
+.joinPloggingIcon {
     width: 85%;
     height: auto;
 }

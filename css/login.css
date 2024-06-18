@@ -1,3 +1,8 @@
+body {
+    font-family: 'Jua', sans-serif;
+    overflow-x: hidden;
+  }
+
 /* 로고 */
 .logo {
     position: absolute;
@@ -56,7 +61,7 @@
 
 .goMembership{
     font-size: 15px;  
-    margin-left: 47.9%;
+    margin-left: 48.2%;
     display: block; 
     color: gray;
     font-style: normal;

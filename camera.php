@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카메라</title>
+    <title>어썹</title>
     <link rel="stylesheet" href="css/camera.css">
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>

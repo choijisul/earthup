@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Jua', sans-serif;
+    overflow-x: hidden;
+}
+
+/* 위치 수정 */
+.pencil{
+    padding-top: 10px;
+}
+
 li {
     list-style: none;
 }
@@ -35,26 +45,26 @@ li {
 .backButton {
     border: 0px;
     background: none;
-    position: absolute; 
-    z-index: 0; 
-    width: 50px; 
+    position: absolute;
+    z-index: 0;
+    width: 50px;
     height: 50px;
     margin-left: 1%;
     cursor: pointer;
 }
 
 .backButton img {
-    width: 70%; 
-    height: auto; 
+    width: 70%;
+    height: auto;
 }
 
 .bi {
-    font-size: 27px; 
+    font-size: 27px;
     margin-left: 97%;
 }
 
 /* 지역 선택 header */
-.subNav_container{
+.subNav_container {
     position: absolute;
     top: 40px;
     z-index: 1;
@@ -63,7 +73,7 @@ li {
     border-width: 0px 0px 1px 0px;
     border-color: gray;
     border-style: solid;
-    box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 .chooseArea {
@@ -71,18 +81,21 @@ li {
     z-index: 1;
     margin-left: 1%;
     margin-top: 1%;
-    width: 100px; 
-    height: 30px; 
+    width: 100px;
+    height: 30px;
     /* background-color: aquamarine; */
     border: 0px;
-    outline: none; /* 클릭 -> border (X)*/
+    outline: none;
+    /* 클릭 -> border (X)*/
 }
 
-.chooseArea:focus, /*포커스, 크릭*/
-.chooseArea:active { 
+.chooseArea:focus,
+/*포커스, 크릭*/
+.chooseArea:active {
     border: 0px;
-    outline: none; 
+    outline: none;
 }
+
 .area {
     /* 추가 스타일이 필요하다면 여기에 추가하세요 */
 }

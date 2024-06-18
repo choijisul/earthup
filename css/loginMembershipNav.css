@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Jua', sans-serif;
+    overflow-x: hidden;
+}
+
+
 li {
     list-style: none;
 }
@@ -24,15 +30,15 @@ li {
 .backButton {
     border: 0px;
     background: none;
-    position: absolute; 
-    z-index: 0; 
-    width: 50px; 
+    position: absolute;
+    z-index: 0;
+    width: 50px;
     height: 50px;
     margin-left: 1%;
     cursor: pointer;
 }
 
 .backButton img {
-    width: 70%; 
-    height: auto; 
+    width: 70%;
+    height: auto;
 }
