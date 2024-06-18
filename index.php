@@ -64,7 +64,7 @@
             <img src="img/메인사진2.png" class="banner-image" alt="">
             <img src="img/메인사진3.png" class="banner-image" alt="">
         </div>
-    
+
         <div class="bottom-part">
             <div class="array">
                 <div class="leftzone" data-aos="fade-right">
