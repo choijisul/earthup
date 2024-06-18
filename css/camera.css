@@ -16,6 +16,14 @@
     transform: translate(-50%, -50%);
 }
 
+/* 인식버튼 */
+.btn-camera {
+    background-color: transparent;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+}
+
 /* 이미지 불러오기 버튼 위치 */
 .btn-image {
     top: 85%;
