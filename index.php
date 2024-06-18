@@ -90,8 +90,6 @@
                     <p>인식결과로 나온 처리방법에 따라<br>
                         알맞게 쓰레기를 버려주세요!</p>
                     </div>
-                        <p>플로깅 게시판에서 다양한 사람들과,<br>
-                            함께 쓰레기를 줍고 환경을 지켜요!</p>
                     </div>
                 </div>
             </div>
@@ -109,45 +107,7 @@
                 </div>
             </div>
         </div>
-        <!-- <button id="moreBtn" class="more-button">더보기</button> -->
-        <div class="bottom-part more-content" style="display: none;">
-            <div class="array">
-                <div class="leftzone" data-aos="fade-right">
-                    <img src="img/서브사진4.png" class="leftzone-image">
-                </div>
-                <div class="rightzone" data-aos="fade-left">
-                    <div class="textzone">
-                        <p>지구의 행복은 우리의 행복!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-        <div class="bottom-part more-content" style="display: none;">
-            <div class="array">
-                <div class="leftzone" data-aos="fade-right">
-                    <img src="img/서브사진5.png" class="leftzone-image">
-                </div>
-                <div class="rightzone" data-aos="fade-left">
-                    <div class="textzone">
-                        <p>즐거운 지구와 아름다운 세상</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom-part more-content" style="display: none;">
-            <div class="array">
-                <div class="leftzone" data-aos="fade-right">
-                    <img src="img/서브사진6.png" class="leftzone-image">
-                </div>
-                <div class="rightzone" data-aos="fade-left">
-                    <div class="textzone">
-                        <p>찰칵 한번으로 지구를 살리는 길!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </main>
     <footer class="footer" id="footer">
         <div class="footer-content">
