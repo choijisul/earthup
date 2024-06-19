@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="css/proggingNav.css?val2">
     <link rel="stylesheet" href="css/proggingTabel.css?val3">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <title>어썹</title>
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
 </head>
