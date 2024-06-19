@@ -13,6 +13,9 @@ require 'auth.php';
     <link rel="stylesheet" href="css/myPageNav.css?val1">
     <title>어썹</title>
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">   <!--폰트-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
 
 <script>

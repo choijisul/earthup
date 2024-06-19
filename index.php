@@ -8,12 +8,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css?val4"> <!--after, val1-->
-    <link rel="stylesheet" href="css/homeNav.css?val2">
-    <link rel="stylesheet" href="css/myPage.css?val2">
-    <link rel="stylesheet" href="css/mypageDiv.css?val1s">
+    <link rel="stylesheet" href="css/index.css?val5"> <!--after, val1-->
+    <link rel="stylesheet" href="css/homeNav.css?val3">
+    <link rel="stylesheet" href="css/mypageDiv.css?val2">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">   <!--폰트-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <title>어썹</title>
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
 </head>

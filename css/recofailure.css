@@ -1,3 +1,9 @@
+body {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .icon2 {
     position: fixed;
     top: 10px;

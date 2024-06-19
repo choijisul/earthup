@@ -1,3 +1,9 @@
+body {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* 입력창 사각형 틀 */
 .login_container {
     width: 60%;
