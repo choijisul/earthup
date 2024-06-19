@@ -7,10 +7,12 @@
     border-radius: 30px;
     font-weight: 550;
     display: flex;
-    justify-content: center;
     align-items: center;
     margin: 0 auto;
+    padding: 10px;
     position: absolute;
+    justify-content: center;
+    text-align: center;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
