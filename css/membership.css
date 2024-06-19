@@ -1,21 +1,21 @@
 /* 입력창 사각형 틀 */
 .login_container {
     width: 60%;
-    height: 550px; 
-    background-color: #F1F1F1; 
-    position: absolute; 
+    height: 550px;
+    background-color: #F1F1F1;
+    position: absolute;
     top: 53%;
-    left: 50%; 
+    left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid #000000; 
+    border: 1px solid #000000;
     border-radius: 20px;
 }
 
 /* 입력창 정가운데 정렬 */
 .input {
-    position: absolute; 
+    position: absolute;
     top: 48%;
-    left: 50%; 
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -24,7 +24,8 @@
 .member-pw,
 .member-reconfirm,
 .member-email {
-    margin-bottom: 10px; /* Add margin between input fields */
+    margin-bottom: 10px;
+    /* Add margin between input fields */
 }
 
 /* 텍스트 */
@@ -45,7 +46,27 @@
     width: 500px;
     height: 45px;
     padding-left: 10px;
-    margin-bottom: 13px
+    margin-bottom: 13px;
+    background-color: #F1F1F1;
+    border: 0px;
+    border-bottom: 1px solid #000000;
+}
+
+/* 글자 입력 미리보기 */
+.input-id::placeholder,
+.input-pw::placeholder,
+.input-reconfirm::placeholder,
+.input-email::placeholder {
+    color: rgb(186, 186, 186);
+}
+
+/* 글자 입력시 나타나는 효과 X */
+.input-id:focus,
+.input-pw:focus, 
+.input-reconfirm:focus,
+.input-email:focus{
+    outline: none;
+    border-bottom: 1px solid #000000;
 }
 
 .membershipButton {
@@ -57,7 +78,7 @@
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid #000000; 
+    border: 1px solid #000000;
     border-radius: 10px;
     color: white;
     cursor: pointer;
