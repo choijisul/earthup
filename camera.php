@@ -55,7 +55,7 @@
             }, 5000); // 5초
 
             // Teachable Machine 모델 URL
-            const URL = "https://teachablemachine.withgoogle.com/models/wpm7vVOQJ/";
+            const URL = "https://teachablemachine.withgoogle.com/models/XHwKZx6uz/";
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
 
