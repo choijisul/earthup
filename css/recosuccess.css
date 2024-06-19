@@ -85,7 +85,7 @@ input[type="text"]:focus {
 .icon3 {
     position: absolute;
     top: 5px;
-    right: 0px;
+    right: 5px;
     width: 30px;
     cursor: pointer;
 }
@@ -225,8 +225,9 @@ input[type="text"]:focus {
 .icon-container {
     position: relative;
     width: 300px;
-    height: 20px;
+    height: 19px;
     margin-top: 2.4%;
+    padding-left: 7px;
 }
 
 /* 검색 실패한 경우 */
