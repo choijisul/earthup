@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/proggingNav.css?va2">
-    <link rel="stylesheet" href="css/recosuccess.css?val7">
+    <link rel="stylesheet" href="css/recosuccess.css?val9">
     <title>어썹</title>
     <link rel="icon" href="img/pavicon.png" type="image/png" sizes="32x32">
     <link rel="preconnect" href="https://fonts.googleapis.com">   <!--폰트-->
