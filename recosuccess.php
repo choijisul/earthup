@@ -147,7 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <?php else: ?>
                                     <img src="img/icon7.png" class="icon5">
                                 <?php endif; ?>
-                                <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>명이 좋아요를 눌렀습니다!</span>
+                                <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>번 좋아요를 눌렀습니다!</span>
                             </div>
                         </div>
                     </div>
