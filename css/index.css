@@ -84,7 +84,7 @@ body {
 }
 
 /* 배너 슬라이드 애니메이션 */
-@keyframes slideInLeft {
+/* @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);
     opacity: 0;
@@ -106,7 +106,7 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
-}
+} */
 
 /* 풋터 */
 .footer {
@@ -158,26 +158,23 @@ body {
 }
 
 /* 중간 부분 설명 */
-
-/* 카메라 인식 */
-.context-camera,
-.context-flogging,
-.context-search {
+.context {
   margin-left: 20%;
   margin-top: 5%;
 }
 
-#context-title-1,
-#context-title-2,
-#context-title-3 {
+#context-title {
   font-size: 35px;
   font-weight: bold;
   margin-bottom: 1%;
 }
 
-#context-1,
-#context-2,
-#context-3 {
+#context {
   letter-spacing: 1px;
   line-height: 25px;
+}
+
+.context button {
+  margin-top: 1%;
+  
 }
