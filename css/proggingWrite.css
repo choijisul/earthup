@@ -62,7 +62,7 @@ body {
 .detailInput {
     display: flex;
     width: 95%;
-    height: 73%;
+    height: 65%;
     margin-top: 10%;
     padding-left: 17px;
     border: none;
@@ -88,4 +88,30 @@ body {
 
 .raiseButton:hover {
     background-color: #5bbf97;
+}
+
+/* 지역 선택 */
+.areaSelect {
+    border: 1px solid gray;  
+    padding: 5px 10px;          
+    background-color: white; 
+    font-size: 13px;        
+    border-radius: 4px;     
+    outline: none;   
+    margin-bottom: 20px;      
+}
+
+/* Change padding between list items */
+.areaSelect option {
+    padding: 8px;            /* Adjust padding between list items */
+}
+
+/* Additional customization for hover and focus states */
+.areaSelect:hover {
+    border-color: darkgray;  /* Change border color on hover */
+}
+
+.areaSelect:focus {
+    border-color: rgb(81, 81, 81);      /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(137, 137, 137, 0.5); /* Add a blue shadow on focus */
 }
