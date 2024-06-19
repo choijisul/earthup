@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css?val6"> <!--after, val1-->
+    <link rel="stylesheet" href="css/index.css?val7"> <!--after, val1-->
     <link rel="stylesheet" href="css/homeNav.css?val3">
     <link rel="stylesheet" href="css/mypageDiv.css?val2">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -115,12 +115,13 @@
     <footer class="footer" id="footer">
         <div class="footer-content">
             <p>&copy; 2024 earthup <a href="https://github.com/choijisul/earthup" target="_blank"><img src="img/github-mark.png" alt="GitHub" class="social-icon"></a></p>
-
-            <p>Contact us:
-                <a href="mailto:w2204@e-mirim.hs.kr">w2204@e-mirim.hs.kr</a>,
+            <br>
+            Address
+            <p>
+                <a href="mailto:w2204@e-mirim.hs.kr">w2204@e-mirim.hs.kr &nbsp;&nbsp;</a>
                 <a href="mailto:w2209@e-mirim.hs.kr">w2209@e-mirim.hs.kr</a>
-            <p>Contact us:
-                <a href="mailto:w2212@e-mirim.hs.kr">w2212@e-mirim.hs.kr</a>,
+            <p>
+                <a href="mailto:w2212@e-mirim.hs.kr">w2212@e-mirim.hs.kr &nbsp;&nbsp;</a>
                 <a href="mailto:w2217@e-mirim.hs.kr">w2217@e-mirim.hs.kr</a>
             </p>
         </div>
