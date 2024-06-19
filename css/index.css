@@ -86,7 +86,7 @@ body {
 /* 풋터 */
 .footer {
   margin-top: 200px;
-  background-color: #d2d2d2;
+  background-color: #7c7c7c;
   color: #fff;
   text-align: center;
   padding: 20px 0;
@@ -127,7 +127,7 @@ body {
 .conatiner-1 img,
 .conatiner-2 img,
 .conatiner-3 img {
-  width: 55%;
+  width: 50%;
   display: block;
   margin: 0 auto;
 }
