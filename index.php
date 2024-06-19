@@ -59,9 +59,9 @@
     </div>
     <main class="main">
         <div id="banner-container">
-            <img src="img/메인사진1.png" class="banner-image" alt="">
-            <img src="img/메인사진2.png" class="banner-image" alt="">
-            <img src="img/메인사진3.png" class="banner-image" alt="">
+            <img src="img/banner-1.png" class="banner-image" alt="">
+            <img src="img/banner-2.png" class="banner-image" alt="">
+            <img src="img/banner-3.png" class="banner-image" alt="">
         </div>
 
     <!-- 메인 중간 부분 -->
