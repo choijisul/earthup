@@ -83,31 +83,6 @@ body {
   color: #4CACBC;
 }
 
-/* 배너 슬라이드 애니메이션 */
-/* @keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-} */
-
 /* 풋터 */
 .footer {
   margin-top: 200px;
@@ -152,9 +127,9 @@ body {
 .conatiner-1 img,
 .conatiner-2 img,
 .conatiner-3 img {
-  width: 55%; 
+  width: 55%;
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 /* 중간 부분 설명 */
@@ -176,5 +151,9 @@ body {
 
 .context button {
   margin-top: 1%;
-  
+  width: 200px;
+  height: 50px;
+  background-color: #dcdcdc;
+  border: 1.3px solid #00000000;
+  border-radius: 5px;
 }
