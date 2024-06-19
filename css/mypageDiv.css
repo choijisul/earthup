@@ -8,11 +8,6 @@ button.myPage {
     background-color: transparent;
 }
 
-body {
-    font-family: 'Jua', sans-serif;
-    overflow-x: hidden;
-}
-
 .myPageImg {
     width: 92%;
     height: auto;
