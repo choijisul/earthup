@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css?val4"> <!--after, val1-->
-    <link rel="stylesheet" href="css/homeNav.css?val1">
+    <link rel="stylesheet" href="css/homeNav.css?val2">
     <link rel="stylesheet" href="css/myPage.css?val2">
     <link rel="stylesheet" href="css/mypageDiv.css?val1s">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
