@@ -66,9 +66,9 @@
 
         <!-- 메인 중간 부분 -->
         <div class="container">
-            <div class="conatiner-1"><img src="img/round-1.png" alt=""></div>
-            <div class="conatiner-2"><img src="img/round-2.png" alt=""></div>
-            <div class="conatiner-3"><img src="img/round-3.png" alt=""></div>
+            <div class="conatiner-1" onClick="location.href='/camera.php'"><img src="img/round-1.png" alt=""></div>
+            <div class="conatiner-2" onClick="location.href='/ploggingBoard.php'"><img src="img/round-2.png" alt=""></div>
+            <div class="conatiner-3" onClick="location.href='/recosuccess.php'"><img src="img/round-3.png" alt=""></div>
         </div>
 
         <!-- 중간 부분 설명 -->
