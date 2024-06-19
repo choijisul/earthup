@@ -62,7 +62,7 @@
             <img src="img/메인사진3.png" class="banner-image" alt="">
         </div>
 
-    <!-- 가운데 부분 -->
+    <!-- 동그라미 -->
     <div class="container">
         <div class="conatiner-1">
             <img src="img/round-1.png" alt="">
@@ -76,6 +76,8 @@
             <img src="img/round-3.png" alt="">
         </div>
     </div>
+
+
 
     </main>
     <footer class="footer" id="footer">
