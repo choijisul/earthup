@@ -65,19 +65,19 @@
     <!-- 동그라미 -->
     <div class="container">
         <div class="conatiner-1">
-            <img src="img/round-1.png" alt="">
+            <a href="http://localhost/camera.php"><img src="img/round-1.png" alt=""></a>
         </div>
 
         <div class="conatiner-2">
-            <img src="img/round-2.png" alt="">
+            <a href="http://localhost/ploggingBoard.php"><img src="img/round-2.png" alt=""></a>
         </div>
 
         <div class="conatiner-3">
-            <img src="img/round-3.png" alt="">
+            <a href="http://localhost/recosuccess.php"><img src="img/round-3.png" alt=""></a>
         </div>
     </div>
 
-                
+
 
     </main>
     <footer class="footer" id="footer">
