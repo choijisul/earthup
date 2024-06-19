@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
         <div class="nav_container">
             <h1>
-                <p><button onClick="location.href='/camera.php'" class="backButton"><img src="./img/backButton.png"></button>
+                <p><button onClick="location.href='/index.php'" class="backButton"><img src="./img/backButton.png"></button>
                     <i onClick="location.href='/index.php'" class="topName">인식 결과</i>
             </h1>
         </div>
