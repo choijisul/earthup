@@ -62,48 +62,22 @@
             <img src="img/메인사진3.png" class="banner-image" alt="">
         </div>
 
-        <div class="bottom-part">
-            <div class="array">
-                <div class="leftzone" data-aos="fade-right">
-                    <img src="img/서브사진1.png" class="leftzone-image">
-                </div>
-                <div class="rightzone" data-aos="fade-left">
-                    <div class="textzone">
-                        <div class="textzone">
-                            <p>버리는 방법을 모르겠는 쓰레기를<br>
-                                카메라에 대고 찍어주세요<br>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- 동그라미 -->
+    <div class="container">
+        <div class="conatiner-1">
+            <img src="img/round-1.png" alt="">
         </div>
-        <div class="bottom-part">
-            <div class="array">
-                <div class="leftzone" data-aos="fade-right">
-                    <img src="img/서브사진2.png" class="leftzone-image">
-                </div>
-                <div class="rightzone" data-aos="fade-left">
-                    <div class="textzone">
-                    <p>인식결과로 나온 처리방법에 따라<br>
-                        알맞게 쓰레기를 버려주세요!</p>
-                    </div>
-                    </div>
-                </div>
-            </div>
+
+        <div class="conatiner-2">
+            <img src="img/round-2.png" alt="">
         </div>
-        <div class="bottom-part"_>
-            <div class="array">
-                <div class="leftzone" data-aos="fade-right">
-                    <img src="img/서브사진3.png" class="leftzone-image">
-                </div>
-                <div class="rightzone" data-aos="fade-left">
-                    <div class="textzone">
-                        <p class="earth-responsibility">
-                        <p>플로깅 게시판에서 같이 플로깅할 사람을 구해<br>쓰레기를 주우러 다녀 보세요</p>
-                    </div>
-                </div>
-            </div>
+
+        <div class="conatiner-3">
+            <img src="img/round-3.png" alt="">
         </div>
+    </div>
+
+
 
     </main>
     <footer class="footer" id="footer">
