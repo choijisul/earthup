@@ -185,3 +185,7 @@ body {
   background-color: #7c7c7c;
   margin-bottom: 1%;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
