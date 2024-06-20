@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $keyword = $_POST['keyword'];
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +44,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             .then(response => response.json())
             .then(data => console.log(data))
             .catch(error => console.error('Error:', error));
+        }
+
+        // 로그인 상태에 따른 하트 클릭 제어
+        function handleHeartClick(postId) {
+            <?php if ($authenticated): ?>
+                changeImage(postId);
+            <?php else: ?>
+                alert('로그인이 필요합니다.');
+            <?php endif; ?>
         }
     </script>
 </head>
@@ -103,11 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="icon5-container">
                             <div class="icon-container">
-                            <?php if ($authenticated): ?>
-                                    <img id="image_<?php echo $postId; ?>" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
-                                <?php else: ?>
-                                    <img src="img/icon7.png" class="icon5">
-                                <?php endif; ?>
+                                <img id="image_<?php echo $postId; ?>" src="img/icon7.png" class="icon5" onclick="handleHeartClick(<?php echo $postId; ?>)">
                                 <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>번 좋아요를 눌렀습니다!</span>
                             </div>
                         </div>
@@ -142,11 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="icon5-container">
                             <div class="icon-container">
-                            <?php if ($authenticated): ?>
-                                    <img id="image_<?php echo $postId; ?>" src="img/icon7.png" class="icon5" onclick="changeImage(<?php echo $postId; ?>)">
-                                <?php else: ?>
-                                    <img src="img/icon7.png" class="icon5">
-                                <?php endif; ?>
+                                <img id="image_<?php echo $postId; ?>" src="img/icon7.png" class="icon5" onclick="handleHeartClick(<?php echo $postId; ?>)">
                                 <span class="user-count-text"><span id="heartNum_<?php echo $postId; ?>"><?php echo $row['heartNum']; ?></span>번 좋아요를 눌렀습니다!</span>
                             </div>
                         </div>
