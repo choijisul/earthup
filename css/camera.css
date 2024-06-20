@@ -48,3 +48,7 @@ body {
 .btn img {
     opacity: 0.5;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

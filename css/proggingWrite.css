@@ -115,3 +115,7 @@ body {
     border-color: rgb(81, 81, 81);      /* Change border color on focus */
     box-shadow: 0 0 5px rgba(137, 137, 137, 0.5); /* Add a blue shadow on focus */
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

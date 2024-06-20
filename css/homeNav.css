@@ -84,3 +84,7 @@ li {
     height: 40px;
     margin-left: 300px;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

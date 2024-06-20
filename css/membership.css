@@ -93,3 +93,7 @@ body {
 .membershipButton:hover {
     background-color: #5bbf97;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

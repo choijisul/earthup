@@ -90,3 +90,7 @@ body {
     font-weight: bold;
     text-align: center;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

@@ -42,3 +42,7 @@ li {
     width: 70%;
     height: auto;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

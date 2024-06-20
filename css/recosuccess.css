@@ -259,3 +259,7 @@ input[type="text"]:focus {
     color: #787878;
     text-align: center;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

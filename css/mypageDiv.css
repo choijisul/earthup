@@ -76,3 +76,7 @@ button.myPage {
     font-size: 10px;
     color: white;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

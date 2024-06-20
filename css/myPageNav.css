@@ -52,3 +52,7 @@ body {
     font-style: normal;
     margin-left: 25px;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

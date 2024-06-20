@@ -96,3 +96,7 @@ li {
     border: 0px;
     outline: none;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }
