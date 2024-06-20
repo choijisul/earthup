@@ -16,6 +16,9 @@ require 'auth.php'; ?>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <script>
+        // 로그인 상태 확인
+        var isAuthenticated = <?php echo json_encode($authenticated); ?>;
+
         // 하트 이미지 바꾸기
         function changeImage(clickedImageId, otherImageId) {
             var clickedImg = document.getElementById(clickedImageId);
@@ -27,6 +30,11 @@ require 'auth.php'; ?>
 
         // 좋아요 관련 함수
         function plusHeartNum() {
+            if (!isAuthenticated) {
+                alert('로그인이 필요합니다.');
+                return;
+            }
+
             var urlParams = new URLSearchParams(window.location.search);
             var ploggingId = urlParams.get('id');
             var loginId = <?php echo json_encode($loginId); ?>;
@@ -59,6 +67,11 @@ require 'auth.php'; ?>
 
         // 댓글 다는 버튼 js
         function updateChat() {
+            if (!isAuthenticated) {
+                alert('로그인이 필요합니다.');
+                return;
+            }
+
             var newChatContent = document.querySelector('.newChat').value;
 
             // 댓글 빈 문자인 경우
@@ -83,7 +96,6 @@ require 'auth.php'; ?>
 
             xhr.send("content=" + encodeURIComponent(newChatContent) + "&id=" + encodeURIComponent(id) + "&loginId=" + encodeURIComponent(loginId));
         }
-
 
         // 하트 이미지 설정
         window.onload = function() {
@@ -167,8 +179,8 @@ require 'auth.php'; ?>
                         $resultJoin->close();
                         if ($alreadyJoined == false) {
                         ?>
-                            <form id="joinPloggingForm" method="POST" action="./ploggingJoin.php">
-                                <input type="hidden" name="id" value="<?php echo $id ?>"> <!-- 참여하기 버튼을 누르면 POST 데이터에 joinPlogging이라는 키가 전송됩니다. -->
+                            <form id="joinPloggingForm" method="POST" action="./ploggingJoin.php" onsubmit="return checkLogin()">
+                                <input type="hidden" name="id" value="<?php echo $id ?>">
                                 <button type="submit" class="enjoyButton">참여하기</button>
                             </form>
                         <?php
@@ -215,5 +227,15 @@ require 'auth.php'; ?>
 
 </body>
 <script src="js/proggingLikeButton.js"></script>
+<script>
+    function checkLogin() {
+        if (!isAuthenticated) {
+            alert('로그인이 필요합니다.');
+            return false;
+        }
+        return true;
+    }
+</script>
 
 </html>
+
